@@ -153,17 +153,17 @@ export default function Menu({}) {
       >
         Menu
       </p>
-      <p
-        // id="menu-button"
-        className={`menu-button opacity-0 select-none pointer-events-none fixed top-6 right-6 p-4 cursor-pointer text-lg z-50 leading-none font-sans duration-300 delay-200 text-[--background]`}
-        style={{
-          transitionProperty: "opacity, transform",
-        }}
-      >
-        <ContactPopup>
-          <span>Work with me</span>
-        </ContactPopup>
-      </p>
+      <ContactPopup>
+        <span
+          // id="menu-button"
+          className={`menu-button opacity-0 select-none pointer-events-none fixed top-6 right-6 p-4 cursor-pointer text-lg z-50 leading-none font-sans duration-300 delay-200 text-[--background]`}
+          style={{
+            transitionProperty: "opacity, transform",
+          }}
+        >
+          Work with me
+        </span>
+      </ContactPopup>
 
       {/* We want to render the Jukebox at all times so that it plays even when not visible. We only toggle visibility, not rendering. */}
       <Jukebox controllerIsVisible={showMenu} />
@@ -211,7 +211,7 @@ export default function Menu({}) {
                     })}
                     {index < menuItems.length - 1 && (
                       <motion.span
-                        className="text-gray-300 opacity-50 font-sans font-light text-4xl overflow-hidden"
+                        className="hidden md:inline text-gray-300 opacity-50 font-sans font-light text-4xl overflow-hidden"
                         variants={ampersand}
                       >
                         ,

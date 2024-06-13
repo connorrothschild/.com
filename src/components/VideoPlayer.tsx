@@ -2,11 +2,19 @@ import { easeInOutQuint } from "@/config/eases";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-export default function VideoPlayer() {
+export default function VideoPlayer({ muted = false }: { muted?: boolean }) {
   const [videoProgress, setVideoProgress] = useState<number>(0);
   const [videoDuration, setVideoDuration] = useState<number>();
-  const [isPaused, setIsPaused] = useState(true);
+  const [isPaused, setIsPaused] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      // Play
+      video.play();
+    }
+  }, [videoRef]);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -43,26 +51,31 @@ export default function VideoPlayer() {
 
   return (
     <div
-      className={`relative mx-auto my-8 rounded-[6px] overflow-hidden cursor-pointer border border-solid border-gray-300 ${
-        isPaused ? "scale-90 md:scale-75" : "scale-100"
-      }`}
+      className="h-full w-full"
+      // className={`relative mx-auto my-8 rounded-[6px] overflow-hidden cursor-pointer border border-solid border-gray-300 ${
+      //   isPaused ? "scale-90 md:scale-75" : "scale-100"
+      // }`}
       style={{
         transitionDuration: "800ms",
         transitionTimingFunction: `cubic-bezier(${easeInOutQuint.join(",")})`,
       }}
       onMouseDown={togglePlayPause}
     >
-      <div className="absolute top-4 right-4 z-[1]">
+      {/* <div className="absolute top-4 right-4 z-[1]">
         <VideoPlayerControls
           progress={videoProgress}
           isPaused={isPaused}
           onPlayPause={togglePlayPause}
         />
-      </div>
+      </div> */}
       <video
         className="w-full"
         ref={videoRef}
+        muted={muted}
+        controls={false}
         loop
+        allowsInlineMediaPlayback
+        playsInline
         poster="/images/mockups/tech-downturn.jpg"
       >
         <source src="/videos/showreel.mp4" />

@@ -96,7 +96,18 @@ const nyghtSerif = localFont({
 });
 
 const montreal = localFont({
-  src: "./fonts/montreal/PPNeueMontreal-Book.woff2",
+  src: [
+    {
+      path: "./fonts/montreal/PPNeueMontreal-Book.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/montreal/PPNeueMontreal-Medium.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
   display: "fallback",
   variable: "--font-montreal",
 });
@@ -106,6 +117,7 @@ import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import { Toaster } from "sonner";
 import Head from "next/head";
+import { AnimatePresence } from "framer-motion";
 
 // Add a global variable to track if the app has mounted
 let isAppMounted = false;
@@ -113,59 +125,58 @@ let isAppMounted = false;
 export default function App({ Component, pageProps }: AppProps) {
   // We only want this loader on 1) fresh loads and 2) on the home page
   const router = useRouter();
-  // Add router pathname to data-router-pathname attribute on body
-  useEffect(() => {
-    document.body.setAttribute("data-router-pathname", router.pathname);
-  }, [router.pathname]);
+  // // Add router pathname to data-router-pathname attribute on body
+  // useEffect(() => {
+  //   document.body.setAttribute("data-router-pathname", router.pathname);
+  // }, [router.pathname]);
 
-  const LOADING_TIME = 3.5;
+  // const LOADING_TIME = 3.5;
 
-  useEffect(() => {
-    // On initial mount, check if it's a fresh page load
-    if (isAppMounted) {
-      // setShouldShowLoadingAnimation(false);
-    } else {
-      if (
-        (performance.navigation.type === 1 ||
-          performance.navigation.type === 0) &&
-        router.asPath === "/"
-      ) {
-        // setShouldShowLoadingAnimation(true);
+  // useEffect(() => {
+  //   // On initial mount, check if it's a fresh page load
+  //   if (isAppMounted) {
+  //     // setShouldShowLoadingAnimation(false);
+  //   } else {
+  //     if (
+  //       (performance.navigation.type === 1 ||
+  //         performance.navigation.type === 0) &&
+  //       router.asPath === "/"
+  //     ) {
+  //       // setShouldShowLoadingAnimation(true);
 
-        // console.log("Adding loading animation");
-        document.body.classList.add("loading");
-        document.body.classList.remove("loaded");
+  //       // console.log("Adding loading animation");
+  //       document.body.classList.add("loading");
+  //       document.body.classList.remove("loaded");
 
-        setTimeout(() => {
-          // console.log("Removing loading animation");
-          document.body.classList.remove("loading");
-          document.body.classList.add("loaded");
-        }, LOADING_TIME * 1000);
-      } else {
-        // console.log("Skipping loading animation");
-        // setShouldShowLoadingAnimation(false);
-        document.body.classList.add("loaded");
+  //       setTimeout(() => {
+  //         // console.log("Removing loading animation");
+  //         document.body.classList.remove("loading");
+  //         document.body.classList.add("loaded");
+  //       }, LOADING_TIME * 1000);
+  //     } else {
+  //       // console.log("Skipping loading animation");
+  //       // setShouldShowLoadingAnimation(false);
+  //       document.body.classList.add("loaded");
 
-        // If router has a hash, scroll to that element
-        setTimeout(() => {
-          if (router.asPath.includes("#")) {
-            const element = document.querySelector(
-              `#${router.asPath.split("#")[1]}`
-            );
-            console.log(router.asPath.split("#"));
-            if (element) {
-              element.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-                inline: "nearest",
-              });
-            }
-          }
-        }, 0);
-      }
-      isAppMounted = true;
-    }
-  }, [router.asPath]); // Dependency on the router path to re-check on route changes
+  //       // If router has a hash, scroll to that element
+  //       setTimeout(() => {
+  //         if (router.asPath.includes("#")) {
+  //           const element = document.querySelector(
+  //             `#${router.asPath.split("#")[1]}`
+  //           );
+  //           if (element) {
+  //             element.scrollIntoView({
+  //               behavior: "smooth",
+  //               block: "start",
+  //               inline: "nearest",
+  //             });
+  //           }
+  //         }
+  //       }, 0);
+  //     }
+  //     isAppMounted = true;
+  //   }
+  // }, [router.asPath]); // Dependency on the router path to re-check on route changes
 
   return (
     <>
@@ -197,8 +208,12 @@ export default function App({ Component, pageProps }: AppProps) {
           href="https://use.typekit.net/mhr2lku.css"
         ></link>
         <Toaster />
-        <Menu />
-        <Component {...pageProps} />
+        <AnimatePresence
+          mode="wait"
+          onExitComplete={() => window.scrollTo(0, 0)}
+        >
+          <Component key={router.route} {...pageProps} />
+        </AnimatePresence>
       </main>
       <Analytics />
     </>

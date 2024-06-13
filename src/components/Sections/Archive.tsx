@@ -471,14 +471,13 @@ export default function Archive() {
 
   return (
     <section className="w-full min-h-screen relative">
-      <div className="relative flex flex-col items-start justify-start pt-48 pb-24 w-full min-h-screen text-black px-[20px]">
-        <div className="max-w-7xl mx-auto w-full">
+      <div className="relative flex flex-col items-start justify-start py-24 w-full min-h-screen text-black px-[20px]">
+        <div className="max-w-5xl mx-auto w-full">
           <h1 className="text-7xl font-sans font-extralight text-gray-700 mb-2">
-            Archive
+            All Projects
           </h1>
-          {/* <SectionTitle classes="relative top-0">Archive</SectionTitle> */}
           <p className="text-lg font-sans font-light leading-snug text-gray-700">
-            A collection of (most of) my work.
+            Everything I have worked on.
           </p>
           <div className="flex flex-row gap-2 mb-12 mt-4">
             {CATEGORIES.map((filter) => (
@@ -487,15 +486,28 @@ export default function Archive() {
                 onMouseDown={() => {
                   if (selectedFilter === filter.slug) {
                     setSelectedFilter("");
-                    router.replace({
-                      pathname: "/archive",
-                    });
+                    router.push(
+                      {
+                        // pathname: "/archive",
+                        pathname: router.pathname,
+                      },
+                      undefined,
+                      {
+                        scroll: false,
+                      }
+                    );
                   } else {
                     setSelectedFilter(filter.slug);
-                    router.replace({
-                      pathname: "/archive",
-                      query: { filter: filter.slug },
-                    });
+                    router.push(
+                      {
+                        pathname: router.pathname,
+                        query: { filter: filter.slug },
+                      },
+                      undefined,
+                      {
+                        scroll: false,
+                      }
+                    );
                   }
                 }}
                 className={`select-none cursor-pointer text-sm font-sans font-light leading-snug text-gray-700 transition ${
