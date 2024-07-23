@@ -78,11 +78,11 @@ export default function Hero() {
           }}
         >
           <CanvasGradient />
-          <div className="hidden md:flex pl-12 leading-none font-light py-4 text-right absolute bottom-0 right-4 w-[calc(100%-12px)] text-xl flex-col text-gray-300 mix-blend-screen tracking-[0.0125rem] font-serif z-[49]">
+          <div className="hidden md:flex leading-none font-light text-right absolute bottom-0 right-0 p-4 text-xl flex-col text-gray-300 mix-blend-screen tracking-[0.0125rem] font-sans z-[49]">
             The portfolio of software & data visualization engineer, Connor
             Rothschild.
           </div>
-          <div className="flex md:hidden pl-12 leading-none font-light py-4 text-right absolute bottom-0 right-4 text-xl flex-col text-gray-300 mix-blend-screen tracking-[0.0125rem] font-serif z-[49]">
+          <div className="flex md:hidden leading-none font-light text-right absolute bottom-0 right-0 p-4 text-lg flex-col text-gray-300 mix-blend-screen tracking-[0.0125rem] font-sans z-[49]">
             2024 Portfolio
           </div>
           <Name hasLoaded={hasLoaded} />
@@ -103,7 +103,7 @@ function Name({ hasLoaded }: { hasLoaded: boolean }) {
       <div className="">
         <motion.div
           layout="position"
-          className="font-serif text-[3rem] md:text-[4rem] lg:text-[5rem] xl:text-[6rem] leading-[.85] text-white font-normal"
+          className="font-sans text-[3rem] md:text-[4rem] lg:text-[5rem] xl:text-[6rem] leading-[.85] text-white font-semibold tracking-[-0.01em]"
         >
           C
           {["o", "n", "n", "o", "r"].map((letter, i) => (
@@ -111,7 +111,7 @@ function Name({ hasLoaded }: { hasLoaded: boolean }) {
               {hasLoaded && (
                 <motion.span
                   key={i}
-                  className="inline-block font-serif"
+                  className="inline-block font-sans"
                   animate={{ translateX: 0, rotateY: 0, opacity: 1 }}
                   initial={{ translateX: "100%", rotateY: 90, opacity: 0 }}
                   // animate={{ translateY: 0, rotateY: 0, opacity: 1 }}
@@ -133,14 +133,14 @@ function Name({ hasLoaded }: { hasLoaded: boolean }) {
       <div className="">
         <motion.div
           layout="position"
-          className="font-serif text-[3rem] md:text-[4rem] lg:text-[5rem] xl:text-[6rem] leading-[.85] text-white font-normal"
+          className="font-sans text-[3rem] md:text-[4rem] lg:text-[5rem] xl:text-[6rem] leading-[.85] text-white font-semibold tracking-[-0.01em]"
         >
           R
           {["o", "t", "h", "s", "c", "h", "i", "l", "d"].map((letter, i) => (
             <AnimatePresence key={i}>
               {hasLoaded && (
                 <motion.span
-                  className="inline-block font-serif"
+                  className="inline-block font-sans"
                   animate={{ translateX: 0, rotateY: 0, opacity: 1 }}
                   initial={{ translateX: "100%", rotateY: 90, opacity: 0 }}
                   // animate={{ translateY: 0, rotateY: 0, opacity: 1 }}

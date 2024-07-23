@@ -6,6 +6,9 @@ import Head from "next/head";
 import Loader from "@/components/Loader";
 import Footer from "@/components/Sections/Footer";
 import Showreel from "@/components/Sections/Showreel";
+import ProjectsScroll from "@/components/Sections/ProjectsScroll";
+import Menu from "@/components/Menu";
+import PageTransitionWrapper from "@/components/PageTransitionWrapper";
 
 const META_TITLE = "Connor Rothschild";
 const META_DESCRIPTION =
@@ -27,14 +30,18 @@ export default function Home() {
         <meta property="og:description" content={META_DESCRIPTION} />
       </Head>
 
-      <Loader>
-        <Hero />
+      <PageTransitionWrapper>
+        {/* <Loader> */}
+        {/* <Hero /> */}
         {/* <Showreel /> */}
+        {/* <Menu /> */}
         <Intro />
-        <Work />
-        <Contact />
-        <Footer />
-      </Loader>
+        {/* <ProjectsScroll /> */}
+        {/* <Work /> */}
+        {/* <Contact /> */}
+        {/* <Footer /> */}
+        {/* </Loader> */}
+      </PageTransitionWrapper>
     </>
   );
 }

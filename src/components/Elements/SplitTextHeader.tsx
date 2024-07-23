@@ -1,131 +1,202 @@
-import { useTransform, motion, MotionValue, useScroll } from "framer-motion";
-import React from "react";
+import { easeInOutQuint } from "@/config/eases";
+import {
+  useTransform,
+  motion,
+  MotionValue,
+  useScroll,
+  AnimatePresence,
+} from "framer-motion";
+import Image from "next/image";
+import React, { Suspense, useEffect, useState } from "react";
+import VideoPlayer from "../VideoPlayer";
 
 export default function KaraokeText({
-  scrollYProgress,
   phrase,
+  setShowEmoji,
 }: {
-  scrollYProgress: MotionValue<number>;
   phrase: string;
+  setShowEmoji: (showEmoji: boolean) => void;
 }) {
   const words = phrase.split(" ");
+  const [numberOfHoveredWords, setNumberOfHoveredWords] = useState(0);
+
+  // On mobile, we want everything to be visible, don't want to force the user to click on every word lol
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setIsMobile(true);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <p className="self-center flex flex-wrap gap-x-[.5em] md:gap-x-[.65em] text-gray-600">
-      {words.map((word, i) => {
-        const start = i / words.length;
-        const end = start + 1 / words.length;
-        return (
-          <Word key={i} progress={scrollYProgress} range={[start, end]}>
-            {word}
-          </Word>
-        );
-      })}
-    </p>
+    <>
+      <p className="self-center flex flex-wrap gap-x-[.4em] md:gap-x-[.65em] text-gray-600 select-none">
+        {words.map((word, i) => {
+          const start = i / words.length;
+          const end = start + 1 / words.length;
+          return (
+            <Word
+              key={i}
+              setNumberOfHoveredWords={setNumberOfHoveredWords}
+              setShowEmoji={setShowEmoji}
+              isMobile={isMobile}
+            >
+              {word}
+            </Word>
+          );
+        })}
+      </p>
+      {/* <Link
+        href="/projects"
+        className="bottom-8 absolute left-1/2 transform -translate-x-1/2 cursor-pointer py-6 px-12 text-lg ml-auto flex items-center gap-3 w-max text-white rounded-full transition-all"
+        style={
+          {
+            // backgroundImage: "linear-gradient(198deg, #323232, #141414)",
+            // outline: "1px solid rgba(255, 255, 255, .2)",
+            // boxShadow:
+            //   "-21px -16px 10px rgba(0, 0, 0, .04), -12px -9px 9px rgba(0, 0, 0, .13), -5px 4px 6px rgba(0, 0, 0, .23), -1px 1px 4px rgba(0, 0, 0, .26)",
+            // filter: `blur(${Math.round(
+            //   12 - (numberOfHoveredWords / words.length) * 12
+            // )}px)`,
+          }
+        }
+      >
+        Check my work
+        <Dot animated />
+      </Link> */}
+    </>
   );
 }
 
+import Dot from "./Dot";
+import Link from "next/link";
+import { useIsTouchDevice } from "@/hooks/useIsTouchDevice";
+
+const tooltipWords = ["Connor,", "Texas.", "websites"];
+const tooltipWordToComponentMap = {
+  "Connor,": <ImageOfMe />,
+  "Texas.": <div />,
+  websites: <Video />,
+};
+
 const Word = ({
   children,
-  progress,
-  range,
+  setNumberOfHoveredWords,
+  setShowEmoji,
+  isMobile,
 }: {
   children: string;
-  progress: MotionValue<number>;
-  range: [number, number];
+  setNumberOfHoveredWords: React.Dispatch<React.SetStateAction<number>>;
+  setShowEmoji: React.Dispatch<React.SetStateAction<boolean>>;
+  isMobile: boolean;
 }) => {
-  const amount = range[1] - range[0];
-  const opacity = useTransform(progress, range, [0, 1]);
+  const [hoveredOnce, setHoveredOnce] = useState(false);
+  // If screen becomes mobile, set hoveredOnce to true
+  useEffect(() => {
+    if (isMobile) {
+      setHoveredOnce(true);
+    }
+  }, [isMobile]);
+
+  const [tooltip, setTooltip] = useState(false);
+  const [tooltipOffsetDirection, setTooltipOffsetDirection] = useState<
+    "left" | "right"
+  >("left");
+
+  useEffect(() => {
+    if (hoveredOnce) {
+      setNumberOfHoveredWords((prev) => prev + 1);
+    }
+  }, [setNumberOfHoveredWords, hoveredOnce]);
 
   return (
-    <span className="relative text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-[3.45rem] tracking-[-0.01em]">
-      <span className={"absolute opacity-20"}>{children}</span>
+    <span
+      className={`relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[3.8rem] tracking-[-0.005em] leading-[1.1] md:!leading-[1.05] ${
+        hoveredOnce
+          ? tooltipWords.includes(children)
+            ? "text-gray-800 font-bold"
+            : "mix-blend-plus-lighter pointer-events-none text-gray-600"
+          : tooltipWords.includes(children)
+          ? "font-bold mix-blend-plus-lighter"
+          : "mix-blend-plus-lighter"
+      }`}
+      // style={{
+      //   textShadow: tooltipWords.includes(children)
+      //     ? "-1px -1px 0 rgba(255,255,255,.25), 1px -1px 0 rgba(255,255,255,.25), -1px 1px 0 rgba(255,255,255,.25), 1px 1px 0 rgba(255,255,255,.25)"
+      //     : "none",
+      // }}
+      onMouseEnter={(event) => {
+        if (hoveredOnce) {
+          setTooltip(true);
+          if (children === "Texas.") {
+            setShowEmoji(true);
+          }
+          const elementLeft = event.currentTarget.getBoundingClientRect().left;
+          const screenWidth = window.innerWidth;
+          const elementWidth = window.innerWidth / 2;
+
+          if (elementLeft + elementWidth > screenWidth) {
+            setTooltipOffsetDirection("right");
+          } else {
+            setTooltipOffsetDirection("left");
+          }
+        }
+        setHoveredOnce(true);
+      }}
+      onMouseLeave={() => {
+        setTooltip(false);
+      }}
+    >
+      <AnimatePresence>
+        {tooltip && tooltipWords.includes(children) && (
+          <motion.span
+            initial={{ opacity: 0, y: 0, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 0, scale: 0.95 }}
+            transition={{ ease: easeInOutQuint, duration: 0.4 }}
+            className={`z-50 pointer-events-none absolute top-full overflow-hidden transform -translate-x-full mix-blend-normal ${
+              tooltipOffsetDirection === "left" ? "left-0" : "right-0"
+            }`}
+          >
+            {tooltipWordToComponentMap[children]}
+          </motion.span>
+        )}
+      </AnimatePresence>
       <motion.span
-        style={{ opacity: opacity }}
-        className={"transition-opacity duration-300"}
+        style={{
+          filter: hoveredOnce ? "blur(0px)" : "blur(8px)",
+        }}
+        className={"transition-all duration-300"}
       >
         {children}
+        {tooltipWords.includes(children) && <span>*</span>}
       </motion.span>
     </span>
   );
 };
 
-// const Char = ({
-//   children,
-//   progress,
-//   range,
-//   isImage,
-// }: {
-//   children: string | React.ReactNode[];
-//   progress: MotionValue<number>;
-//   range: [number, number];
-//   isImage?: boolean;
-// }) => {
-//   const opacity = useTransform(progress, range, [0, 1]);
+function ImageOfMe() {
+  return (
+    <Image
+      src="/images/me/andys-low.jpg"
+      alt="Connor Rothschild"
+      width={400}
+      height={400}
+      className="mt-1 min-w-[min(400px,_50vw)] min-h-[min(400px,_50vw)] rounded-xl"
+    />
+  );
+}
 
-//   return (
-//     <span>
-//       <span className={"absolute opacity-20"}>{children}</span>
-//       <motion.span
-//         style={{ opacity: opacity }}
-//         className={isImage ? "transition-opacity duration-300" : ""}
-//       >
-//         {children}
-//       </motion.span>
-//     </span>
-//   );
-// };
-
-// import { motion, useScroll, useTransform } from "framer-motion";
-// import React, { useRef } from "react";
-
-// export default function SplitTextHeader({ container, phrase }) {
-//   const { scrollYProgress } = useScroll({
-//     target: container,
-//     // offset: ["start 0.9", "start 0.25"],
-//   });
-//   const words = phrase.split(" ");
-//   return (
-//     <p
-//       ref={container}
-//       className="w-full flex flex-row items-center flex-wrap gap-x-2 md:gap-x-3"
-//     >
-//       {words.map((word, i) => {
-//         const start = i / words.length;
-//         const end = start + 1 / words.length;
-//         return (
-//           <Word key={i} progress={scrollYProgress} range={[start, end]}>
-//             {word}
-//           </Word>
-//         );
-//       })}
-//     </p>
-//   );
-// }
-
-// const Word = ({ children, progress, range }) => {
-//   const opacity = useTransform(progress, range, [0, 1]);
-
-//   const emphasized = false;
-//   // const emphasized = [
-//   //   "software",
-//   //   "&",
-//   //   "data",
-//   //   "visualization",
-//   //   "engineer",
-//   //   "websites",
-//   // ].includes(children.toLowerCase());
-
-//   return (
-//     <span
-//       // className="relative mr-3 mt-3"
-//       className={`relative text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-[3.45rem] !leading-[1.1375] ${
-//         emphasized
-//           ? "font-serif font-light gradient-text mb-[.4%]"
-//           : "text-gray-700 font-sans font-extralight"
-//       }`}
-//     >
-//       <span className="absolute opacity-20 !text-gray-400">{children}</span>
-//       <motion.span style={{ opacity: opacity }}>{children}</motion.span>
-//     </span>
-//   );
-// };
+function Video() {
+  return (
+    <span className="block mt-1 min-w-[min(400px,_50vw)] rounded-lg overflow-hidden">
+      <VideoPlayer muted />
+    </span>
+  );
+}
