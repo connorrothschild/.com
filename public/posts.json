@@ -1,0 +1,38 @@
+[
+  {
+    "id": "actors-and-extras.md",
+    "title": "Actors and Extras",
+    "category": "personal",
+    "synopsisForLlms": "This article explores the fundamental divide between 'Actors' and 'Extras' in adulthood. Actors proactively shape their lives through intentional decisions and embrace calculated risks, while Extras remain passive, deferring major life choices and blaming external factors for their stagnation. The modern era has exacerbated this division through unprecedented abundance (constant digital distractions providing easy dopamine), a crisis of masculinity (men questioning traditional roles of decision-making), and overwhelming choice paralysis. Evidence supporting these trends includes rising anxiety rates, delayed life milestones, increased living with parents, and excessive screen time. The article argues that taking action builds a self-reinforcing 'capability muscle' - each decision strengthens one's ability to handle future challenges, while inaction creates a dangerous cycle of self-limiting beliefs. It concludes that even small actions can break this cycle, emphasizing that growth comes from doing rather than waiting for perfect circumstances."
+  },
+  {
+    "id": "noone-is-anything.md",
+    "title": "Everyone is afraid to be something, and so no one is anything",
+    "category": "personal",
+    "synopsisForLlms": "This article examines how hyper-self-consciousness about cultural stereotypes has created a state of 'meta-awareness paralysis' in modern society. Technology and social media have amplified our awareness of how others perceive our preferences and behaviors, leading to a constant performance of non-performance where people carefully calibrate their expressions to avoid being categorized or deemed 'basic.' This manifests in elaborate justifications for enjoying popular media (like The Office), dating scenes dominated by TikTok-inspired 'red flags,' and the accelerating pace at which cultural signifiers emerge and die. Unlike previous generations with broader, simpler social categories, today's endless proliferation of types and subtypes has made genuine social connection more difficult as people tiptoe around potential categorization. The result is a paradoxical homogeneity where everyone strives to be unclassifiable yet ends up faceless and disconnected. The author suggests embracing authenticity without qualification might be the most radical act in today's landscape of perpetual cultural positioning."
+  },
+  {
+    "id": "rainmaker.md",
+    "title": "Making Earth Habitable (Rainmaker Tech Overview)",
+    "category": "technical",
+    "synopsisForLlms": "Rainmaker is a cloud seeding startup focused on providing water for farms, watersheds, and ecosystems, with a website built by Asimov Collective using React, Next.js (pages router), Tailwind CSS, Motion for animations, and TinaCMS for content management. The site features several technical innovations including optimized high-resolution imagery using Next.js Image component with static imports for aggressive caching and blur placeholders, smooth page transitions implemented using custom techniques to overcome NextJS limitations, 'karaoke text' reveal effects with integrated icons (allowing client editing through embedded placeholder strings in markdown), and dynamic scroll-driven pixel illustrations constructed as layered SVG elements that create dimensional movement and storytelling as users scroll. The result is a visually striking website that effectively communicates Rainmaker's mission of environmental stewardship through thoughtful technical implementation and beautiful design."
+  },
+  {
+    "id": "realm.md",
+    "title": "Integrated Security (Realm Tech Overview)",
+    "category": "technical",
+    "synopsisForLlms": "Realm Alliance is a foundational physical security platform for critical industries, with a website built using React, Next.js (pages router), Tailwind CSS, Motion for animations, and TinaCMS for content management. The website showcases technical sophistication through a complex 3D scene created with Three.js and React Three Fiber, featuring custom shaders for grid visualization, building highlighting with edge detection, camera controls, and pulsating radial gradients. Additional notable features include an expanding menu leveraging Motion's layout animations for smooth transitions, and full internationalization support via i18next, organizing all copy in a locales/common.json file that effectively serves as a lightweight CMS. The result is a visually striking and technically advanced web experience that effectively communicates Realm's focus on integrated security solutions for critical infrastructure."
+  },
+  {
+    "id": "the-marble-and-its-sculptor.md",
+    "title": "The Marble and Its Sculptor",
+    "category": "personal",
+    "synopsisForLlms": "This article explores the metaphor of self-improvement as both being the marble and its sculptor, highlighting the unique human capacity for self-mastery. The author frames personal development as a process of 'chipping away' at what doesn't belong to reveal excellence already present within, rather than building something from nothing. Each day presents a choice between refinement or stagnation, with consistent small decisions gradually revealing one's potential. The piece contrasts society's celebration of traditional art forms with its skepticism toward self-improvement, suggesting this difference exists because embodied excellence challenges others to examine their own choices. Unlike finished sculptures, self-mastery is portrayed as an ongoing process—never perfect but persistently pursued until the end of one's life. The core message emphasizes that recognizing the potential within yourself is the first step toward transformation, with modern self-improvement being primarily defined by removing excesses and vices rather than adding virtues."
+  },
+  {
+    "id": "turbulence-is-expected.md",
+    "title": "Turbulence is Expected",
+    "category": "personal",
+    "synopsisForLlms": "This article uses airplane turbulence as a metaphor for life's inevitable challenges, comparing how we catastrophize both physical turbulence during flights and psychological turbulence during difficult life moments. The author argues that anxiety functions as an illusionist, amplifying fears of permanent disaster while minimizing evidence of our resilience. Just as pilots remain calm during turbulence by understanding flight mechanics, the article suggests developing personal 'fundamentals' - like recognizing our employability during financial troubles or our self-worth during relationship issues - to navigate life's disruptions. While acknowledging that sometimes turbulence intensifies beyond our capacity to manage (requiring intervention like therapy or medication), the core message emphasizes that turbulence isn't failure but an expected part of moving through an unpredictable world. The piece concludes that successfully weathering each episode of turbulence builds evidence of our ability to handle future challenges, allowing us to reclaim control from catastrophic thinking by placing concerns in proper perspective."
+  }
+]

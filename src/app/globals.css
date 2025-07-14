@@ -1,0 +1,129 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --default-border-width: 1px;
+  --default-border-width: 0.5px;
+}
+
+:root {
+  --background: #000000;
+  --background-invert: #ffffff;
+
+  --vh: 1vh;
+
+  /* In case the below are not supported, use fallbacks */
+  --svh: 1vh;
+  --lvh: 1vh;
+
+  /* Now actually set the values */
+  /* Note these will be overwritten by the real-viewport.tsx script */
+  --svh: 1svh;
+  --lvh: 1lvh;
+
+  /* Smallest grid cells */
+  --grid-cell-width: 50vw; /* max(220px, 50vw); */
+}
+
+*::selection {
+  background-color: #363636;
+  color: #fff;
+  /* color: #363636;
+  background-color: #fff; */
+}
+
+/* Tailwind lg breakpoint */
+@media (min-width: 64rem) {
+  :root {
+    --grid-cell-width: 25vw;
+  }
+}
+
+/* Tailwind xl breakpoint */
+@media (min-width: 80rem) {
+  :root {
+    /* --grid-cell-width: min(400px, 20vw); */
+    --grid-cell-width: 20vw; /* This distorts the projects grid on super wide screens, but fixes alignment on feed and writing... */
+  }
+}
+
+html,
+body {
+  background: var(--background) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+}
+
+html,
+body {
+  overscroll-behavior: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.text-wrap-pretty {
+  text-wrap: balance;
+  text-wrap: pretty;
+}
+
+.text-wrap-balance {
+  text-wrap: balance;
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+}
+
+@layer components {
+  .default-grid {
+    @apply bg-black min-h-[calc(100*var(--svh))] h-[calc(100*var(--svh))] text-white overflow-x-auto grid grid-rows-2 auto-cols-[var(--grid-cell-width)] grid-flow-col;
+  }
+}
+
+/* FIXME: Prose pre causes height collapse, this is a hack to fix it */
+.prose pre {
+  overflow: initial;
+}
+
+.prose p {
+  text-wrap: pretty;
+}
+
+/* Only apply top margin to children of block quotes if they are > 1 index */
+
+.prose blockquote p:first-of-type {
+  margin-top: 0 !important;
+}
+
+.prose blockquote {
+  border-inline-start-width: 2px !important;
+}
+
+.prose blockquote p {
+  line-height: 1.25;
+  text-wrap: balance;
+  padding: 0.75rem 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
