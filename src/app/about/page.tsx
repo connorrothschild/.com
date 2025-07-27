@@ -21,8 +21,8 @@ export default function AboutPage() {
           <Image
             src="/images/me/headshot-2025.jpg"
             alt="Connor Rothschild"
-            width={120}
-            height={120}
+            width={1000}
+            height={1000}
             className="size-24 md:size-48 lg:size-72 object-contain rounded overflow-hidden"
           />
         </div>
