@@ -2,6 +2,7 @@
 title: "How Netflix could have advertised their livestream fight"
 date: "2024-11-15"
 type: "Note"
+hidden: true
 ---
 
 Netflix could do two things to get people to watch their big livestream fight (they did the first):

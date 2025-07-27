@@ -5,7 +5,7 @@ export interface Project {
   year: number | string;
   type: string;
   image?: string;
-  url: string;
+  url?: string;
   filterCategory?: string;
   featured: boolean;
   titleWidth?: number;
@@ -16,6 +16,36 @@ export interface Project {
 }
 
 export const projects = [
+  // {
+  //   title: "Hadrian",
+  //   year: 2025,
+  //   url: "https://hadrian.co",
+  //   type: "Web",
+  //   filterCategory: "web",
+  //   featured: true,
+  //   image: "hadrian",
+  //   titleWidth: 80,
+  // },
+  {
+    title: "New Industrial Corporation",
+    year: 2025,
+    url: "https://newindustrial.com",
+    type: "Web",
+    filterCategory: "web",
+    featured: true,
+    image: "new-industrial",
+    titleWidth: 200,
+  },
+  {
+    title: "Testudo",
+    year: 2025,
+    url: "https://testudo.co",
+    type: "Web",
+    filterCategory: "web",
+    featured: true,
+    image: "testudo",
+    titleWidth: 80,
+  },
   {
     title: "Venice AI",
     year: 2025,
@@ -52,7 +82,7 @@ export const projects = [
     url: "https://www.durin.com/",
     type: "Web",
     filterCategory: "web",
-    featured: true,
+    featured: false,
     image: "durin",
     titleWidth: 80,
   },
@@ -239,16 +269,16 @@ export const projects = [
     type: "App, web",
     filterCategory: "web",
   },
-  // {
-  //   title: "Minerva",
-  //   year: 2023,
-  //   url: "https://realtors.minervadata.xyz/",
-  //   type: "App",
-  //   filterCategory: "web",
-  //   featured: true,
-  //   image: "minerva",
-  //   titleWidth: 75,
-  // },
+  {
+    title: "Minerva",
+    year: 2023,
+    url: "https://minervadata.io/",
+    type: "App",
+    filterCategory: "web",
+    // featured: true,
+    image: "minerva",
+    titleWidth: 75,
+  },
   {
     title: "Absolute Rest",
     year: 2023,
@@ -261,7 +291,6 @@ export const projects = [
     url: "https://www.newline.co/courses/better-data-visualizations-with-svelte",
     type: "Course",
     filterCategory: "visualization",
-    featured: true,
     image: "course",
     titleWidth: 250,
   },
@@ -566,6 +595,7 @@ export const projects = [
   .reverse()
   .map((p) => ({
     ...p,
+    featured: p.featured ?? false,
     blurDataURL: p.image
       ? blurData[p.image as keyof typeof blurData]
       : undefined,

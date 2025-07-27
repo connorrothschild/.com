@@ -121,6 +121,27 @@ export default function RootLayout({
         <Analytics />
         <SpeedInsights />
         <RealViewport />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              let previousSelectionLength = 0;
+              
+              document.addEventListener('selectionchange', function() {
+                const selection = window.getSelection();
+                const currentSelectionLength = selection ? selection.toString().length : 0;
+                
+                // Only change color if we're starting a new selection (going from 0 to some text)
+                // Keep the same color if we're extending an existing selection
+                if (currentSelectionLength > 0 && previousSelectionLength === 0) {
+                  const randomHue = Math.floor(Math.random() * 360);
+                  document.documentElement.style.setProperty('--selection-hue', randomHue);
+                }
+                
+                previousSelectionLength = currentSelectionLength;
+              });
+            `,
+          }}
+        />
       </body>
     </html>
   );

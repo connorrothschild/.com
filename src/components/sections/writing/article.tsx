@@ -2,6 +2,9 @@ import React from "react";
 import { MDXRemote } from "next-mdx-remote/rsc"; // Use '/rsc' for App Router
 import { PostData } from "@/lib/posts"; // Import the PostData type
 import Image, { ImageProps } from "next/image"; // Import Image and ImageProps
+import ReactMarkdown from "react-markdown";
+import { cn } from "@/lib/utils";
+import rehypeRaw from "rehype-raw";
 
 // Define custom components
 const mdxComponents = {
@@ -41,7 +44,7 @@ export default function Article({ article }: { article: PostData }) {
 
       {/* Modify prose classes here for body text styling */}
       <div
-        className="absolute inset-0 h-full w-full overflow-y-scroll scrollbar-hide py-[50px] lg:py-[100px]"
+        className="absolute inset-0 h-full w-full overflow-y-scroll scrollbar-hide py-[50px] lg:py-[100px] lg:pt-[37svh]"
         style={{
           // NOTE: Cannot use motion here because it breaks mdx-remote which is a server component.
           opacity: 0,
@@ -104,7 +107,109 @@ export default function Article({ article }: { article: PostData }) {
             {formattedDate}
           </p>
 
-          <MDXRemote source={article.content} components={mdxComponents} />
+          {/* <MDXRemote source={article.content} components={mdxComponents} /> */}
+          <ReactMarkdown
+            rehypePlugins={[rehypeRaw]}
+            components={{
+              h1: ({ children }) => (
+                <h1 className="text-3xl font-light text-black mb-6 mt-8 first:mt-0">
+                  {children}
+                </h1>
+              ),
+              h2: ({ children }) => (
+                <h2 className="text-2xl font-light text-black mb-4 mt-8 first:mt-0">
+                  {children}
+                </h2>
+              ),
+              h3: ({ children }) => (
+                <h3 className="text-xl !font-normal text-black mb-3 mt-8 first:mt-0">
+                  {children}
+                </h3>
+              ),
+              p: ({ children, className }) => (
+                <p className={cn("text-base leading-relaxed mb-6", className)}>
+                  {children}
+                </p>
+              ),
+              strong: ({ children }) => (
+                <strong className="text-black font-medium">{children}</strong>
+              ),
+              em: ({ children }) => (
+                <em className="text-white/90 italic">{children}</em>
+              ),
+              a: ({ children, href }) => (
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="!text-white/80 hover:!text-white/100 underline"
+                >
+                  {children}
+                  {/* <ExternalLink className="w-3 h-3" /> */}
+                </a>
+              ),
+              ul: ({ children }) => (
+                <ul className="text-white/80 space-y-2 mb-6">{children}</ul>
+              ),
+              ol: ({ children }) => (
+                <ol className="text-white/80 space-y-2 mb-6">{children}</ol>
+              ),
+              li: ({ children }) => (
+                <li className="relative">
+                  {/* <span className="absolute -left-6 text-white/40">
+                          •
+                        </span> */}
+                  {children}
+                </li>
+              ),
+              blockquote: ({ children }) => (
+                <blockquote className="border-l-4 border border-l-white/50 border-white/15 px-6 md:px-8 py-4 md:py-6 my-6 rounded-r-lg">
+                  {children}
+                </blockquote>
+              ),
+              code: ({ children, className }) => {
+                const isInline = !className;
+                if (isInline) {
+                  return (
+                    <code className="px-1 py-1 bg-white/10 text-white/90 rounded text-sm font-mono">
+                      {children}
+                    </code>
+                  );
+                }
+                return (
+                  <pre className="my-6 bg-black/60 border border-white/10 rounded-xl p-4 overflow-x-auto">
+                    <code className="text-white/90 text-sm font-mono">
+                      {children}
+                    </code>
+                  </pre>
+                );
+              },
+              pre: ({ children }) => (
+                <pre className="not-prose bg-black/60 border border-white/10 rounded-xl p-4 overflow-x-auto my-6">
+                  {children}
+                </pre>
+              ),
+              img: ({ src, alt }) => (
+                <Image
+                  width={1200}
+                  height={1200}
+                  src={src || ""}
+                  alt={alt || ""}
+                  className="my-8 not-prose w-full rounded-xl border border-white/10"
+                />
+              ),
+              video: ({ src, ...props }) => (
+                <video
+                  src={src}
+                  className="my-8 w-full rounded-xl border border-white/10"
+                  controls
+                  {...props}
+                />
+              ),
+            }}
+          >
+            {article.content}
+          </ReactMarkdown>
         </div>
       </div>
     </>

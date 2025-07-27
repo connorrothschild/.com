@@ -7,3 +7,7 @@
 * Valar globe heros? scroll? something else.
 * Monumental ??
 * Realm 3d scene
+
+* Stickies for home page?
+* Notes for blog posts?
+* Notifications for feed?

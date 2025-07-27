@@ -1,5 +1,5 @@
 ---
-title: "Venice Navbar"
+title: "Venice: Navbar"
 date: "2025-04-20"
 type: "Interaction"
 videoSrc: "/feed/venice-navbar.mp4"

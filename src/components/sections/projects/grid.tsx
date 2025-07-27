@@ -54,7 +54,7 @@ function ProjectItem({
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        "block group relative col-span-1 h-full overflow-hidden bg-black border border-neutral-700",
+        "block group relative col-span-1 h-full overflow-hidden border border-neutral-700",
         index === 0 && "border-l-transparent",
         className
       )}

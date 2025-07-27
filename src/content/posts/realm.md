@@ -31,7 +31,7 @@ The site is built using our typical stack:
 
 We built out a complex 3D scene using [Three.js](https://threejs.org/) and [React Three Fiber](https://r3f.docs.pmnd.rs/). The scene uses a base GLTF model of mountains and a scene on top of a series of buildings. We built a complex grid shader that takes in the density as a parameter, allowing us to visualize depth. You can see the scene in action below:
 
-<video controls className='w-full h-96'>
+<video controls className='w-full'>
     <source src="/posts/realm/3d-scene.mp4" type="video/mp4" />
 </video>
 
@@ -46,7 +46,7 @@ Some other stuff, that you would think would be trivial, but were actually somew
 
 We leveraged `motion`'s [layout animations](https://motion.dev/docs/react-layout-animations) to create an expanding menu animation.
 
-<video controls className='w-full h-96'>
+<video controls className='w-full'>
     <source src="/posts/realm/expanding-menu.mp4" type="video/mp4" />
 </video>
 
@@ -56,7 +56,7 @@ Layout animations can always be tricky, especially when trying to prevent distor
 
 This was our first project carrying out internationalization via [i18next](https://github.com/i18next/next-i18next)—a great tool. As a result, we moved all copy to a `locales/common.json` file, which had a side effect of becoming a lightweight CMS in a way.
 
-<video controls className='w-full h-96'>
+<video controls className='w-full'>
     <source src="/posts/realm/internationalization.mp4" type="video/mp4" />
 </video>
 

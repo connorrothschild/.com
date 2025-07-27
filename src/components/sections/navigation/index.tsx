@@ -16,7 +16,11 @@ const navItems = [
   },
   {
     label: "Writing",
-    href: "/writing/audacity-goes-the-furthest", // For now just navigate to the first article
+    href: "/writing/ai-is-the-pulley", // For now just navigate to the first article
+  },
+  {
+    label: "About",
+    href: "/about",
   },
   {
     label: "Feed",
@@ -38,7 +42,7 @@ export default function Navigation() {
       layoutId="navigation"
       layout="position"
       className={cn(
-        "z-50 bg-black relative p-[24px] flex flex-col justify-between lg:h-full gap-[48px]",
+        "z-50 relative p-[24px] flex flex-col justify-between lg:h-full gap-[48px]",
         isHome
           ? "border-b max-lg:border-transparent lg:border-neutral-700"
           : "lg:border-r-transparent lg:border-l-transparent lg:border-b-transparent",

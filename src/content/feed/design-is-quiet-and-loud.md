@@ -2,6 +2,7 @@
 title: "Design is quiet and loud"
 date: "2025-04-18"
 type: "Note"
+hidden: true
 ---
 
 As I learn more about design, and work with talented designers, I've come to realize that design is quiet and loud. 

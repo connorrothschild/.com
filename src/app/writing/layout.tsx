@@ -12,11 +12,14 @@ export default async function WritingLayout({
 }) {
   // Fetch posts for the selector
   const posts: PostData[] = await getAllPosts();
-  const articleLinks = posts.map((post) => ({
-    id: post.id,
-    title: post.title,
-    category: post.category as "technical" | "personal",
-  }));
+  const articleLinks = posts
+    // Note: Omitting technical posts for now
+    .filter((post) => post.category === "personal")
+    .map((post) => ({
+      id: post.id,
+      title: post.title,
+      category: post.category as "technical" | "personal",
+    }));
 
   return (
     <div className="default-grid scrollbar-hide max-lg:flex max-lg:flex-col">

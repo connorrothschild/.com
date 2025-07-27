@@ -38,7 +38,7 @@ Our approach was to use the default Next.js `<Image />` component. We made use o
 
 The site features some cool animations and page transitions. Page transitions in NextJS can be somewhat tricky, we followed the methods documented in [this article](https://blog.olivierlarose.com/articles/nextjs-page-transition-guide).
 
-<video controls className='w-full h-96'>
+<video controls className='w-full'>
     <source src="/posts/rainmaker/page-transition.mp4" type="video/mp4" />
 </video>
 
@@ -46,13 +46,13 @@ The site features some cool animations and page transitions. Page transitions in
 
 The site features a few narrative blocks that use the popular "karaoke text" reveal effect. (This isn't exactly an agreed upon term for the effect, but its what we use internally 🤷).
 
-<video controls className='w-full h-96'>
+<video controls className='w-full'>
     <source src="/posts/rainmaker/karaoke.mp4" type="video/mp4" />
 </video>
 
 We extended this effect in a few different ways. One fun approach used inline icons that were highlighted as the text was revealed.
 
-<video controls className='w-full h-96'>
+<video controls className='w-full'>
     <source src="/posts/rainmaker/karaoke-with-icons.mp4" type="video/mp4" />
 </video>
 
@@ -79,7 +79,7 @@ Throughout the site you'll notice beautiful pixel illustrations put together by 
 
 To add some dimensionality to the pixel illustrations, we rendered the illustrations as SVG elements with groups. This composition would allow us to handle separate layers in different ways. As one example, how different layers appear and reappear at different times, and how some elements move with the scroll.
 
-<video controls className='w-full h-96'>
+<video controls className='w-full'>
     <source src="/posts/rainmaker/scroll-driven-illustrations.mp4" type="video/mp4" />
 </video>
 

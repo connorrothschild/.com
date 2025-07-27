@@ -3,7 +3,8 @@ title: 'Actors and Extras'
 date: 2024-12-09
 category: "personal"
 showToc: true
-image: '/posts/actors-and-extras/social.webp'
+# image: '/posts/actors-and-extras/social.webp'
+image: '/command-bar-icons/posts/actors-and-extras.webp'
 showTopImage: false
 unlisted: false
 synopsisForLlms: "This article explores the fundamental divide between 'Actors' and 'Extras' in adulthood. Actors proactively shape their lives through intentional decisions and embrace calculated risks, while Extras remain passive, deferring major life choices and blaming external factors for their stagnation. The modern era has exacerbated this division through unprecedented abundance (constant digital distractions providing easy dopamine), a crisis of masculinity (men questioning traditional roles of decision-making), and overwhelming choice paralysis. Evidence supporting these trends includes rising anxiety rates, delayed life milestones, increased living with parents, and excessive screen time. The article argues that taking action builds a self-reinforcing 'capability muscle' - each decision strengthens one's ability to handle future challenges, while inaction creates a dangerous cycle of self-limiting beliefs. It concludes that even small actions can break this cycle, emphasizing that growth comes from doing rather than waiting for perfect circumstances."

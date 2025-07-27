@@ -25,11 +25,13 @@
   --grid-cell-width: 50vw; /* max(220px, 50vw); */
 }
 
+:root {
+  --selection-hue: 0;
+}
+
 *::selection {
-  background-color: #363636;
+  background-color: hsl(var(--selection-hue), 30%, 30%);
   color: #fff;
-  /* color: #363636;
-  background-color: #fff; */
 }
 
 /* Tailwind lg breakpoint */
@@ -117,6 +119,15 @@ img {
   line-height: 1.25;
   text-wrap: balance;
   padding: 0.75rem 0;
+}
+
+.prose blockquote p::before,
+.prose blockquote p::after {
+  content: "";
+}
+
+.prose blockquote {
+  font-style: unset;
 }
 
 @keyframes fadeIn {
