@@ -125,7 +125,7 @@ export default function AboutPage() {
                       href={`https://${version}.connorrothschild.com`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-neutral-400 underline-offset-4 decoration-neutral-200 font-light hover:text-white transition-colors"
+                      className="inline text-neutral-400 underline-offset-4 decoration-neutral-200 font-light hover:text-white transition-colors"
                     >
                       {version.toUpperCase()}
                     </a>
