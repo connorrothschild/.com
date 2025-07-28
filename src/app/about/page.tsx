@@ -2,7 +2,7 @@ import React from "react";
 import Navigation from "@/components/sections/navigation";
 import BottomBox from "@/components/sections/bottom-box";
 import RightSide from "@/components/sections/right-side";
-import Image from "next/image";
+import ScrollAwareContent from "@/components/sections/bottom-box/scroll-aware-content";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -17,15 +17,7 @@ export default function AboutPage() {
       <Navigation />
 
       <BottomBox>
-        <div className="flex items-center justify-start lg:justify-center h-full">
-          <Image
-            src="/images/me/headshot-2025.jpg"
-            alt="Connor Rothschild"
-            width={1000}
-            height={1000}
-            className="size-24 md:size-48 lg:size-72 object-contain rounded overflow-hidden"
-          />
-        </div>
+        <ScrollAwareContent />
       </BottomBox>
 
       <RightSide>
@@ -35,6 +27,7 @@ export default function AboutPage() {
 
         {/* Main Content */}
         <div
+          id="scrollable-content"
           className="absolute inset-0 h-full w-full overflow-y-scroll scrollbar-hide py-[50px] lg:py-[100px] lg:pt-[37svh] text-wrap-pretty"
           style={{
             opacity: 0,
@@ -118,20 +111,19 @@ export default function AboutPage() {
               <p className="text-neutral-400 font-light text-[20px] leading-[1.5] tracking-[-0.003em] max-sm:text-[18px]">
                 You can take a look at how this site has evolved over the years:
               </p>
-              <ul className="mt-4 list-disc list-inside">
+              <div className="mt-4 flex flex-col gap-2">
                 {["v1", "v2", "v3", "v4", "v5", "v6"].map((version) => (
-                  <li key={version}>
-                    <a
-                      href={`https://${version}.connorrothschild.com`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline text-neutral-400 underline-offset-4 decoration-neutral-200 font-light hover:text-white transition-colors"
-                    >
-                      {version.toUpperCase()}
-                    </a>
-                  </li>
+                  <a
+                    href={`https://${version}.connorrothschild.com`}
+                    key={version}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-neutral-400 underline-offset-4 decoration-neutral-200 font-light hover:text-white transition-colors"
+                  >
+                    &bull; {version.toUpperCase()}
+                  </a>
                 ))}
-              </ul>
+              </div>
             </div>
           </div>
         </div>
