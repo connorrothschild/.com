@@ -54,7 +54,7 @@ This is not just limited to programming. In this new era of AI, we are bombarded
 
 Each of these conveniences fundamentally changes how we engage with the world. When we ask AI to evaluate information for us, we gradually lose our ability to discern bias, check sources, or think critically about what we read. The muscle of skepticism atrophies. When we let AI write our emails, we stop learning how to communicate nuance, handle difficult conversations, or develop our own voice. The careful work of choosing the right words—words that actually represent what we mean—gets outsourced. It's the reason the most powerful tools at our disposal are making us [cognitively bankrupt](https://www.media.mit.edu/projects/your-brain-on-chatgpt/overview/).
 
-Consider what happens when we stop doing the small, seemingly mundane tasks that actually build our capabilities. Reading dense technical documentation teaches us patience and thoroughness. Debugging teaches us systematic thinking. Writing difficult emails teaches us empathy and precision. Each time we reach for the AI pulley, we're not just saving time—we're choosing not to develop these deeper capacities.
+Consider what happens when we stop doing the small, seemingly mundane tasks that actually build our capabilities. Reading dense technical documentation teaches us patience and thoroughness. Debugging teaches us systematic thinking. Writing difficult emails teaches us empathy and precision. Each time we reach for the AI pulley, we're saving time, but we're also choosing not to develop these deeper capacities.
 
 ## I swear I’m not a luddite
 

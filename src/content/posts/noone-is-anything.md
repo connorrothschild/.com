@@ -49,7 +49,7 @@ This performance of non-performance extends beyond media consumption into how we
 
 The contrast with previous generations is striking. They operated with broader, simpler social categories and weren't constantly cross-referencing every interaction against an internal database of stereotypes. Without today's endless proliferation of types and subtypes, they were freer to let relationships develop organically. Now everyone strives to be unclassifiable, yet paradoxically we've all become more faceless—so busy avoiding being "a type" that we struggle to be anything at all.
 
-This same pattern plays out at larger scales too. When your main impression of any group comes from their most vocal members online, it becomes harder to take them seriously in real life. The environmental activist at your company might have perfectly reasonable ideas about reducing waste, but if your primary exposure to environmentalism is through viral videos of protesters gluing themselves to paintings, you're already approaching the conversation with baggage. The reasonable majority is still there—they're just not the loudest.
+<!-- This same pattern plays out at larger scales too. When your main impression of any group comes from their most vocal members online, it becomes harder to take them seriously in real life. The environmental activist at your company might have perfectly reasonable ideas about reducing waste, but if your primary exposure to environmentalism is through viral videos of protesters gluing themselves to paintings, you're already approaching the conversation with baggage. The reasonable majority is still there—they're just not the loudest. -->
 
 ## The stakes
 

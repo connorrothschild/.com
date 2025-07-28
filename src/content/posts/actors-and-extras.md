@@ -136,7 +136,7 @@ The inverse is equally true, and perhaps more insidious. Inaction breeds a pecul
 
 ### Capability is a muscle
 
-**And so capability is a muscle**—it can either be strengthened through use or atrophied through neglect. Each time someone chooses inaction, they're not just avoiding a single moment of discomfort; they're reinforcing a pattern that becomes increasingly difficult to break.
+**And so capability is a muscle**—it can either be strengthened through use or atrophied through neglect. Each time someone chooses inaction, they're both avoiding a single moment of discomfort, and reinforcing a pattern that becomes increasingly difficult to break.
 
 Consider this progression:
 
