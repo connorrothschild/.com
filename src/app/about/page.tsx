@@ -85,10 +85,10 @@ export default function AboutPage() {
             <div className="mt-8 space-y-2">
               <p className="text-neutral-400 font-light text-[20px] leading-[1.5] tracking-[-0.003em] max-sm:text-[18px]">
                 <a
-                  href="mailto:hello@connorrothschild.com"
+                  href="mailto:connor@connorrothschild.com"
                   className="text-neutral-200 underline-offset-4 decoration-neutral-200 decoration-[0.5px] font-light hover:text-white transition-colors"
                 >
-                  hello@connorrothschild.com
+                  connor@connorrothschild.com
                 </a>
               </p>
               <p className="text-neutral-400 font-light text-[20px] leading-[1.5] tracking-[-0.003em] max-sm:text-[18px]">
