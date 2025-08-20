@@ -1,6 +1,6 @@
 # Metadata Utility Functions
 
-This module provides utility functions for generating consistent metadata across your Next.js application, including OpenGraph and Twitter card metadata.
+This module provides utility functions for generating consistent metadata across your Next.js application, including OpenGraph, Twitter card metadata, and JSON-LD structured data.
 
 ## Functions
 
@@ -127,10 +127,54 @@ export const metadata = generatePageMetadata(
 );
 ```
 
+## JSON-LD Structured Data
+
+The utility also generates JSON-LD structured data for better SEO and rich snippets:
+
+### Article JSON-LD
+```typescript
+import { generateArticleJsonLd } from "@/lib/metadata";
+
+const articleJsonLd = generateArticleJsonLd(
+  "My Blog Post",
+  "Post description",
+  "/post-image.jpg",
+  "Author Name",
+  "2024-01-01T00:00:00Z",
+  "2024-01-02T00:00:00Z",
+  "/blog/my-post",
+  ["design", "engineering"]
+);
+```
+
+### Person JSON-LD
+```typescript
+import { generatePersonJsonLd } from "@/lib/metadata";
+
+const personJsonLd = generatePersonJsonLd(
+  "Connor Rothschild",
+  "Interaction designer and engineer",
+  "Lead Technology at Asimov Collective",
+  { name: "Asimov Collective", url: "https://asimovcollective.com" },
+  ["https://twitter.com/connorrothschild"]
+);
+```
+
+### Website JSON-LD
+```typescript
+import { generateWebsiteJsonLd } from "@/lib/metadata";
+
+const websiteJsonLd = generateWebsiteJsonLd(
+  "Connor Rothschild",
+  "Personal website and portfolio"
+);
+```
+
 ## Benefits
 
 - **Consistency**: All pages use the same metadata structure
-- **DRY**: No more duplicated OpenGraph and Twitter configurations
+- **DRY**: No more duplicated OpenGraph, Twitter, and JSON-LD configurations
 - **Maintainability**: Update metadata patterns in one place
 - **Flexibility**: Easy to override defaults when needed
 - **Type Safety**: Full TypeScript support with interfaces
+- **SEO Rich**: Includes structured data for better search engine understanding

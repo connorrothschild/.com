@@ -36,8 +36,17 @@ export default async function PostPage({ params }: Props) {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
   try {
-    const { title } = await getPost(id);
-    return generateArticleMetadata(title);
+    const { title, date, image } = await getPost(id);
+    return generateArticleMetadata(
+      title,
+      undefined, // description
+      image, // image
+      `/writing/${id}`, // url
+      date, // publishedTime
+      undefined, // modifiedTime
+      undefined, // authors
+      undefined // tags
+    );
   } catch (error) {
     // Return default metadata if post fetch fails
     return generateArticleMetadata("Connor Rothschild");

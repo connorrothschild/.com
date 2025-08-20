@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Metadata, Viewport } from "next";
 import { RealViewport } from "@/components/helpers/real-viewport";
+import { generateDefaultJsonLd } from "@/lib/metadata";
 
 const times = localFont({
   src: [
@@ -92,6 +93,9 @@ export const metadata: Metadata = {
     description:
       "Connor Rothschild is an interaction designer and engineer based in Texas.",
     images: ["/social.png"],
+  },
+  other: {
+    "application/ld+json": JSON.stringify(generateDefaultJsonLd()),
   },
 };
 
