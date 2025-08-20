@@ -4,7 +4,7 @@ date: 2025-06-20
 category: "personal"
 showToc: true
 # image: '/posts/actors-and-extras/social.webp'
-image: '/command-bar-icons/posts/ai-is-the-pulley.webp'
+# image: '/command-bar-icons/posts/ai-is-the-pulley.webp'
 showTopImage: false
 unlisted: false
 synopsisForLlms: "..."

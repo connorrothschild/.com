@@ -5,7 +5,7 @@ description: Audacity goes the furthest.
 category: "personal"
 showToc: true
 # image: '/posts/audacity-goes-the-furthest/social.webp'
-image: '/command-bar-icons/posts/audacity-goes-the-furthest.webp'
+# image: '/command-bar-icons/posts/audacity-goes-the-furthest.webp'
 showTopImage: false
 unlisted: false
 synopsisForLlms: "Audacity goes the furthest. Some of the least intelligent people I know are the richest, and vice versa. You realize as you get older that audacity matters most because it is so rare. Sure, intellect matters, but beyond a certain relatively low baseline, it's your audacity that determines how far you'll go. Throughout history, we see this pattern repeatedly in entrepreneurs and innovators who weren't necessarily the most technically brilliant in their fields, but whose audacity to pursue their vision despite skepticism led to outsized success. In virtually every field, the willingness to boldly take action in the face of uncertainty often matters more than raw intellectual capacity."

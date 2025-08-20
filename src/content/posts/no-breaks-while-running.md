@@ -4,7 +4,7 @@ date: 2025-04-16
 category: "personal"
 showToc: true
 # image: '/posts/no-breaks-while-running/social.webp'
-image: '/command-bar-icons/posts/no-breaks-while-running.webp'
+# image: '/command-bar-icons/posts/no-breaks-while-running.webp'
 showTopImage: false
 ---
 

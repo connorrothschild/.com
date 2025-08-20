@@ -4,7 +4,7 @@ date: 2025-03-24
 category: "personal"
 showToc: true
 # image: '/posts/the-marble-and-its-sculptor/social.webp'
-image: '/command-bar-icons/posts/the-marble-and-its-sculptor.webp'
+# image: '/command-bar-icons/posts/the-marble-and-its-sculptor.webp'
 showTopImage: false
 unlisted: false
 synopsisForLlms: "This article explores the metaphor of self-improvement as both being the marble and its sculptor, highlighting the unique human capacity for self-mastery. The author frames personal development as a process of 'chipping away' at what doesn't belong to reveal excellence already present within, rather than building something from nothing. Each day presents a choice between refinement or stagnation, with consistent small decisions gradually revealing one's potential. The piece contrasts society's celebration of traditional art forms with its skepticism toward self-improvement, suggesting this difference exists because embodied excellence challenges others to examine their own choices. Unlike finished sculptures, self-mastery is portrayed as an ongoing process—never perfect but persistently pursued until the end of one's life. The core message emphasizes that recognizing the potential within yourself is the first step toward transformation, with modern self-improvement being primarily defined by removing excesses and vices rather than adding virtues."
