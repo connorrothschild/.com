@@ -2,6 +2,7 @@ import { getAllPostIds, getPost, PostData } from "@/lib/posts";
 import Article from "@/components/sections/writing/article"; // Adjust path if needed
 import { notFound } from "next/navigation";
 import { Metadata } from "next"; // Import Metadata type
+import { generateArticleMetadata } from "@/lib/metadata";
 
 // This function tells Next.js which pages to build based on your post IDs (slugs)
 export async function generateStaticParams() {
@@ -32,21 +33,13 @@ export default async function PostPage({ params }: Props) {
   }
 }
 
-// Optional: Add metadata generation
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
   try {
     const { title } = await getPost(id);
-    return {
-      title: `${title} | Connor Rothschild`,
-      description:
-        "Connor Rothschild is an interaction designer and engineer based in Texas.",
-      // Add other metadata like description if available in frontmatter
-    };
+    return generateArticleMetadata(title);
   } catch (error) {
     // Return default metadata if post fetch fails
-    return {
-      title: "Post Not Found",
-    };
+    return generateArticleMetadata("Connor Rothschild");
   }
 }

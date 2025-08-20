@@ -4,12 +4,13 @@ import BottomBox from "@/components/sections/bottom-box";
 import RightSide from "@/components/sections/right-side";
 import ScrollAwareContent from "@/components/sections/bottom-box/scroll-aware-content";
 import { Metadata } from "next";
+import { generatePageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "About | Connor Rothschild",
+export const metadata: Metadata = generatePageMetadata({
+  title: "About",
   description:
     "Connor Rothschild is an interaction designer and engineer based in Texas.",
-};
+});
 
 export default function AboutPage() {
   return (
