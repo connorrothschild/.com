@@ -5,7 +5,7 @@ const SITE_CONSTANTS = {
   NAME: "Connor Rothschild",
   DESCRIPTION:
     "Connor Rothschild is an interaction designer and engineer based in Texas.",
-  DEFAULT_IMAGE: "/social.png",
+  DEFAULT_IMAGE: "/social-2025.png",
   TWITTER_HANDLE: "connorrothschild",
   HEADSHOT_IMAGE: "/images/me/headshot-2025.jpg",
   ABOUT_PATH: "/about",

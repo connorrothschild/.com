@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     siteName: "Connor Rothschild",
     images: [
       {
-        url: "/social.png",
+        url: "/social-2025.png",
         width: 1200,
         height: 630,
         alt: "Connor Rothschild",
@@ -92,7 +92,7 @@ export const metadata: Metadata = {
     title: "Connor Rothschild",
     description:
       "Connor Rothschild is an interaction designer and engineer based in Texas.",
-    images: ["/social.png"],
+    images: ["/social-2025.png"],
   },
   other: {
     "application/ld+json": JSON.stringify(generateDefaultJsonLd()),
