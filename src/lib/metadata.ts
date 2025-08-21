@@ -17,7 +17,7 @@ const SITE_CONSTANTS = {
   WORK_INFO: {
     COMPANY: "Asimov Collective",
     COMPANY_URL: "https://asimovcollective.com",
-    JOB_TITLE: "Lead Technology at Asimov Collective",
+    JOB_TITLE: "Director of Technology at Asimov Collective",
   },
 } as const;
 

@@ -5,6 +5,7 @@ import RightSide from "@/components/sections/right-side";
 import ScrollAwareContent from "@/components/sections/bottom-box/scroll-aware-content";
 import { Metadata } from "next";
 import { generatePageMetadata } from "@/lib/metadata";
+import Link from "next/link";
 
 export const metadata: Metadata = generatePageMetadata({
   title: "About",
@@ -43,7 +44,7 @@ export default function AboutPage() {
 
             {/* Introduction */}
             <p className="text-neutral-400 font-light text-[20px] leading-[1.5] tracking-[-0.003em] mb-6 max-sm:text-[18px]">
-              I'm an engineer based in Texas. I lead technology at{" "}
+              I'm an engineer based in Texas. I help lead technology at{" "}
               <a
                 href="https://asimovcollective.com"
                 target="_blank"
@@ -57,8 +58,15 @@ export default function AboutPage() {
 
             <p className="text-neutral-400 font-light text-[20px] leading-[1.5] tracking-[-0.003em] mb-8 max-sm:text-[18px]">
               I have 6 years of experience in design and development. To date,
-              I've worked on 92 projects, spanning web applications, data
-              visualization, and user interfaces.
+              I've worked on 67 projects (featured ones{" "}
+              <Link
+                href="/"
+                className="text-neutral-200 underline-offset-4 decoration-neutral-200 decoration-[0.5px] font-light hover:text-white transition-colors"
+              >
+                here
+              </Link>
+              ), spanning web applications, data visualization, and user
+              interfaces.
             </p>
 
             {/* Background */}

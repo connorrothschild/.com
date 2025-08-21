@@ -154,7 +154,7 @@ import { generatePersonJsonLd } from "@/lib/metadata";
 const personJsonLd = generatePersonJsonLd(
   "Connor Rothschild",
   "Interaction designer and engineer",
-  "Lead Technology at Asimov Collective",
+  "Director of Technology at Asimov Collective",
   { name: "Asimov Collective", url: "https://asimovcollective.com" },
   ["https://twitter.com/connorrothschild"]
 );

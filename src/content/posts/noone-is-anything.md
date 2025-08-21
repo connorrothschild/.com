@@ -13,7 +13,7 @@ The internet sucks for many reasons. One of the things I've recently been thinki
 
 These people exist, but they're not representative. Most gym goers just enjoy their workouts. Most vegans just eat plant-based meals without lecturing anyone. Most politically engaged people have nuanced views and can talk about other things. But if your exposure to these groups comes mainly from the internet, you'd never know it.
 
-The internet has this fundamental problem: it shows us the loudest person in any group, and the loudest person is almost always the most annoying. This isn't just an observation about online culture—it's distorting how we understand and relate to each other.
+The internet has this fundamental problem: it shows us the loudest person in any group, and the loudest person is almost always the most annoying. Over time, this distorts how we understand and relate to each other.
 
 ## Being quiet gets you nowhere
 
