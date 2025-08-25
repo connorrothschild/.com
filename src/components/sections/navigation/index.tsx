@@ -42,12 +42,12 @@ export default function Navigation() {
       layoutId="navigation"
       layout="position"
       className={cn(
-        "z-50 relative p-[24px] flex flex-col justify-between lg:h-full gap-[48px]",
+        "z-50 relative p-[16px] lg:p-[24px] flex flex-col justify-between lg:h-full gap-[48px]",
         isHome
           ? "border-b max-lg:border-transparent lg:border-neutral-700"
           : "lg:border-r-transparent lg:border-l-transparent lg:border-b-transparent",
         isHome ? "lg:row-start-2" : "row-start-1",
-        "max-lg:min-h-[157.98px] max-lg:h-[157.98px]",
+        // "max-lg:min-h-[165.28px] max-lg:h-[165.28px]",
         "col-start-1 col-span-2"
       )}
       transition={{
@@ -55,8 +55,8 @@ export default function Navigation() {
         ease: easeInOutQuint,
       }}
     >
-      <PrimaryTitle className="lg:w-min">Connor Rothschild</PrimaryTitle>
-      <div className="flex gap-[24px] lg:gap-[50px]">
+      <PrimaryTitle className="w-min">Connor Rothschild</PrimaryTitle>
+      <div className="flex gap-[24px] lg:gap-[50px] max-sm:justify-between">
         {navItems.map((item, index) => (
           <Link
             key={`nav-${index}`}
@@ -75,7 +75,7 @@ export default function Navigation() {
       </div>
       {/* On homepage, on mobile, show arrow right */}
       {isHome && (
-        <div className="block lg:hidden absolute bottom-[24px] right-[24px]">
+        <div className="block lg:hidden absolute bottom-[48px] right-[16px] sm:bottom-[24px] sm:right-[24px]">
           <ArrowRightIcon className="size-6 stroke-1" />
         </div>
       )}

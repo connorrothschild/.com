@@ -52,7 +52,7 @@ export default function Article({ article }: { article: PostData }) {
         }}
       >
         <div
-          className="text-white flex flex-col pb-[50px] lg:pb-[100px] w-full max-lg:max-w-none lg:max-w-[480px] lg:mx-auto max-lg:px-[24px] 
+          className="text-white flex flex-col pb-[50px] lg:pb-[100px] w-full max-lg:max-w-none lg:max-w-[480px] lg:mx-auto max-lg:px-[16px] 
                   font-sans 
                   prose 
                   prose-p:mb-0
@@ -100,10 +100,10 @@ export default function Article({ article }: { article: PostData }) {
                   prose-a:font-light
                   "
         >
-          <h2 className="text-[36px] lg:text-[48px] mb-2 font-light leading-none tracking-[-0.02em] not-prose text-wrap-balance">
+          <h2 className="text-[20px] lg:text-[48px] mb-2 lg:mb-4 font-light leading-none tracking-[-0.02em] not-prose text-wrap-balance">
             {article.title}
           </h2>
-          <p className="text-[20px] mb-8 font-light text-white/80 not-prose">
+          <p className="text-[20px] leading-none mb-6 lg:mb-8 font-light text-white/50 not-prose">
             {formattedDate}
           </p>
 

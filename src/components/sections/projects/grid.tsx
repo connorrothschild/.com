@@ -76,12 +76,12 @@ function ProjectItem({
       {/* Gradient scrim */}
       <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black via-black/50 to-transparent pointer-events-none" />
       <div
-        className="absolute inset-0 p-[24px] z-[1] flex flex-col gap-2 justify-end translate-y-[22px] group-hover:translate-y-0 group-active:translate-y-0"
+        className="absolute inset-0 p-[16px] lg:p-[24px] z-[1] flex flex-col gap-2 justify-end translate-y-[22px] group-hover:translate-y-0 group-active:translate-y-0"
         style={{
           transition: `all 300ms cubic-bezier(${easeInOutQuint.join(",")})`,
         }}
       >
-        <div className="text-[24px] leading-none tracking-[-0.02em] font-light opacity-70 text-wrap-balance">
+        <div className="text-[20px] lg:text-[24px] leading-none tracking-[-0.02em] font-light opacity-70 text-wrap-balance">
           {project.title}
         </div>
 

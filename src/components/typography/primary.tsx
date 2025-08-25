@@ -11,7 +11,7 @@ export default function PrimaryTitle({
   return (
     <h1
       className={cn(
-        "text-[min(9vw,48px)] lg:text-[72px] leading-[.9] tracking-[-0.02em] font-light",
+        "text-[min(13vw,48px)] lg:text-[72px] leading-[.9] tracking-[-0.02em] font-light",
         className
       )}
     >

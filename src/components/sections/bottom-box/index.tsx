@@ -8,7 +8,7 @@ export default function BottomBox({ children }: { children: React.ReactNode }) {
   return (
     <div
       className={cn(
-        "z-50 relative p-[24px] border border-neutral-700 w-full lg:h-full flex flex-col justify-end",
+        "z-50 relative p-[16px] lg:p-[24px] border border-neutral-700 w-full lg:h-full flex flex-col justify-end",
         "border-r-transparent border-l-transparent lg:border-b-transparent"
       )}
       style={{

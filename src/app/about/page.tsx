@@ -36,11 +36,11 @@ export default function AboutPage() {
             animation: "fadeIn 0.5s ease-in-out 0.25s forwards",
           }}
         >
-          <div className="text-white flex flex-col pb-[50px] lg:pb-[100px] w-full max-lg:max-w-none lg:max-w-[480px] lg:mx-auto max-lg:px-[24px] font-sans">
+          <div className="text-white flex flex-col pb-[50px] lg:pb-[100px] w-full max-lg:max-w-none lg:max-w-[480px] lg:mx-auto max-lg:px-[16px] font-sans">
             {/* Title */}
-            <h1 className="text-[36px] lg:text-[48px] mb-8 font-light leading-none tracking-[-0.02em] text-wrap-balance">
+            {/* <h1 className="text-[36px] lg:text-[48px] mb-8 font-light leading-none tracking-[-0.02em] text-wrap-balance">
               About
-            </h1>
+            </h1> */}
 
             {/* Introduction */}
             <p className="text-neutral-400 font-light text-[20px] leading-[1.5] tracking-[-0.003em] mb-6 max-sm:text-[18px]">
@@ -70,7 +70,7 @@ export default function AboutPage() {
             </p>
 
             {/* Background */}
-            <h2 className="text-white font-light tracking-[-0.02em] text-[36px] leading-[1.2] mb-4 mt-8">
+            <h2 className="text-white font-light tracking-[-0.02em] text-[24px] lg:text-[36px] leading-[1.2] mb-4 mt-8">
               Personal
             </h2>
 
@@ -80,7 +80,7 @@ export default function AboutPage() {
             </p>
 
             {/* Contact */}
-            <h2 className="text-white font-light tracking-[-0.02em] text-[36px] leading-[1.2] mb-4 mt-8">
+            <h2 className="text-white font-light tracking-[-0.02em] text-[24px] lg:text-[36px] leading-[1.2] mb-4 mt-8">
               Contact
             </h2>
 
@@ -91,7 +91,7 @@ export default function AboutPage() {
               charge.
             </p>
 
-            <div className="mt-8 space-y-2">
+            <div className="mt-2 lg:mt-8 space-y-2">
               <p className="text-neutral-400 font-light text-[20px] leading-[1.5] tracking-[-0.003em] max-sm:text-[18px]">
                 <a
                   href="mailto:connor@connorrothschild.com"
@@ -113,7 +113,7 @@ export default function AboutPage() {
             </div>
             <hr className="mt-24 mb-8 opacity-25" />
             <div className="text-neutral-400 font-light text-[20px] leading-[1.5] tracking-[-0.003em] max-sm:text-[18px]">
-              <h2 className="text-white font-light tracking-[-0.02em] text-[36px] leading-[1.2] mb-4 mt-8">
+              <h2 className="text-white font-light tracking-[-0.02em] text-[24px] lg:text-[36px] leading-[1.2] mb-4 mt-8">
                 Past Versions of This Site
               </h2>
 
