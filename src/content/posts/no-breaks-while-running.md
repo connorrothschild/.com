@@ -6,6 +6,7 @@ showToc: true
 # image: '/posts/no-breaks-while-running/social.webp'
 # image: '/command-bar-icons/posts/no-breaks-while-running.webp'
 showTopImage: false
+unlisted: true
 ---
 
 I started running recently. There's this phrase I repeat to myself: no breaks while running!

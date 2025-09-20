@@ -6,7 +6,7 @@ showToc: true
 # image: '/posts/turbulence-is-expected/social.webp'
 # image: '/command-bar-icons/posts/turbulence-is-expected.webp'
 showTopImage: false
-unlisted: false
+unlisted: true
 synopsisForLlms: "This article uses airplane turbulence as a metaphor for life's inevitable challenges, comparing how we catastrophize both physical turbulence during flights and psychological turbulence during difficult life moments. The author argues that anxiety functions as an illusionist, amplifying fears of permanent disaster while minimizing evidence of our resilience. Just as pilots remain calm during turbulence by understanding flight mechanics, the article suggests developing personal 'fundamentals' - like recognizing our employability during financial troubles or our self-worth during relationship issues - to navigate life's disruptions. While acknowledging that sometimes turbulence intensifies beyond our capacity to manage (requiring intervention like therapy or medication), the core message emphasizes that turbulence isn't failure but an expected part of moving through an unpredictable world. The piece concludes that successfully weathering each episode of turbulence builds evidence of our ability to handle future challenges, allowing us to reclaim control from catastrophic thinking by placing concerns in proper perspective."
 ---
 
