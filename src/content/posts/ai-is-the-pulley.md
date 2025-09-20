@@ -64,7 +64,7 @@ The unease likely stems from many sources: the obvious fear of losing jobs, but 
 
 ## Pulleys go both ways
 
-The paradox here is that these new pulley systems can make craftsmen feel purposeless, but they can make the same craftsmen feel liberated with new opportunity. On my portfolio site, I wanted to create a consistent series of icons in a 3D style (which you can see below). Two years ago, this would require a tremendous learning effort involving multiple tools (or paying someone to do it for me). Today, it was simple as one prompt in Recraft.
+The paradox here is that these new pulley systems can make craftsmen feel purposeless, but they can make the same craftsmen feel liberated with new opportunity. On an older version of my portfolio site, I wanted to create a consistent series of icons in a 3D style. Two years ago, this would require a tremendous learning effort involving multiple tools (or paying someone to do it for me). Today, it was simple as one prompt in Recraft.
 
 *(There is no real point in this section, I am simply dwelling on if this makes me a hypocrite.)*
 
