@@ -6,6 +6,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Metadata, Viewport } from "next";
 import { RealViewport } from "@/components/helpers/real-viewport";
 import { generateDefaultJsonLd } from "@/lib/metadata";
+import { Chivo_Mono } from "next/font/google";
 
 const times = localFont({
   src: [
@@ -58,6 +59,11 @@ const montreal = localFont({
   ],
   display: "fallback",
   variable: "--font-sans",
+});
+
+const chivoMono = Chivo_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
 });
 
 export const metadata: Metadata = {
@@ -118,7 +124,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <main
-          className={`${montreal.variable} ${times.variable} bg-bg font-sans`}
+          className={`${montreal.variable} ${times.variable} ${chivoMono.variable} bg-bg font-sans`}
         >
           {children}
         </main>
