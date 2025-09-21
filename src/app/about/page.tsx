@@ -24,8 +24,8 @@ export default function AboutPage() {
 
       <RightSide>
         {/* Scrims */}
-        <div className="absolute top-0 h-[50px] lg:h-[100px] w-full bg-gradient-to-b from-black to-transparent pointer-events-none z-10" />
-        <div className="absolute bottom-0 left-0 right-0 h-[50px] lg:h-[100px] bg-gradient-to-t from-black to-transparent pointer-events-none z-10" />
+        <div className="absolute top-0 h-[50px] w-full bg-gradient-to-b from-black to-transparent pointer-events-none z-10" />
+        <div className="absolute bottom-0 left-0 right-0 h-[50px] bg-gradient-to-t from-black to-transparent pointer-events-none z-10" />
 
         {/* Main Content */}
         <div

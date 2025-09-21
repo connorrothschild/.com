@@ -39,8 +39,8 @@ export default function Article({ article }: { article: PostData }) {
     <>
       {/* Scrims */}
       {/* FIXME ABSTRACT? */}
-      <div className="absolute top-0 h-[50px] lg:h-[100px] w-full bg-gradient-to-b from-black to-transparent pointer-events-none z-10" />
-      <div className="absolute bottom-0 left-0 right-0 h-[50px] lg:h-[100px] bg-gradient-to-t from-black to-transparent pointer-events-none z-10" />
+      <div className="absolute top-0 h-[50px] w-full bg-gradient-to-b from-black to-transparent pointer-events-none z-10" />
+      <div className="absolute bottom-0 left-0 right-0 h-[50px] bg-gradient-to-t from-black to-transparent pointer-events-none z-10" />
 
       {/* Modify prose classes here for body text styling */}
       <div
