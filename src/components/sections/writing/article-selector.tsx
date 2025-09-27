@@ -5,11 +5,12 @@ import React, { useRef, useEffect } from "react"; // Import useRef and useEffect
 import Link from "next/link";
 import { useParams } from "next/navigation"; // Import useParams
 
-// Define the expected shape of articles more precisely if possible
 interface ArticleLink {
   id: string;
   title: string;
-  category: "technical" | "personal"; // Add category field
+  slug?: string; // Only for manually added
+  isExternal?: boolean;
+  category: "technical" | "personal";
 }
 
 // New component for rendering individual article links
@@ -25,8 +26,10 @@ const ArticleLinkItem: React.FC<ArticleLinkItemProps> = ({
   return (
     <Link
       key={article.id}
-      href={`/writing/${article.id}`}
-      data-article-id={article.id} // Add data attribute to identify the link
+      href={article.slug || `/writing/${article.id}`}
+      target={article.isExternal ? "_blank" : undefined}
+      rel={article.isExternal ? "noopener noreferrer" : undefined}
+      data-article-id={article.id}
       className={cn(
         "max-lg:snap-center shrink-0 whitespace-nowrap text-[20px] lg:text-[24px] leading-[1.1] tracking-[-0.02em] font-light cursor-pointer transition-colors duration-150 ease-in-out", // Base styles + added transition
         // Apply conditional styling

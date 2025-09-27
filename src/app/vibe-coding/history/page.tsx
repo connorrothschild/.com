@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
 // Timeline data structure
@@ -498,212 +499,6 @@ const EraSection = ({
   </section>
 );
 
-// New Timeline View Components
-const TimelineView = () => {
-  const [hoveredEvent, setHoveredEvent] = useState<string | null>(null);
-
-  // Calculate total days from start to end
-  const startDate = new Date("2021-06-01");
-  const endDate = new Date("2025-07-01");
-  const totalDays = Math.ceil(
-    (endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24)
-  );
-
-  // Convert dates to days from start
-  const parseDate = (dateStr: string) => {
-    if (dateStr.includes(" - ")) {
-      const [start] = dateStr.split(" - ");
-      return new Date(start + " 1, 2021");
-    }
-    return new Date(dateStr);
-  };
-
-  const getEraColor = (era: string) => {
-    switch (era) {
-      case "copilot-era":
-        return "bg-blue-500";
-      case "cursor-era":
-        return "bg-purple-500";
-      case "terminal-era":
-        return "bg-green-500";
-      default:
-        return "bg-white";
-    }
-  };
-
-  const getEraLabel = (era: string) => {
-    switch (era) {
-      case "copilot-era":
-        return "The Copilot Era";
-      case "cursor-era":
-        return "The Cursor Era";
-      case "terminal-era":
-        return "The Terminal Era";
-      default:
-        return "Unknown Era";
-    }
-  };
-
-  // Calculate positions for each event
-  const eventsWithPositions = timelineData.map((event) => {
-    const eventDate = parseDate(event.date);
-    const daysFromStart = Math.ceil(
-      (eventDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24)
-    );
-    const position = (daysFromStart / totalDays) * 100;
-    return { ...event, position, daysFromStart };
-  });
-
-  return (
-    <div className="relative">
-      {/* Scrollable Timeline Container */}
-      <div className="relative overflow-x-auto">
-        <div
-          className="relative h-32 min-w-max"
-          style={{ width: `${totalDays * 2}px` }}
-        >
-          {/* Timeline Line */}
-          <div className="absolute top-16 left-0 right-0 h-0.5 bg-gradient-to-r from-white/20 via-white/60 to-white/20" />
-
-          {/* Timeline Events */}
-          {eventsWithPositions.map((event) => (
-            <div
-              key={event.id}
-              className="absolute top-0 bottom-0 flex flex-col items-center group"
-              style={{ left: `${event.position}%` }}
-              onMouseEnter={() => setHoveredEvent(event.id)}
-              onMouseLeave={() => setHoveredEvent(null)}
-            >
-              {/* Event Dot */}
-              <div className="relative z-10 mt-12">
-                <div
-                  className={`w-3 h-3 rounded-full ${getEraColor(
-                    event.era
-                  )} border-2 border-black shadow-lg transition-all duration-300 ${
-                    hoveredEvent === event.id ? "scale-150" : "scale-100"
-                  }`}
-                />
-                {hoveredEvent === event.id && (
-                  <div
-                    className={`absolute inset-0 w-3 h-3 rounded-full ${getEraColor(
-                      event.era
-                    )} animate-ping`}
-                  />
-                )}
-              </div>
-
-              {/* Event Label */}
-              <div className="mt-2 text-center">
-                <div className="text-xs text-white/60 font-mono">
-                  {event.date.split(" ")[0]} {event.date.split(" ")[1]}
-                </div>
-                <div className="text-xs text-white/80 font-light max-w-24 leading-tight">
-                  {event.title.length > 20
-                    ? event.title.substring(0, 20) + "..."
-                    : event.title}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Hover Details Tooltip */}
-      {hoveredEvent && (
-        <div className="absolute top-40 left-1/2 transform -translate-x-1/2 z-50 pointer-events-none">
-          <div className="bg-white/95 backdrop-blur-sm rounded-lg p-6 border border-white/20 shadow-xl max-w-md">
-            {(() => {
-              const event = timelineData.find((e) => e.id === hoveredEvent);
-              if (!event) return null;
-
-              return (
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-black/60 text-sm font-mono uppercase tracking-tight">
-                      {event.date}
-                    </span>
-                    <span
-                      className={`px-3 py-1 rounded-full text-sm font-medium text-black ${getEraColor(
-                        event.era
-                      )}`}
-                    >
-                      {getEraLabel(event.era)}
-                    </span>
-                    {event.tier === 1 && (
-                      <span className="px-3 py-1 rounded-full text-sm font-medium bg-yellow-500/20 text-yellow-600 border border-yellow-500/30">
-                        Major Event
-                      </span>
-                    )}
-                  </div>
-
-                  <h3 className="text-xl font-light text-black mb-4 leading-tight">
-                    {event.title}
-                  </h3>
-
-                  <p className="text-black/80 font-light mb-4 leading-relaxed">
-                    {event.description}
-                  </p>
-
-                  <div className="bg-black/5 rounded-md p-4 mb-4 border-l-2 border-black/20">
-                    <p className="text-sm text-black/70 font-light leading-relaxed">
-                      <span className="font-medium text-black/90">
-                        Significance:
-                      </span>{" "}
-                      {event.significance}
-                    </p>
-                  </div>
-
-                  {event.references && event.references.length > 0 && (
-                    <div className="flex flex-wrap gap-2">
-                      {event.references.map((ref, refIndex) => (
-                        <a
-                          key={refIndex}
-                          href={ref.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 px-3 py-1 bg-black/10 hover:bg-black/20 rounded-md text-black/70 hover:text-black text-sm transition-all duration-200 pointer-events-auto"
-                        >
-                          <span className="text-xs opacity-50">
-                            0{refIndex + 1}.
-                          </span>
-                          {ref.title}
-                          <span className="text-xs opacity-75">↗</span>
-                        </a>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              );
-            })()}
-          </div>
-        </div>
-      )}
-
-      {/* Era Legend */}
-      <div className="mt-8 flex justify-center gap-8 text-sm text-white/60">
-        <div className="flex items-center gap-2">
-          <div
-            className={`w-3 h-3 rounded-full ${getEraColor("copilot-era")}`}
-          ></div>
-          <span>The Copilot Era (2021-2023)</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <div
-            className={`w-3 h-3 rounded-full ${getEraColor("cursor-era")}`}
-          ></div>
-          <span>The Cursor Era (2024-2025)</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <div
-            className={`w-3 h-3 rounded-full ${getEraColor("terminal-era")}`}
-          ></div>
-          <span>The Terminal Era (2025)</span>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 const TableOfContents = () => {
   const [activeSection, setActiveSection] = useState("copilot-era");
   const [activeEvent, setActiveEvent] = useState("copilot-beta");
@@ -765,20 +560,6 @@ const TableOfContents = () => {
     }
   };
 
-  // Minimap data
-  const getEraColor = (era: string) => {
-    switch (era) {
-      case "copilot-era":
-        return "bg-blue-500";
-      case "cursor-era":
-        return "bg-purple-500";
-      case "terminal-era":
-        return "bg-green-500";
-      default:
-        return "bg-white";
-    }
-  };
-
   const startDate = new Date("2021-06-01");
   const endDate = new Date("2025-07-01");
   const totalDays = Math.ceil(
@@ -804,7 +585,7 @@ const TableOfContents = () => {
 
   return (
     <div className="hidden lg:block fixed left-0 top-0 h-full w-80 bg-black/95 backdrop-blur-sm border-r border-white/10 z-50 overflow-y-auto scrollbar-hide">
-      <div className="px-4 py-8 h-full flex flex-col">
+      <div className="px-4 pt-8 pb-4 h-full flex flex-col">
         {/* Timeline Minimap */}
         <div className="mb-2">
           {/* <h3 className="text-lg font-light text-white mb-4">
@@ -919,6 +700,12 @@ const TableOfContents = () => {
             ))}
           </nav>
         </div>
+        <Link
+          className="mt-auto text-[24px] leading-[1.2] font-light tracking-[-0.02em]"
+          href="/"
+        >
+          Connor Rothschild
+        </Link>
       </div>
     </div>
   );
@@ -938,7 +725,7 @@ export default function VibeCodingHistory() {
           {/* Introduction */}
           <section id="introduction" className="mb-20 scroll-mt-24">
             <div className="mb-12">
-              <h1 className="text-[36px] lg:text-[72px] mb-6 font-light leading-[1.1] tracking-[-0.02em] text-wrap-balance">
+              <h1 className="text-[36px] lg:text-[64px] mb-6 font-light leading-[1.1] tracking-[-0.02em] text-wrap-balance">
                 The History of Vibe Coding, So Far
               </h1>
               <p className="text-[16px] leading-[1.4] text-white/50 mb-8 font-mono uppercase tracking-tight">
@@ -1288,7 +1075,7 @@ export default function VibeCodingHistory() {
               id="claude-code-ga"
               date="May 22, 2025"
               title="Claude Code Reaches General Availability"
-              description="Claude Code launches with full IDE integrations for VS Code and JetBrains, plus CI/CD support, expanding vibe coding from prototype territory into structured team workflows and enterprise environments. This coincides with the release of Claude 4 models, including Opus 4 (the world's best coding model) and Sonnet 4, which power the enhanced Claude Code experience."
+              description="Claude Code launches with full IDE integrations for VS Code and JetBrains, plus CI/CD support, expanding vibe coding from prototype territory into structured team workflows and enterprise environments. This coincides with the release of Claude 4 models, including Opus 4 and Sonnet 4, which power the enhanced Claude Code experience."
               references={[
                 {
                   title: "Introducing Claude 4",
@@ -1322,10 +1109,31 @@ export default function VibeCodingHistory() {
             <div className="border-t border-white/20 pt-12">
               <div className="space-y-6">
                 <p className="text-[20px] leading-[1.6] text-white/80 font-light">
-                  Thanks for reading! This is one of three parts in my
-                  collection of notes on AI-assisted development. It will be
-                  updated as I continue to research the topic.
+                  Thanks for reading! If I missed anything, please{" "}
+                  <a
+                    href="mailto:connor@connorrothschild.com"
+                    className="underline underline-offset-4 decoration-neutral-200 decoration-[0.5px] font-light hover:text-white transition-colors"
+                  >
+                    let me know
+                  </a>
+                  .
                 </p>
+                <p className="mt-12 text-[20px] leading-[1.6] text-white/80 font-light">
+                  Some notes:
+                </p>
+                <ul className="list-disc list-inside">
+                  <li className="text-[18px] leading-[1.6] text-white/70 font-light">
+                    I'm missing some content on V0, Lovable, Replit, Bolt, etc.
+                    I'm unsure of their timelines, and also do not use them
+                    often, so I've omitted them until I learn more.
+                  </li>
+                  <li className="text-[18px] leading-[1.6] text-white/70 font-light mt-2">
+                    There is a whole other world of "vibe coders" who know
+                    nothing about programming, and I don't know if they would
+                    consider the history of vibe coding differently. This is
+                    chiefly from the view of someone who knows programming.
+                  </li>
+                </ul>
               </div>
             </div>
           </section>
