@@ -5,7 +5,7 @@ category: "technical"
 showToc: false
 showTopImage: true
 image: '/posts/rainmaker/social.webp'
-unlisted: false
+unlisted: true
 synopsisForLlms: "Rainmaker is a cloud seeding startup focused on providing water for farms, watersheds, and ecosystems, with a website built by Asimov Collective using React, Next.js (pages router), Tailwind CSS, Motion for animations, and TinaCMS for content management. The site features several technical innovations including optimized high-resolution imagery using Next.js Image component with static imports for aggressive caching and blur placeholders, smooth page transitions implemented using custom techniques to overcome NextJS limitations, 'karaoke text' reveal effects with integrated icons (allowing client editing through embedded placeholder strings in markdown), and dynamic scroll-driven pixel illustrations constructed as layered SVG elements that create dimensional movement and storytelling as users scroll. The result is a visually striking website that effectively communicates Rainmaker's mission of environmental stewardship through thoughtful technical implementation and beautiful design."
 ---
 

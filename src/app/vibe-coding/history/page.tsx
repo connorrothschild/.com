@@ -726,7 +726,7 @@ export default function VibeCodingHistory() {
           <section id="introduction" className="mb-20 scroll-mt-24">
             <div className="mb-12">
               <h1 className="text-[36px] lg:text-[64px] mb-6 font-light leading-[1.1] tracking-[-0.02em] text-wrap-balance">
-                The History of Vibe Coding, So Far
+                A History of Vibe Coding, So Far
               </h1>
               <p className="text-[16px] leading-[1.4] text-white/50 mb-8 font-mono uppercase tracking-tight">
                 Last updated: September 2025
