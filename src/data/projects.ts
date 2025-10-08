@@ -16,6 +16,16 @@ export interface Project {
 }
 
 export const projects = [
+  {
+    title: "Picogrid",
+    year: 2025,
+    url: "https://picogrid.com",
+    type: "Web",
+    filterCategory: "web",
+    featured: true,
+    image: "picogrid",
+    titleWidth: 80,
+  },
   // {
   //   title: "Hadrian",
   //   year: 2025,
@@ -478,7 +488,7 @@ export const projects = [
     url: "https://connorrothschild.github.io/bob-ross-art-gallery/",
     type: "Story",
     filterCategory: "visualization",
-    featured: false,
+    featured: true,
     image: "bob-ross",
     titleWidth: 210,
   },

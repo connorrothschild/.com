@@ -24,11 +24,6 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: "/projects",
-        destination: "/",
-        permanent: true,
-      },
-      {
         source: "/post/:splat*",
         destination: "https://connorrothschild.github.io/v4/post/:splat*",
         permanent: true,

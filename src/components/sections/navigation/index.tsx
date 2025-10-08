@@ -12,7 +12,7 @@ import { ArrowRightIcon } from "lucide-react";
 const navItems = [
   {
     label: "Projects",
-    href: "/",
+    href: "/projects",
   },
   {
     label: "Writing",
@@ -55,7 +55,9 @@ export default function Navigation() {
         ease: easeInOutQuint,
       }}
     >
-      <PrimaryTitle className="w-min">Connor Rothschild</PrimaryTitle>
+      <PrimaryTitle className="w-min">
+        <Link href="/">Connor Rothschild</Link>
+      </PrimaryTitle>
       <div className="flex gap-[24px] lg:gap-[50px] max-sm:justify-between">
         {navItems.map((item, index) => (
           <Link
