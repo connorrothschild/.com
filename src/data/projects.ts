@@ -361,7 +361,8 @@ export const projects = [
   {
     title: "babby.xyz",
     year: 2022,
-    url: "https://opensea.io/collection/babbys",
+    url: "https://babby.xyz/",
+    // url: "https://opensea.io/collection/babbys",
     type: "App, web",
     filterCategory: "web",
   },
