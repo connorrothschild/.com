@@ -58,7 +58,7 @@ export default function AboutPage() {
 
             <p className="text-neutral-400 font-light text-[20px] leading-[1.5] tracking-[-0.003em] mb-8 max-sm:text-[18px]">
               I have 6 years of experience in design and development. To date,
-              I've worked on 67 projects (featured ones{" "}
+              I've worked on 68 projects (featured ones{" "}
               <Link
                 href="/"
                 className="text-neutral-200 underline-offset-4 decoration-neutral-200 decoration-[0.5px] font-light hover:text-white transition-colors"
