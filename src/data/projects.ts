@@ -17,6 +17,16 @@ export interface Project {
 
 export const projects = [
   {
+    title: "Extropic",
+    year: 2025,
+    url: "https://extropic.ai",
+    type: "Web",
+    filterCategory: "web",
+    featured: true,
+    image: "extropic",
+    titleWidth: 80,
+  },
+  {
     title: "Picogrid",
     year: 2025,
     url: "https://picogrid.com",

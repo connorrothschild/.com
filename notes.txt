@@ -1,0 +1,9 @@
+Tips for applying on LinkedIn
+
+* Don't use a Docx resume. Use a PDF. LinkedIn shows a top level preview of the PDF, but you have to download Docx. [image] 
+* The top 1/4 of your resume (if a PDF) is the most important. This appears in the preview, before clicking "Show more". [image]
+* Your last TWO JOB EXPERIENCES are the most important. These appear above the fold before clicking "See full profile".
+* Portfolios go such a long way... 95% of applicants don't have one. 
+    * Bonus note: Rather than link "Portfolio" as a hyperlink in your resume, write out the URL directly. LinkedIn previews don't allow clicking on the link (you have to download PDF and then click), so it's preferable to have it written so the poster can type it in directly.
+* Don't overdo your tagline. I see so many applicants with something like: "Building Innovative Solutions | Software Engineer | JavaScript, AWS, Next.js, Airflow, PostgreSQL | Seeking New Roles | Recent University Graduate Passionate About Technology." I ain't reading all that bro. A better tagline would be: Engineer at XYZ | React, NextJS Expert.
+* Personal messages do well... in a flood of applicants you basically guarantee you get eyes on your profile.

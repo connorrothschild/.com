@@ -1,0 +1,3 @@
+Job description/what you'll do
+* Pull all nighters to finish sites on an artificially sped up timeline from the client, just for them to delay 2 weeks once you are done
+* Spend hundreds of additional work hours to set up an extensible CMS for the client, just so they can message you at 11pm on a Friday and ask for you to make a content change

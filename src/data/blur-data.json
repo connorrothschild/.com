@@ -4,11 +4,12 @@
   "blackouts": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAAAQAwCdASoUACAAPtFeqE+wJKOqKAgCABoJaQDQGBi5+BgA/u7huFGm+JeD+evF5qvCYFNscybsyu8aj02IAA==",
   "course": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADwBACdASoUACAAPs1OokunpCMht/VYAPAZiWUAtsgQ7MOhOFNOEgSgHvZw9dce5AAA/usi6wlr04i5Xm3sDvKuur+r+lrt6myFad6ekfmYDaUbBBapFW7JAAA=",
   "durin": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAQBQCdASoUACAAPtFUo0uoJKMhsAgBABoJaQAAW/D270+UzF9x2LP0XzcVOFp7PtBAAP71cr1I5veTlzQa/S28E1PdVvNHHveUCAAA",
+  "extropic": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAABQBQCdASoUACQAPslUpUunpKOhsAqo8BkJZQC90CHhmDIcr+c74kYt/mrqpTyKH8gCKQAA/uk8QN3rtadeLaytC99ZfFOZv6PwjM6z97GoPHI5PgqrIdDCvAwAAA==",
   "impact": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAACwAwCdASoUACAAPsVUn0u0pSKhsAwCkBiJYwC7AC4SRHMC4jOucAD+v4NAM9KDyOwhutf9cXM/bsn00WSXegI/JPYnLrJkOnePA+kfxViTNwBqAAA=",
   "eternal": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADQAwCdASoUACAAPtFcpk6oJSOiKAqpABoJZwC90BiHSs9naBeHgQAA/uoROeE4RZfD6vKHuQqW+fNDBClUj8k9j6vfPH0imlMoi8N3YEM8LAQgAAA=",
+  "midjourney": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAQBACdASoUACAAPtFWokuoJKMhsAgBABoJZwAAe1p4cLyhLLOpcj3rEAD+8NPaCOqqCGjrTm+p6sHgRU/jPc4NbWlQsTc9MlgbBL1K2eAAAA==",
   "integral": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAACwAwCdASoUACAAPsVQokunpKMhsAwA8BiJZwDMWDDk/b4PX1708AD+8PavCu3scA7i8yzt4SxDQjuQc9upDCI+oOnwG1AA",
   "linkedin": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAABQBACdASoUACAAPtFgpk4oJaOjKA1RABoJZwDGQBETS1IPAXGbje+QEKoAAP7f7IP2d4kIIKlKCk9zMqw9BHgfCpjKN3khXvPA3rVqlcW6AAAA",
-  "midjourney": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAQBACdASoUACAAPtFWokuoJKMhsAgBABoJZwAAe1p4cLyhLLOpcj3rEAD+8NPaCOqqCGjrTm+p6sHgRU/jPc4NbWlQsTc9MlgbBL1K2eAAAA==",
   "monumental": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAQBACdASoUACAAPslQn0u0pKKhsAwCkBkJZwDKtDL+QR2ndafSgz12AAD+7/W19zNnzDoJ1cs3Ve8LBGZS0e/khqELHgsQAAA=",
   "olympics": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAAAQAwCdASoUACAAPtFepU6oJSMiKAqpABoJaQAAPlepUgAA/vE9/1fdli6CgAAA",
   "new-industrial": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAABwBACdASoUACQAPtFapU0wJSOiqrgMAgAaCWkAy+ALN2CkW8FUEIy5MX05iAD+6oD8kIW8F2AIpQ5xwy/FShDihzfrlUoHfDlT4bbitaQAAA==",
@@ -16,10 +17,10 @@
   "praxis": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAACQBACdASoUACAAPtFYpEuoJSOhsAgBABoJZwC7AC0HmLw5ipOY/aPHtGEwhwAA/uyI16j1T98M0Ir3R+FhOy12Noi29pJB9fUDY6LBe2DgAA==",
   "protests": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAACQAwCdASoUACAAPtFgqE+qpSOjKAgBUBoJZwAAPPVSCe3SKlgAAP7wBz8vg0LqytKJz8I3ing119geAAA=",
   "realm": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACwBACdASoUACAAPtFUokuoJKMhsAgBABoJZwDL4CHfw3WRdvFyKdCuEHDiOSdkAP72g9OWcYAqB/q7v/uSTO1Tbu6QqjIuNgAAAA==",
-  "rainmaker": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAwBACdASoUACAAPsVQpEunpKOhsAwA8BiJZwDKAB6FrcKSTRpdruzzFJ4A/hYovpS4NsxFo7dE20HSMz14vMMbxasinztrtBeMytnJugAAAA==",
-  "tech": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAACwAwCdASoUACAAPtFcpk6oJKMiKAqpABoJZwAALnVXU1uIrLnVlAD+785s4y8+dbhCrz8znMr+uL+GYdwBK/R3d8qmRQAA",
   "terrain": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAAAQAwCdASoUACAAPtFcp04oJSOiKAqpABoJaQDM0BiIEcAA/u+Ojm4MJyWhWC3p8OqLegAA",
+  "tech": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAACwAwCdASoUACAAPtFcpk6oJKMiKAqpABoJZwAALnVXU1uIrLnVlAD+785s4y8+dbhCrz8znMr+uL+GYdwBK/R3d8qmRQAA",
+  "rainmaker": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAwBACdASoUACAAPsVQpEunpKOhsAwA8BiJZwDKAB6FrcKSTRpdruzzFJ4A/hYovpS4NsxFo7dE20HSMz14vMMbxasinztrtBeMytnJugAAAA==",
   "testudo": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAACwBACdASoUACAAPslQoUunpKMht/VYAPAZCUAWnQId+K/7QzIn9yZbzM85ac0gAP7wvPEEOYH+23vw81YXbKBPV5OtsmRi63iSL+/2xHfdclKRBoIiCgAA",
-  "valar": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAABQAwCdASoUACAAPtFaqE21pSQiKAqqsBoJZwAAQzxivZQPAAD+8QBfoOsyNmKiwDR4kOp2Ci+5DjBuRPX+GLgAAAA=",
-  "venice": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADQBACdASoUACAAPtFcqU2oJTmiKAqrMBoJZwDMHBEcsjOH/TcrbH2wR5WN/QjfAAD+rlAUhnZV6xfxULCxnbbJAkezIXgUUAAAAA=="
+  "venice": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADQBACdASoUACAAPtFcqU2oJTmiKAqrMBoJZwDMHBEcsjOH/TcrbH2wR5WN/QjfAAD+rlAUhnZV6xfxULCxnbbJAkezIXgUUAAAAA==",
+  "valar": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAABQAwCdASoUACAAPtFaqE21pSQiKAqqsBoJZwAAQzxivZQPAAD+8QBfoOsyNmKiwDR4kOp2Ci+5DjBuRPX+GLgAAAA="
 }

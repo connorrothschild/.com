@@ -11,3 +11,13 @@
 * Stickies for home page?
 * Notes for blog posts?
 * Notifications for feed?
+
+---
+
+Blog posts
+
+Video behind text
+Shaders with a webgl fallback
+Sanity: Page builder blocks with error boundaries
+How to make sites that are robust to client content updates
+A website is a haircut
