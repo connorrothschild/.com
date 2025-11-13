@@ -59,12 +59,12 @@ export default function ProjectsPage() {
                       href={project.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="truncate text-2xl font-light hover:opacity-75 transition-opacity"
+                      className="truncate text-lg lg:text-2xl font-light hover:opacity-75 transition-opacity"
                     >
                       {project.title}
                     </a>
                   ) : (
-                    <span className="truncate text-2xl font-light">
+                    <span className="truncate text-lg lg:text-2xl font-light">
                       {project.title}
                     </span>
                   )}

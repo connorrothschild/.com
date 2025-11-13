@@ -17,6 +17,26 @@ export interface Project {
 
 export const projects = [
   {
+    title: "Etched",
+    year: 2025,
+    url: "https://www.etched.com",
+    type: "Web",
+    filterCategory: "web",
+    featured: false,
+    image: "etched",
+    titleWidth: 80,
+  },
+  {
+    title: "Rainmaker Merch Store",
+    year: 2025,
+    url: "https://store.rainmaker.com",
+    type: "Web",
+    filterCategory: "web",
+    featured: false,
+    image: "rainmaker-merch",
+    titleWidth: 80,
+  },
+  {
     title: "Extropic",
     year: 2025,
     url: "https://extropic.ai",
