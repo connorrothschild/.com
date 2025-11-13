@@ -19,10 +19,12 @@ export default function ProjectsPage() {
 
       <BottomBox>
         <div className="">
-          <h1 className="hidden lg:block text-3xl font-light">All Projects</h1>
-          <p className="text-base lg:text-base text-neutral-400 mt-2">
+          <h1 className="hidden lg:block text-3xl font-light mb-2">
+            All Projects
+          </h1>
+          <p className="text-base lg:text-base text-neutral-400">
             <span className="inline lg:hidden">All projects.</span> See featured
-            projects
+            projects{" "}
             <Link
               href="/"
               className="underline underline-offset-4 decoration-[1px]"
