@@ -207,6 +207,10 @@ Google releases Gemini 3 Pro, a new version of the Gemini model that is more cap
 
 Google also releases Google Antigravity, their take on an IDE. 
 
+**References:**
+- [Gemini 3 Pro](https://blog.google/products/gemini/gemini-3/)
+- [Google Antigravity](https://antigravity.google/)
+
 ## Conclusion
 
 Thanks for reading! If I missed anything, please [let me know](mailto:connor@connorrothschild.com).
