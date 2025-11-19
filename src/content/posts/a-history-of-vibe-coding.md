@@ -194,6 +194,19 @@ This represents Google's major entry into the terminal-based AI coding space, of
 **References:**
 - [Gemini CLI: your open-source AI agent](https://blog.google/technology/developers/introducing-gemini-cli-open-source-ai-agent/)
 
+### September 29, 2025: Anthropic Releases Claude Sonnet 4.5
+
+Anthropic releases Claude Sonnet 4.5, positioning it as "the best coding model in the world" with state-of-the-art performance on SWE-bench Verified (77.2%). Alongside the model release, Anthropic launches the Claude Agent SDK—the same infrastructure powering Claude Code—enabling developers to build long-running agents with memory, permissions, and subagent coordination. 
+
+**References:**
+- [Introducing Claude Sonnet 4.5](https://www.anthropic.com/news/claude-sonnet-4-5)
+
+### November 18, 2025: Google Releases Gemini 3 Pro, Google Antigravity
+
+Google releases Gemini 3 Pro, a new version of the Gemini model that is more capable of writing code. As a personal anecdote, this seems to be the most impressive model I've seen so far, capable of one-shotting most complex coding tasks with ease and without error.
+
+Google also releases Google Antigravity, their take on an IDE. 
+
 ## Conclusion
 
 Thanks for reading! If I missed anything, please [let me know](mailto:connor@connorrothschild.com).
