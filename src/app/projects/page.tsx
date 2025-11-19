@@ -19,9 +19,12 @@ export default function ProjectsPage() {
 
       <BottomBox>
         <div className="">
-          <h1 className="text-2xl lg:text-3xl font-light">All Projects</h1>
-          <p className="text-base lg:text-base text-neutral-400 mt-2">
-            See featured projects{" "}
+          <h1 className="hidden lg:block text-3xl font-light mb-2">
+            All Projects
+          </h1>
+          <p className="text-base lg:text-base text-neutral-400">
+            <span className="inline lg:hidden">All projects.</span> See featured
+            projects{" "}
             <Link
               href="/"
               className="underline underline-offset-4 decoration-[1px]"
@@ -59,12 +62,12 @@ export default function ProjectsPage() {
                       href={project.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="truncate text-2xl font-light hover:opacity-75 transition-opacity"
+                      className="truncate text-lg lg:text-2xl font-light hover:opacity-75 transition-opacity"
                     >
                       {project.title}
                     </a>
                   ) : (
-                    <span className="truncate text-2xl font-light">
+                    <span className="truncate text-lg lg:text-2xl font-light">
                       {project.title}
                     </span>
                   )}
