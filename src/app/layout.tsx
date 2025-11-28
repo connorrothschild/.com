@@ -7,6 +7,7 @@ import { Metadata, Viewport } from "next";
 import { RealViewport } from "@/components/helpers/real-viewport";
 import { generateDefaultJsonLd } from "@/lib/metadata";
 import { Chivo_Mono } from "next/font/google";
+import Navigation from "@/components/sections/navigation";
 
 const times = localFont({
   src: [
@@ -34,28 +35,28 @@ const times = localFont({
   variable: "--font-serif",
 });
 
-const montreal = localFont({
+const gtAmerica = localFont({
   src: [
     {
-      path: "../fonts/montreal/PPNeueMontreal-Book.otf",
-      weight: "300",
-      style: "normal",
-    },
-    {
-      path: "../fonts/montreal/PPNeueMontreal-Regular.otf",
+      path: "../fonts/gt-america/GTAmerica-Regular.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../fonts/montreal/PPNeueMontreal-Medium.otf",
-      weight: "500",
-      style: "normal",
+      path: "../fonts/gt-america/GTAmerica-RegularItalic.woff2",
+      weight: "400",
+      style: "italic",
     },
-    {
-      path: "../fonts/montreal/PPNeueMontreal-Bold.otf",
-      weight: "700",
-      style: "normal",
-    },
+    // {
+    //   path: "../fonts/gt-america/GTAmerica-MediumItalic.woff2",
+    //   weight: "500",
+    //   style: "italic",
+    // },
+    // {
+    //   path: "../fonts/gt-america/GTAmerica-BoldItalic.woff2",
+    //   weight: "700",
+    //   style: "italic",
+    // },
   ],
   display: "fallback",
   variable: "--font-sans",
@@ -106,8 +107,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#000000",
-  colorScheme: "dark",
+  themeColor: "#ffffff",
+  colorScheme: "light",
 
   width: "device-width",
   initialScale: 1,
@@ -124,8 +125,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <main
-          className={`${montreal.variable} ${times.variable} ${chivoMono.variable} bg-bg font-sans`}
+          className={`${gtAmerica.variable} ${times.variable} ${chivoMono.variable} bg-bg font-sans`}
         >
+          <Navigation />
           {children}
         </main>
         <Analytics />

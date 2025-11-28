@@ -428,15 +428,15 @@ const TimelineEvent = ({
                   )}
               </span>
             </div>
-            <h3 className={`font-light ${styles.title} text-white text-pretty`}>
+            <h3 className={`${styles.title} text-white text-pretty`}>
               {title}
             </h3>
           </div>
-          <div className="text-[18px] leading-[1.6] text-white/60 font-light mb-4">
+          <div className="text-[18px] leading-[1.6] text-white/60 mb-4">
             {description}
           </div>
 
-          <div className="text-[18px] leading-[1.6] text-white/60 font-light">
+          <div className="text-[18px] leading-[1.6] text-white/60">
             {significance}
           </div>
 
@@ -482,13 +482,13 @@ const EraSection = ({
 }) => (
   <section id={id} className="mb-20 scroll-mt-24">
     <div className="mb-12">
-      <h2 className="text-[32px] lg:text-[48px] mb-4 font-light leading-[1.1] tracking-[-0.02em] text-white">
+      <h2 className="text-[32px] lg:text-[48px] mb-4 leading-[1.1] tracking-[-0.02em] text-white">
         {title}
       </h2>
-      <p className="text-[20px] lg:text-[24px] leading-[1.4] text-white font-light mb-6">
+      <p className="text-[20px] lg:text-[24px] leading-[1.4] text-white mb-6">
         {subtitle}
       </p>
-      <p className="text-[20px] leading-[1.6] text-white/80 font-light max-w-3xl">
+      <p className="text-[20px] leading-[1.6] text-white/80 max-w-3xl">
         {description}
       </p>
     </div>
@@ -588,7 +588,7 @@ const TableOfContents = () => {
       <div className="px-4 pt-8 pb-4 h-full flex flex-col">
         {/* Timeline Minimap */}
         <div className="mb-2">
-          {/* <h3 className="text-lg font-light text-white mb-4">
+          {/* <h3 className="text-lg text-white mb-4">
             Timeline Overview
           </h3> */}
           <div className="relative h-24 bg-black/20 rounded-lg mx-3">
@@ -676,7 +676,7 @@ const TableOfContents = () => {
 
         {/* Table of Contents */}
         <div className="flex-1">
-          {/* <h3 className="text-lg font-light text-white mb-6">
+          {/* <h3 className="text-lg text-white mb-6">
             Table of Contents
           </h3> */}
           <nav className="space-y-2">
@@ -690,7 +690,7 @@ const TableOfContents = () => {
                     : "text-white/60 hover:text-white/80 border-transparent"
                 }`}
               >
-                <div className="font-light text-sm">{item.label}</div>
+                <div className="text-sm">{item.label}</div>
                 {item.era && (
                   <div className="text-xs text-white/40 font-mono uppercase mt-1">
                     {item.era}
@@ -701,7 +701,7 @@ const TableOfContents = () => {
           </nav>
         </div>
         <Link
-          className="mt-auto text-[24px] leading-[1.2] font-light tracking-[-0.02em]"
+          className="mt-auto text-[24px] leading-[1.2] tracking-[-0.02em]"
           href="/"
         >
           Connor Rothschild
@@ -725,7 +725,7 @@ export default function VibeCodingHistory() {
           {/* Introduction */}
           <section id="introduction" className="mb-20 scroll-mt-24">
             <div className="mb-12">
-              <h1 className="text-[36px] lg:text-[64px] mb-6 font-light leading-[1.1] tracking-[-0.02em] text-wrap-balance">
+              <h1 className="text-[36px] lg:text-[64px] mb-6 leading-[1.1] tracking-[-0.02em] text-wrap-balance">
                 A History of Vibe Coding, So Far
               </h1>
               <p className="text-[16px] leading-[1.4] text-white/50 mb-8 font-mono uppercase tracking-tight">
@@ -734,19 +734,19 @@ export default function VibeCodingHistory() {
             </div>
 
             <div className="space-y-6">
-              {/* <p className="text-[20px] leading-[1.6] text-white/80 font-light">
+              {/* <p className="text-[20px] leading-[1.6] text-white/80">
                 In just four years, the way we write code has undergone a
                 fundamental transformation. What began as an experimental tool
                 for code completion has evolved into a cultural phenomenon
                 that's reshaping software development itself.
               </p> */}
-              <p className="text-[20px] leading-[1.6] text-white/80 font-light">
+              <p className="text-[20px] leading-[1.6] text-white/80">
                 "Vibe coding" — the term coined by Andrej Karpathy in February
                 2025 — describes a new approach to programming where developers
                 work in close collaboration with AI, iterating through code with
                 an intuitive, almost conversational flow.
               </p>
-              <p className="text-[20px] leading-[1.6] text-white/80 font-light">
+              <p className="text-[20px] leading-[1.6] text-white/80">
                 But vibe coding has changed tremendously in the past few years.
                 It's capabilities have grown as new models have released, it's
                 meaning has evolved, and it's applications have expanded. This
@@ -1108,26 +1108,26 @@ export default function VibeCodingHistory() {
           <section id="conclusion" className="mb-20 scroll-mt-24">
             <div className="border-t border-white/20 pt-12">
               <div className="space-y-6">
-                <p className="text-[20px] leading-[1.6] text-white/80 font-light">
+                <p className="text-[20px] leading-[1.6] text-white/80">
                   Thanks for reading! If I missed anything, please{" "}
                   <a
                     href="mailto:connor@connorrothschild.com"
-                    className="underline underline-offset-4 decoration-neutral-200 decoration-[0.5px] font-light hover:text-white transition-colors"
+                    className="underline underline-offset-4 decoration-neutral-200 decoration-[0.5px] hover:text-white transition-colors"
                   >
                     let me know
                   </a>
                   .
                 </p>
-                <p className="mt-12 text-[20px] leading-[1.6] text-white/80 font-light">
+                <p className="mt-12 text-[20px] leading-[1.6] text-white/80">
                   Some notes:
                 </p>
                 <ul className="list-disc list-inside">
-                  <li className="text-[18px] leading-[1.6] text-white/70 font-light">
+                  <li className="text-[18px] leading-[1.6] text-white/70">
                     I'm missing some content on V0, Lovable, Replit, Bolt, etc.
                     I'm unsure of their timelines, and also do not use them
                     often, so I've omitted them until I learn more.
                   </li>
-                  <li className="text-[18px] leading-[1.6] text-white/70 font-light mt-2">
+                  <li className="text-[18px] leading-[1.6] text-white/70 mt-2">
                     There is a whole other world of "vibe coders" who know
                     nothing about programming, and I don't know if they would
                     consider the history of vibe coding differently. This is

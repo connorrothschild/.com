@@ -12,7 +12,7 @@ export default function VibeCodingLayout({
       {/* Navigation Sidebar */}
       <div className="hidden lg:block fixed left-0 top-0 h-full w-80 bg-black/95 backdrop-blur-sm border-r border-white/10 z-10 overflow-y-auto">
         <div className="p-8">
-          <h2 className="text-xl font-light mb-8 text-white">Vibe Coding</h2>
+          <h2 className="text-xl mb-8 text-white">Vibe Coding</h2>
           <nav className="space-y-2">
             <Link
               href="/vibe-coding/history"

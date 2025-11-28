@@ -31,11 +31,11 @@ const ArticleLinkItem: React.FC<ArticleLinkItemProps> = ({
       rel={article.isExternal ? "noopener noreferrer" : undefined}
       data-article-id={article.id}
       className={cn(
-        "max-lg:snap-center shrink-0 whitespace-nowrap text-[20px] lg:text-[24px] leading-[1.1] tracking-[-0.02em] font-light cursor-pointer transition-colors duration-150 ease-in-out", // Base styles + added transition
+        "max-lg:snap-center shrink-0 whitespace-nowrap text-[16px] leading-[1.1] tracking-[-0.02em] cursor-pointer transition-opacity duration-150 ease-in-out", // Base styles + added transition
         // Apply conditional styling
         article.id === currentSlug
-          ? "text-white" // Active style
-          : "text-neutral-600 hover:text-neutral-300 active:text-neutral-300" // Inactive style
+          ? "opacity-100" // Active style
+          : "opacity-50 hover:opacity-100 active:opacity-100" // Inactive style
       )}
     >
       {article.title}
@@ -107,7 +107,7 @@ export default function ArticleSelector({
 
       {/* Add a divider if both groups have articles */}
       {techArticles.length > 0 && personalArticles.length > 0 && (
-        <div className="shrink-0 w-[2px] h-full lg:w-full lg:h-px bg-neutral-800 max-lg:mx-2 lg:my-2" />
+        <div className="shrink-0 w-[2px] h-full lg:w-full lg:h-px bg-black/10 max-lg:mx-2 lg:my-2" />
       )}
 
       {/* Render Tech Articles */}

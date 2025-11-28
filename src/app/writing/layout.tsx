@@ -1,19 +1,6 @@
 import React from "react";
-import Navigation from "@/components/sections/navigation";
-import BottomBox from "@/components/sections/bottom-box"; // Adjusted path
-import RightSide from "@/components/sections/right-side"; // Adjusted path
 import ArticleSelector from "@/components/sections/writing/article-selector"; // Adjusted path
 import { getAllPosts, PostData } from "@/lib/posts";
-
-// const additionalArticleLinks = [
-//   {
-//     id: "vibe-coding",
-//     title: "A History of Vibe Coding",
-//     slug: "/vibe-coding/history",
-//     category: "technical" as const,
-//     isExternal: true,
-//   },
-// ];
 
 export default async function WritingLayout({
   children,
@@ -32,23 +19,20 @@ export default async function WritingLayout({
     }));
 
   return (
-    <div className="default-grid scrollbar-hide max-lg:flex max-lg:flex-col">
-      <Navigation />
-
-      <BottomBox>
-        {/* We need to pass the current slug here for active state, will handle next */}
-        <ArticleSelector
-          articles={[
-            ...articleLinks,
-            // ...additionalArticleLinks
-          ]}
-        />
-      </BottomBox>
-
-      <RightSide>
-        {/* Render the specific page content */}
-        {children}
-      </RightSide>
+    <div className="min-h-screen bg-white text-black">
+      <div className="px-[16px] lg:px-[24px] pt-[48px] lg:pt-[64px] pb-[64px] lg:pb-[96px]">
+        <div className="mx-auto" style={{ maxWidth: "var(--inner-content-width)" }}>
+          <div className="mb-[64px] lg:mb-[96px]">
+            <ArticleSelector
+              articles={[
+                ...articleLinks,
+                // ...additionalArticleLinks
+              ]}
+            />
+          </div>
+          {children}
+        </div>
+      </div>
     </div>
   );
 }

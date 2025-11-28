@@ -37,37 +37,70 @@ export default function Navigation() {
   const rootPathname = getRootPathname(pathname);
   const isHome = rootPathname === "/";
 
+  if (isHome) {
+    return (
+      <motion.div
+        layoutId="navigation"
+        layout="position"
+        className="z-50 relative p-[16px] lg:p-[24px] flex justify-between items-center w-full"
+        transition={{
+          duration: 0.75,
+          ease: easeInOutQuint,
+        }}
+      >
+        <Link
+          href="/"
+          className="text-[16px] leading-none tracking-[-0.02em] text-black"
+        >
+          Connor Rothschild
+        </Link>
+        <div className="flex gap-[24px] lg:gap-[50px]">
+          {navItems.map((item, index) => (
+            <Link
+              key={`nav-${index}`}
+              className={cn(
+                "text-[16px] leading-none tracking-[-0.02em] cursor-pointer text-black",
+                getRootPathname(item.href) === rootPathname
+                  ? "opacity-100"
+                  : "opacity-50 hover:opacity-100 active:opacity-100",
+                "transition-opacity duration-150"
+              )}
+              href={item.href}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      </motion.div>
+    );
+  }
+
   return (
     <motion.div
       layoutId="navigation"
       layout="position"
-      className={cn(
-        "z-50 relative p-[16px] lg:p-[24px] flex flex-col justify-between lg:h-full gap-[48px]",
-        isHome
-          ? "border-b max-lg:border-transparent lg:border-neutral-700"
-          : "lg:border-r-transparent lg:border-l-transparent lg:border-b-transparent",
-        isHome ? "lg:row-start-2" : "row-start-1",
-        // "max-lg:min-h-[165.28px] max-lg:h-[165.28px]",
-        "col-start-1 col-span-2"
-      )}
+      className="z-50 relative p-[16px] lg:p-[24px] flex justify-between items-center w-full"
       transition={{
         duration: 0.75,
         ease: easeInOutQuint,
       }}
     >
-      <PrimaryTitle className="w-min">
-        <Link href="/">Connor Rothschild</Link>
-      </PrimaryTitle>
-      <div className="flex gap-[24px] lg:gap-[50px] max-sm:justify-between">
+      <Link
+        href="/"
+        className="text-[16px] leading-none tracking-[-0.02em] text-black"
+      >
+        Connor Rothschild
+      </Link>
+      <div className="flex gap-[24px] lg:gap-[50px]">
         {navItems.map((item, index) => (
           <Link
             key={`nav-${index}`}
             className={cn(
-              "text-[20px] lg:text-[24px] leading-none tracking-[-0.02em] font-light cursor-pointer",
+              "text-[16px] leading-none tracking-[-0.02em] cursor-pointer text-black",
               getRootPathname(item.href) === rootPathname
-                ? "text-white"
-                : "text-neutral-600 hover:text-neutral-300 active:text-neutral-300",
-              "transition-colors duration-150"
+                ? "opacity-100"
+                : "opacity-50 hover:opacity-100 active:opacity-100",
+              "transition-opacity duration-150"
             )}
             href={item.href}
           >
@@ -75,12 +108,6 @@ export default function Navigation() {
           </Link>
         ))}
       </div>
-      {/* On homepage, on mobile, show arrow right */}
-      {isHome && (
-        <div className="block lg:hidden absolute bottom-[48px] right-[16px] sm:bottom-[24px] sm:right-[24px]">
-          <ArrowRightIcon className="size-6 stroke-1" />
-        </div>
-      )}
     </motion.div>
   );
 }

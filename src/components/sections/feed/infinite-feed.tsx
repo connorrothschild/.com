@@ -172,43 +172,29 @@ const InfiniteFeed: React.FC<InfiniteFeedProps> = ({ initialItems }) => {
   }, [handleScroll, IS_INFINITE]); // Added IS_INFINITE dependency
 
   return (
-    // Main component container
-    <>
-      {/* Scrims */}
-      {/* FIXME ABSTRACT? */}
-      <div className="absolute top-0 h-[50px] w-full bg-gradient-to-b from-black to-transparent pointer-events-none z-10" />
-      <div className="absolute bottom-0 left-0 right-0 h-[50px] bg-gradient-to-t from-black to-transparent pointer-events-none z-10" />
+    <div
+      ref={scrollContainerRef}
+      className="overflow-y-auto scrollbar-hide"
+    >
+      {/* Render Items */}
+      {items.map((item) => {
+        return <FeedItem key={item.uniqueId} item={item} />;
+      })}
 
-      {/* Scrollable Container */}
-      <div
-        ref={scrollContainerRef}
-        className="absolute inset-0 h-full w-full overflow-y-scroll scrollbar-hide py-[50px] lg:py-[100px]" // Use absolute positioning to respect gradients
-        style={{
-          // NOTE: Testing animation instead of motion.
-          opacity: 0,
-          animation: "fadeIn 0.5s ease-in-out 0.5s forwards",
-        }}
-      >
-        {/* Render Items */}
-        {items.map((item) => {
-          return <FeedItem key={item.uniqueId} item={item} />;
-        })}
-
-        {IS_INFINITE ? null : (
-          <button
-            onClick={() => {
-              scrollContainerRef.current?.scrollTo({
-                top: 0,
-                behavior: "smooth",
-              });
-            }}
-            className="cursor-pointer mt-[25px] lg:mt-[100px] flex items-end justify-end px-12 text-right w-full z-50"
-          >
-            Back to top
-          </button>
-        )}
-      </div>
-    </>
+      {IS_INFINITE ? null : (
+        <button
+          onClick={() => {
+            scrollContainerRef.current?.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          }}
+          className="cursor-pointer mt-[25px] lg:mt-[100px] text-black opacity-50 hover:opacity-100 transition-opacity"
+        >
+          Back to top
+        </button>
+      )}
+    </div>
   );
 };
 

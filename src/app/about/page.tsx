@@ -1,11 +1,8 @@
 import React from "react";
-import Navigation from "@/components/sections/navigation";
-import BottomBox from "@/components/sections/bottom-box";
-import RightSide from "@/components/sections/right-side";
-import ScrollAwareContent from "@/components/sections/bottom-box/scroll-aware-content";
 import { Metadata } from "next";
 import { generatePageMetadata } from "@/lib/metadata";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = generatePageMetadata({
   title: "About",
@@ -15,128 +12,112 @@ export const metadata: Metadata = generatePageMetadata({
 
 export default function AboutPage() {
   return (
-    <div className="default-grid scrollbar-hide max-lg:flex max-lg:flex-col">
-      <Navigation />
-
-      <BottomBox>
-        <ScrollAwareContent />
-      </BottomBox>
-
-      <RightSide>
-        {/* Scrims */}
-        <div className="absolute top-0 h-[50px] w-full bg-gradient-to-b from-black to-transparent pointer-events-none z-10" />
-        <div className="absolute bottom-0 left-0 right-0 h-[50px] bg-gradient-to-t from-black to-transparent pointer-events-none z-10" />
-
-        {/* Main Content */}
+    <div className="min-h-screen bg-white text-black">
+      <div className="px-[16px] lg:px-[24px] pt-[48px] lg:pt-[64px] pb-[64px] lg:pb-[96px]">
         <div
-          id="scrollable-content"
-          className="absolute inset-0 h-full w-full overflow-y-scroll scrollbar-hide py-[50px] lg:py-[100px] lg:pt-[37svh] text-wrap-pretty"
-          style={{
-            opacity: 0,
-            animation: "fadeIn 0.5s ease-in-out 0.25s forwards",
-          }}
+          className="mx-auto"
+          style={{ maxWidth: "var(--inner-content-width)" }}
         >
-          <div className="text-white flex flex-col pb-[50px] lg:pb-[100px] w-full max-lg:max-w-none lg:max-w-[480px] lg:mx-auto max-lg:px-[16px] font-sans">
-            {/* Title */}
-            {/* <h1 className="text-[36px] lg:text-[48px] mb-8 font-light leading-none tracking-[-0.02em] text-wrap-balance">
-              About
-            </h1> */}
+          <Image
+            src="/images/me/headshot-2025.jpg"
+            alt="Connor Rothschild"
+            width={500}
+            height={500}
+            className="w-full max-w-[300px] mb-8 rounded-xl border border-black/10"
+          />
+          {/* Introduction */}
+          <p className="text-[18px] leading-[1.5] tracking-[-0.01em] mb-6  text-black/80">
+            I'm an engineer based in Texas. I help lead technology at{" "}
+            <a
+              href="https://asimovcollective.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-black opacity-50 hover:opacity-100 underline underline-offset-4 decoration-[0.5px]  transition-opacity"
+            >
+              Asimov Collective
+            </a>
+            .
+          </p>
 
-            {/* Introduction */}
-            <p className="text-neutral-400 font-light text-[20px] leading-[1.5] tracking-[-0.003em] mb-6 max-sm:text-[18px]">
-              I'm an engineer based in Texas. I help lead technology at{" "}
+          <p className="text-[18px] leading-[1.5] tracking-[-0.01em] mb-8  text-black/80">
+            I have 6 years of experience in design and development. To date,
+            I've worked on 68 projects (featured ones{" "}
+            <Link
+              href="/"
+              className="text-black opacity-50 hover:opacity-100 underline underline-offset-4 decoration-[0.5px]  transition-opacity"
+            >
+              here
+            </Link>
+            ), spanning web applications, data visualization, and user
+            interfaces.
+          </p>
+
+          {/* Background */}
+          <h2 className="text-[36px] leading-[1.2] tracking-[-0.03em] text-black mb-4 mt-12 first:mt-0 ">
+            Personal
+          </h2>
+
+          <p className="text-[18px] leading-[1.5] tracking-[-0.01em] mb-6  text-black/80">
+            I live in Houston, Texas with my wife Chloe. I graduated from Rice
+            University in 2021. Outside of work, I enjoy lifting weights.
+          </p>
+
+          {/* Contact */}
+          <h2 className="text-[36px] leading-[1.2] tracking-[-0.03em] text-black mb-4 mt-12 ">
+            Contact
+          </h2>
+
+          <p className="text-[18px] leading-[1.5] tracking-[-0.01em] mb-6  text-black/80">
+            Although I'm content in my current role, I'd be happy to mentor
+            those starting out, or learn from those with more experience. I'm
+            also happy to provide technical advice and guidance free of charge.
+          </p>
+
+          <div className="mt-2 lg:mt-8 space-y-2">
+            <p className="text-[18px] leading-[1.5] tracking-[-0.01em]  text-black/80">
               <a
-                href="https://asimovcollective.com"
+                href="mailto:connor@connorrothschild.com"
+                className="text-black opacity-50 hover:opacity-100 underline underline-offset-4 decoration-[0.5px]  transition-opacity"
+              >
+                connor@connorrothschild.com
+              </a>
+            </p>
+            <p className="text-[18px] leading-[1.5] tracking-[-0.01em]  text-black/80">
+              <a
+                href="https://twitter.com/CL_Rothschild"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neutral-200 underline-offset-4 decoration-neutral-200 decoration-[0.5px] font-light hover:text-white transition-colors"
+                className="text-black opacity-50 hover:opacity-100 underline underline-offset-4 decoration-[0.5px]  transition-opacity"
               >
-                Asimov Collective
+                @CL_Rothschild
               </a>
-              .
             </p>
-
-            <p className="text-neutral-400 font-light text-[20px] leading-[1.5] tracking-[-0.003em] mb-8 max-sm:text-[18px]">
-              I have 6 years of experience in design and development. To date,
-              I've worked on 68 projects (featured ones{" "}
-              <Link
-                href="/"
-                className="text-neutral-200 underline-offset-4 decoration-neutral-200 decoration-[0.5px] font-light hover:text-white transition-colors"
-              >
-                here
-              </Link>
-              ), spanning web applications, data visualization, and user
-              interfaces.
-            </p>
-
-            {/* Background */}
-            <h2 className="text-white font-light tracking-[-0.02em] text-[24px] lg:text-[36px] leading-[1.2] mb-4 mt-8">
-              Personal
+          </div>
+          <hr className="mt-24 mb-8 border-black/10" />
+          <div className="text-[18px] leading-[1.5] tracking-[-0.01em]  text-black/80">
+            <h2 className="text-[36px] leading-[1.2] tracking-[-0.03em] text-black mb-4 mt-12 ">
+              Past Versions of This Site
             </h2>
 
-            <p className="text-neutral-400 font-light text-[20px] leading-[1.5] tracking-[-0.003em] mb-6 max-sm:text-[18px]">
-              I live in Houston, Texas with my wife Chloe. I graduated from Rice
-              University in 2021. Outside of work, I enjoy lifting weights.
+            <p className="text-[18px] leading-[1.5] tracking-[-0.01em] mb-4  text-black/80">
+              You can take a look at how this site has evolved over the years:
             </p>
-
-            {/* Contact */}
-            <h2 className="text-white font-light tracking-[-0.02em] text-[24px] lg:text-[36px] leading-[1.2] mb-4 mt-8">
-              Contact
-            </h2>
-
-            <p className="text-neutral-400 font-light text-[20px] leading-[1.5] tracking-[-0.003em] mb-6 max-sm:text-[18px]">
-              Although I'm content in my current role, I'd be happy to mentor
-              those starting out, or learn from those with more experience. I'm
-              also happy to provide technical advice and guidance free of
-              charge.
-            </p>
-
-            <div className="mt-2 lg:mt-8 space-y-2">
-              <p className="text-neutral-400 font-light text-[20px] leading-[1.5] tracking-[-0.003em] max-sm:text-[18px]">
+            <div className="mt-4 flex flex-col gap-2">
+              {["v1", "v2", "v3", "v4", "v5", "v6"].map((version) => (
                 <a
-                  href="mailto:connor@connorrothschild.com"
-                  className="text-neutral-200 underline-offset-4 decoration-neutral-200 decoration-[0.5px] font-light hover:text-white transition-colors"
-                >
-                  connor@connorrothschild.com
-                </a>
-              </p>
-              <p className="text-neutral-400 font-light text-[20px] leading-[1.5] tracking-[-0.003em] max-sm:text-[18px]">
-                <a
-                  href="https://twitter.com/connorrothschild"
+                  href={`https://${version}.connorrothschild.com`}
+                  key={version}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-neutral-200 underline-offset-4 decoration-neutral-200 decoration-[0.5px] font-light hover:text-white transition-colors"
+                  className="block text-black opacity-50 hover:opacity-100 underline underline-offset-4 decoration-[0.5px]  transition-opacity"
                 >
-                  @connorrothschild
+                  &bull; {version.toUpperCase()}
                 </a>
-              </p>
-            </div>
-            <hr className="mt-24 mb-8 opacity-25" />
-            <div className="text-neutral-400 font-light text-[20px] leading-[1.5] tracking-[-0.003em] max-sm:text-[18px]">
-              <h2 className="text-white font-light tracking-[-0.02em] text-[24px] lg:text-[36px] leading-[1.2] mb-4 mt-8">
-                Past Versions of This Site
-              </h2>
-
-              <p className="text-neutral-400 font-light text-[20px] leading-[1.5] tracking-[-0.003em] max-sm:text-[18px]">
-                You can take a look at how this site has evolved over the years:
-              </p>
-              <div className="mt-4 flex flex-col gap-2">
-                {["v1", "v2", "v3", "v4", "v5", "v6"].map((version) => (
-                  <a
-                    href={`https://${version}.connorrothschild.com`}
-                    key={version}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block text-neutral-400 underline-offset-4 decoration-neutral-200 font-light hover:text-white transition-colors"
-                  >
-                    &bull; {version.toUpperCase()}
-                  </a>
-                ))}
-              </div>
+              ))}
             </div>
           </div>
         </div>
-      </RightSide>
+      </div>
     </div>
   );
 }

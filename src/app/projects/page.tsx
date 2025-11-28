@@ -1,7 +1,4 @@
 import React from "react";
-import Navigation from "@/components/sections/navigation";
-import BottomBox from "@/components/sections/bottom-box";
-import RightSide from "@/components/sections/right-side";
 import { projects } from "@/data/projects";
 import { Metadata } from "next";
 import { generatePageMetadata } from "@/lib/metadata";
@@ -14,17 +11,17 @@ export const metadata: Metadata = generatePageMetadata({
 
 export default function ProjectsPage() {
   return (
-    <div className="default-grid scrollbar-hide max-lg:flex max-lg:flex-col">
-      <Navigation />
-
-      <BottomBox>
-        <div className="">
-          <h1 className="hidden lg:block text-3xl font-light mb-2">
+    <div className="min-h-screen bg-white text-black">
+      <div className="px-[16px] lg:px-[24px] pt-[48px] lg:pt-[64px] pb-[64px] lg:pb-[96px]">
+        <div
+          className="mx-auto"
+          style={{ maxWidth: "var(--inner-content-width)" }}
+        >
+          <h1 className="text-[20px] leading-normal tracking-[-0.02em] mb-4">
             All Projects
           </h1>
-          <p className="text-base lg:text-base text-neutral-400">
-            <span className="inline lg:hidden">All projects.</span> See featured
-            projects{" "}
+          <p className="text-[20px] leading-normal tracking-[-0.02em]  opacity-50 mb-2">
+            See featured projects{" "}
             <Link
               href="/"
               className="underline underline-offset-4 decoration-[1px]"
@@ -33,55 +30,43 @@ export default function ProjectsPage() {
             </Link>
             .
           </p>
-        </div>
-      </BottomBox>
-
-      <RightSide>
-        {/* Scrims */}
-        {/* FIXME ABSTRACT? */}
-        <div className="absolute top-0 h-[50px] w-full bg-gradient-to-b from-black to-transparent pointer-events-none z-10" />
-        <div className="absolute bottom-0 left-0 right-0 h-[50px] bg-gradient-to-t from-black to-transparent pointer-events-none z-10" />
-
-        {/* Modify prose classes here for body text styling */}
-        <div
-          className="absolute inset-0 h-full w-full overflow-y-scroll scrollbar-hide py-[50px] lg:py-[100px] lg:pt-[37svh]"
-          style={{
-            // NOTE: Cannot use motion here because it breaks mdx-remote which is a server component.
-            opacity: 0,
-            animation: "fadeIn 0.5s ease-in-out 0.25s forwards",
-          }}
-        >
-          <div className="space-y-1.5 max-lg:max-w-none lg:max-w-[480px] lg:mx-auto max-lg:px-[16px]">
-            {projects
-              .slice()
-              .reverse()
-              .map((project, index) => (
-                <div key={index} className="relative flex items-end text-white">
-                  {project.url ? (
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="truncate text-lg lg:text-2xl font-light hover:opacity-75 transition-opacity"
-                    >
-                      {project.title}
-                    </a>
-                  ) : (
-                    <span className="truncate text-lg lg:text-2xl font-light">
-                      {project.title}
-                    </span>
-                  )}
-                  {project.featured && (
-                    <span className="opacity-75 ml-0.5 mb-auto">*</span>
-                  )}
-                  <span className="text-base opacity-50 ml-1 mb-px">
-                    ({project.year})
-                  </span>
-                </div>
-              ))}
+          <div className="mt-[64px] lg:mt-[96px]">
+            <div className="space-y-4">
+              {projects
+                .slice()
+                .reverse()
+                .map((project, index) => (
+                  <div key={index} className="">
+                    {project.url ? (
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-balance block text-[18px] leading-[1.25] tracking-[-0.02em] hover:opacity-50 transition-opacity"
+                      >
+                        {project.title}{" "}
+                        <span className="text-[16px] leading-none tracking-[-0.02em] opacity-50">
+                          for {project.client || project.title}
+                          {project.with && ` with ${project.with}`}
+                          {` in ${project.year}`}
+                        </span>
+                      </a>
+                    ) : (
+                      <div className="text-[16px] leading-none tracking-[-0.02em]">
+                        {project.title}{" "}
+                        <div className="text-[16px] leading-none tracking-[-0.02em] opacity-50">
+                          for {project.client || project.title}
+                          {project.with && ` with ${project.with}`}
+                          {` in ${project.year}`}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))}
+            </div>
           </div>
         </div>
-      </RightSide>
+      </div>
     </div>
   );
 }

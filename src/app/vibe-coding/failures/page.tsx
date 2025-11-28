@@ -207,7 +207,7 @@ const TableOfContents = () => {
       <div className="p-8 h-full flex flex-col">
         {/* Table of Contents */}
         <div className="flex-1">
-          <h3 className="text-lg font-light text-white mb-6">Timeline</h3>
+          <h3 className="text-lg text-white mb-6">Timeline</h3>
           <nav className="space-y-2">
             {months.map((month) => (
               <button
@@ -221,7 +221,7 @@ const TableOfContents = () => {
                     : "text-white/60 hover:text-white/80 border-transparent"
                 }`}
               >
-                <div className="font-light text-sm">{month}</div>
+                <div className="text-sm">{month}</div>
               </button>
             ))}
           </nav>
@@ -229,7 +229,7 @@ const TableOfContents = () => {
 
         {/* Bottom Navigation */}
         <div className="mt-8 pt-8 border-t border-white/20">
-          <p className="text-[14px] leading-[1.4] text-white/80 font-light mb-4">
+          <p className="text-[14px] leading-[1.4] text-white/80 mb-4">
             Part of my collection of notes on AI-assisted development:
           </p>
           <nav className="space-y-2">
@@ -255,13 +255,13 @@ export default function VibeCodingFailures() {
       <div className="">
         <div className="max-w-[800px] mx-auto px-8 py-16">
           <header className="mb-16">
-            <h1 className="text-[48px] lg:text-[64px] font-light leading-[1.1] tracking-[-0.02em] text-white mb-4">
+            <h1 className="text-[48px] lg:text-[64px] leading-[1.1] tracking-[-0.02em] text-white mb-4">
               Vibe Coding Failures
             </h1>
             <p className="text-[16px] leading-[1.4] text-white/50 mb-8 font-mono uppercase tracking-tight">
               Last updated: September 2025
             </p>
-            <p className="text-[20px] leading-[1.6] text-white/80 font-light">
+            <p className="text-[20px] leading-[1.6] text-white/80">
               A collection of documented failures, security issues, and
               unintended consequences that have emerged as AI coding tools have
               become more widely adopted.
@@ -279,7 +279,7 @@ export default function VibeCodingFailures() {
                 id={monthKey.toLowerCase().replace(" ", "-")}
                 className="mb-20 scroll-mt-24"
               >
-                <h2 className="text-[32px] lg:text-[48px] mb-8 font-light leading-[1.1] tracking-[-0.02em] text-white">
+                <h2 className="text-[32px] lg:text-[48px] mb-8 leading-[1.1] tracking-[-0.02em] text-white">
                   {month} {year}
                 </h2>
 
@@ -298,10 +298,10 @@ export default function VibeCodingFailures() {
                           {failure.source}
                         </span>
                       </div>
-                      <h3 className="text-xl font-light text-white mb-3">
+                      <h3 className="text-xl text-white mb-3">
                         {failure.title}
                       </h3>
-                      <p className="text-[18px] leading-[1.6] text-white/80 font-light mb-4">
+                      <p className="text-[18px] leading-[1.6] text-white/80 mb-4">
                         {failure.description}
                       </p>
                       <a

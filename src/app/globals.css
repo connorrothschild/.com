@@ -7,8 +7,8 @@
 }
 
 :root {
-  --background: #000000;
-  --background-invert: #ffffff;
+  --background: #ffffff;
+  --background-invert: #000000;
 
   --vh: 1vh;
 
@@ -23,6 +23,9 @@
 
   /* Smallest grid cells */
   --grid-cell-width: 50vw; /* max(220px, 50vw); */
+
+  /* Inner content width */
+  --inner-content-width: 768px;
 }
 
 :root {

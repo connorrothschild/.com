@@ -4,7 +4,7 @@ export default function VibeCodingPage() {
   return (
     <div className="max-w-[800px] mx-auto px-8 py-16">
       <header className="mb-16">
-        <h1 className="text-[48px] lg:text-[64px] font-light leading-[1.1] tracking-[-0.02em] text-white mb-4">
+        <h1 className="text-[48px] lg:text-[64px] leading-[1.1] tracking-[-0.02em] text-white mb-4">
           Vibe Coding
         </h1>
         <p className="text-[16px] leading-[1.4] text-white/50 mb-8 font-mono uppercase tracking-tight">
@@ -34,7 +34,7 @@ export default function VibeCodingPage() {
             href="/vibe-coding/history"
             className="group block p-8 border border-white/10 rounded-lg hover:border-white/20 transition-colors"
           >
-            <h2 className="text-2xl font-light mb-4 text-white group-hover:text-white/80 transition-colors">
+            <h2 className="text-2xl mb-4 text-white group-hover:text-white/80 transition-colors">
               History
             </h2>
             <p className="text-white/60 leading-relaxed">
@@ -49,7 +49,7 @@ export default function VibeCodingPage() {
             href="/vibe-coding/failures"
             className="group block p-8 border border-white/10 rounded-lg hover:border-white/20 transition-colors"
           >
-            <h2 className="text-2xl font-light mb-4 text-white group-hover:text-white/80 transition-colors">
+            <h2 className="text-2xl mb-4 text-white group-hover:text-white/80 transition-colors">
               Failures
             </h2>
             <p className="text-white/60 leading-relaxed">
