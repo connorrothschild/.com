@@ -37,44 +37,6 @@ export default function Navigation() {
   const rootPathname = getRootPathname(pathname);
   const isHome = rootPathname === "/";
 
-  if (isHome) {
-    return (
-      <motion.div
-        layoutId="navigation"
-        layout="position"
-        className="z-50 relative p-[16px] lg:p-[24px] flex justify-between items-center w-full"
-        transition={{
-          duration: 0.75,
-          ease: easeInOutQuint,
-        }}
-      >
-        <Link
-          href="/"
-          className="text-[16px] leading-none tracking-[-0.02em] text-black"
-        >
-          Connor Rothschild
-        </Link>
-        <div className="flex gap-[24px] lg:gap-[50px]">
-          {navItems.map((item, index) => (
-            <Link
-              key={`nav-${index}`}
-              className={cn(
-                "text-[16px] leading-none tracking-[-0.02em] cursor-pointer text-black",
-                getRootPathname(item.href) === rootPathname
-                  ? "opacity-100"
-                  : "opacity-50 hover:opacity-100 active:opacity-100",
-                "transition-opacity duration-150"
-              )}
-              href={item.href}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </div>
-      </motion.div>
-    );
-  }
-
   return (
     <motion.div
       layoutId="navigation"
@@ -91,7 +53,7 @@ export default function Navigation() {
       >
         Connor Rothschild
       </Link>
-      <div className="flex gap-[24px] lg:gap-[50px]">
+      <div className="flex gap-1">
         {navItems.map((item, index) => (
           <Link
             key={`nav-${index}`}
@@ -105,6 +67,7 @@ export default function Navigation() {
             href={item.href}
           >
             {item.label}
+            {index !== navItems.length - 1 && ", "}
           </Link>
         ))}
       </div>

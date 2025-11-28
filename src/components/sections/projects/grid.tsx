@@ -68,8 +68,9 @@ function ProjectItem({
           {project.title}
         </div>
         <div className="text-[16px] leading-none tracking-[-0.02em] mt-1 opacity-50 pb-1 text-balance">
-          For {project.client || project.title}
-          {project.with && ` with ${project.with}`}
+          {project.client && `For ${project.client}`}
+          {project.client && project.with && ` with ${project.with}`}
+          {!project.client && project.with && `With ${project.with}`}
           {` in ${project.year}`}
         </div>
       </div>
@@ -83,7 +84,7 @@ export default function Grid() {
     .reverse() as Project[];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-12">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-12 w-full max-w-[1400px] mx-auto">
       {featuredProjects.map((project, index) => (
         <ProjectItem key={index} project={project} index={index} />
       ))}

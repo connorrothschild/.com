@@ -172,10 +172,7 @@ const InfiniteFeed: React.FC<InfiniteFeedProps> = ({ initialItems }) => {
   }, [handleScroll, IS_INFINITE]); // Added IS_INFINITE dependency
 
   return (
-    <div
-      ref={scrollContainerRef}
-      className="overflow-y-auto scrollbar-hide"
-    >
+    <div ref={scrollContainerRef} className="overflow-y-auto scrollbar-hide">
       {/* Render Items */}
       {items.map((item) => {
         return <FeedItem key={item.uniqueId} item={item} />;
@@ -189,7 +186,7 @@ const InfiniteFeed: React.FC<InfiniteFeedProps> = ({ initialItems }) => {
               behavior: "smooth",
             });
           }}
-          className="cursor-pointer mt-[25px] lg:mt-[100px] text-black opacity-50 hover:opacity-100 transition-opacity"
+          className="block text-right w-max ml-auto cursor-pointer mt-[25px] lg:mt-[100px] text-black opacity-50 hover:opacity-100 transition-opacity"
         >
           Back to top
         </button>

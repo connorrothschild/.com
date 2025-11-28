@@ -1,5 +1,5 @@
 import React from "react";
-import { projects } from "@/data/projects";
+import { Project, projects } from "@/data/projects";
 import { Metadata } from "next";
 import { generatePageMetadata } from "@/lib/metadata";
 import Link from "next/link";
@@ -8,6 +8,33 @@ export const metadata: Metadata = generatePageMetadata({
   title: "Projects",
   description: "A comprehensive list of all my projects and work.",
 });
+
+function generateSubtitle(project: Project) {
+  const parts: string[] = [];
+
+  if (project.client && project.client !== project.title) {
+    parts.push(`for ${project.client}`);
+  }
+
+  // if (project.with) {
+  //   if (project.client && project.client !== project.title) {
+  //     parts.push(`with ${project.with}`);
+  //   } else {
+  //     parts.push(`With ${project.with}`);
+  //   }
+  // }
+
+  if (parts.length === 0) {
+    return null;
+  }
+
+  return (
+    <span className="text-[16px] leading-none tracking-[-0.02em] opacity-50">
+      {" "}
+      {parts.join(" ")}
+    </span>
+  );
+}
 
 export default function ProjectsPage() {
   return (
@@ -44,21 +71,11 @@ export default function ProjectsPage() {
                         rel="noopener noreferrer"
                         className="text-balance block text-[18px] leading-[1.25] tracking-[-0.02em] hover:opacity-50 transition-opacity"
                       >
-                        {project.title}{" "}
-                        <span className="text-[16px] leading-none tracking-[-0.02em] opacity-50">
-                          for {project.client || project.title}
-                          {project.with && ` with ${project.with}`}
-                          {` in ${project.year}`}
-                        </span>
+                        {project.title} {generateSubtitle(project)}
                       </a>
                     ) : (
-                      <div className="text-[16px] leading-none tracking-[-0.02em]">
-                        {project.title}{" "}
-                        <div className="text-[16px] leading-none tracking-[-0.02em] opacity-50">
-                          for {project.client || project.title}
-                          {project.with && ` with ${project.with}`}
-                          {` in ${project.year}`}
-                        </div>
+                      <div className="text-[18px] leading-[1.25] tracking-[-0.02em]">
+                        {project.title} {generateSubtitle(project)}
                       </div>
                     )}
                   </div>

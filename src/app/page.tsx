@@ -13,15 +13,15 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-white text-black">
       <div className="px-[16px] lg:px-[24px] pt-[200px] pb-[64px] lg:pb-[96px]">
-        <div className="max-w-[460px] space-y-6 text-center mx-auto">
-          <h1 className="text-[20px] leading-[1.25] tracking-[-0.02em]">
-            Hello, I'm Connor!
+        <div className="space-y-6 text-center mx-auto flex flex-col items-center">
+          <h1 className="text-[18px] leading-[1.25] tracking-[-0.02em]">
+            Hello, I'm Connor <span className="rotate-180">👋</span>
           </h1>
-          <p className="text-[20px] leading-[1.25] tracking-[-0.02em] opacity-50">
-            I am the Director of Technology at Asimov Collective, an agency in
-            New York.
+          <p className="max-w-[400px] text-[18px] leading-[1.25] tracking-[-0.02em] opacity-50">
+            I am the Director of Technology at
+            <br /> Asimov Collective, an agency in New York.
           </p>
-          <p className="text-[20px] leading-[1.25] tracking-[-0.02em] opacity-50">
+          <p className="text-[18px] leading-[1.25] tracking-[-0.02em] opacity-50">
             Some websites I have worked on can be found below.
           </p>
         </div>

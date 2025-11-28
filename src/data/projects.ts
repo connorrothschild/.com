@@ -732,10 +732,14 @@ export const projects = [
   },
 ]
   .reverse()
-  .map((p) => ({
-    ...p,
-    featured: p.featured ?? false,
-    blurDataURL: p.image
-      ? blurData[p.image as keyof typeof blurData]
-      : undefined,
-  }));
+  .map((p) => {
+    const { client, ...rest } = p;
+    return {
+      ...rest,
+      featured: p.featured ?? false,
+      blurDataURL: p.image
+        ? blurData[p.image as keyof typeof blurData]
+        : undefined,
+      ...(client && client !== p.title ? { client } : {}),
+    };
+  });

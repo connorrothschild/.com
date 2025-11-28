@@ -26,7 +26,7 @@ export default function AboutPage() {
             className="w-full max-w-[300px] mb-8 rounded-xl border border-black/10"
           />
           {/* Introduction */}
-          <p className="text-[18px] leading-[1.5] tracking-[-0.01em] mb-6  text-black/80">
+          <p className="text-[18px] leading-[1.5] tracking-[-0.01em] mb-6 text-balance text-black/80">
             I'm an engineer based in Texas. I help lead technology at{" "}
             <a
               href="https://asimovcollective.com"
@@ -57,7 +57,7 @@ export default function AboutPage() {
             Personal
           </h2>
 
-          <p className="text-[18px] leading-[1.5] tracking-[-0.01em] mb-6  text-black/80">
+          <p className="text-[18px] leading-[1.5] tracking-[-0.01em] mb-6 text-balance text-black/80">
             I live in Houston, Texas with my wife Chloe. I graduated from Rice
             University in 2021. Outside of work, I enjoy lifting weights.
           </p>
@@ -67,7 +67,7 @@ export default function AboutPage() {
             Contact
           </h2>
 
-          <p className="text-[18px] leading-[1.5] tracking-[-0.01em] mb-6  text-black/80">
+          <p className="text-[18px] leading-[1.5] tracking-[-0.01em] mb-6 text-balance text-black/80">
             Although I'm content in my current role, I'd be happy to mentor
             those starting out, or learn from those with more experience. I'm
             also happy to provide technical advice and guidance free of charge.
@@ -84,7 +84,7 @@ export default function AboutPage() {
             </p>
             <p className="text-[18px] leading-[1.5] tracking-[-0.01em]  text-black/80">
               <a
-                href="https://twitter.com/CL_Rothschild"
+                href="https://x.com/CL_Rothschild"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-black opacity-50 hover:opacity-100 underline underline-offset-4 decoration-[0.5px]  transition-opacity"

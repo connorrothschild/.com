@@ -40,7 +40,7 @@ export default function Article({ article }: { article: PostData }) {
       <h2 className="text-[24px] lg:text-[48px] mb-2 lg:mb-4 leading-none tracking-[-0.04em] not-prose text-wrap-balance text-black">
         {article.title}
       </h2>
-      <p className="text-[20px] leading-none mb-6 lg:mb-8 opacity-50 not-prose text-black">
+      <p className="text-[20px] leading-none mb-6 lg:mb-8 text-black/50 not-prose tracking-[-0.01em]">
         {formattedDate}
       </p>
 
@@ -49,24 +49,24 @@ export default function Article({ article }: { article: PostData }) {
         rehypePlugins={[rehypeRaw]}
         components={{
           h1: ({ children }) => (
-            <h1 className="text-[36px] leading-[1.2] tracking-[-0.04em] text-black mb-4 mt-16 first:mt-0 ">
+            <h1 className="text-[36px] leading-[1.2] tracking-[-0.04em] text-black mb-4 mt-16 first:mt-0 font-normal">
               {children}
             </h1>
           ),
           h2: ({ children }) => (
-            <h2 className="text-[36px] leading-[1.2] tracking-[-0.03em] text-black mb-4 mt-12 first:mt-0 ">
+            <h2 className="text-[36px] leading-[1.2] tracking-[-0.03em] text-black mb-4 mt-12 first:mt-0 font-normal">
               {children}
             </h2>
           ),
           h3: ({ children }) => (
-            <h3 className="text-[20px] leading-[1.2] tracking-[-0.02em] text-black mb-4 mt-10 first:mt-0 ">
+            <h3 className="text-[24px] leading-[1.2] tracking-[-0.02em] text-black mb-4 mt-10 first:mt-0 font-normal">
               {children}
             </h3>
           ),
           p: ({ children, className }) => (
             <p
               className={cn(
-                "text-[18px] leading-[1.5] tracking-[-0.01em] !my-2.5  text-black/80",
+                "text-[18px] leading-[1.5] tracking-[-0.01em] !my-2.5 text-black/70",
                 className
               )}
             >
@@ -77,26 +77,26 @@ export default function Article({ article }: { article: PostData }) {
             <strong className="text-black font-normal">{children}</strong>
           ),
           em: ({ children }) => (
-            <em className="text-black opacity-50 italic">{children}</em>
+            <em className="text-black/50 italic">{children}</em>
           ),
           a: ({ children, href }) => (
             <a
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-black opacity-50 hover:opacity-100 underline underline-offset-4 decoration-[0.5px]  transition-opacity"
+              className="text-black hover:text-black/50 underline underline-offset-4 decoration-[0.5px] transition-colors"
             >
               {children}
             </a>
           ),
           ul: ({ children }) => (
-            <ul className="text-black/80 space-y-2 mb-6">{children}</ul>
+            <ul className="text-black/60 space-y-2 !my-0">{children}</ul>
           ),
           ol: ({ children }) => (
-            <ol className="text-black/80 space-y-2 mb-6">{children}</ol>
+            <ol className="text-black/60 space-y-2 !my-0">{children}</ol>
           ),
           li: ({ children }) => (
-            <li className="relative text-[20px] leading-[1.5] tracking-[-0.003em] ">
+            <li className="text-black/60 relative text-[18px] leading-[1.5] tracking-[-0.01em] text-balance">
               {children}
             </li>
           ),
