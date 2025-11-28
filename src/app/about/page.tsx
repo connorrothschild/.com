@@ -102,12 +102,12 @@ export default function AboutPage() {
               </p>
               <p className="text-neutral-400 font-light text-[20px] leading-[1.5] tracking-[-0.003em] max-sm:text-[18px]">
                 <a
-                  href="https://twitter.com/connorrothschild"
+                  href="https://x.com/CL_Rothschild"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-neutral-200 underline-offset-4 decoration-neutral-200 decoration-[0.5px] font-light hover:text-white transition-colors"
                 >
-                  @connorrothschild
+                  @CL_Rothschild
                 </a>
               </p>
             </div>
