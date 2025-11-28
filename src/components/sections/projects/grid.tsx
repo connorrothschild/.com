@@ -35,20 +35,20 @@ function ProjectItem({
 }) {
   return (
     <motion.a
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-        transition: {
-          duration: 0.6,
-          delay: 0.2 + index * 0.1,
-          ease: easeInOutQuint,
-        },
-      }}
-      exit={{
-        opacity: 0,
-      }}
+      // initial={{
+      //   opacity: 0,
+      // }}
+      // animate={{
+      //   opacity: 1,
+      //   transition: {
+      //     duration: 0.6,
+      //     delay: 0.2 + index * 0.1,
+      //     ease: easeInOutQuint,
+      //   },
+      // }}
+      // exit={{
+      //   opacity: 0,
+      // }}
       href={project.url}
       target="_blank"
       rel="noopener noreferrer"
@@ -84,7 +84,7 @@ export default function Grid() {
     .reverse() as Project[];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-12 w-full max-w-[1400px] mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-12 w-full max-w-[1460px] mx-auto">
       {featuredProjects.map((project, index) => (
         <ProjectItem key={index} project={project} index={index} />
       ))}

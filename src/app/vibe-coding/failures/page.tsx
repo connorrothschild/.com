@@ -261,7 +261,7 @@ export default function VibeCodingFailures() {
             <p className="text-[16px] leading-[1.4] text-white/50 mb-8 font-mono uppercase tracking-tight">
               Last updated: September 2025
             </p>
-            <p className="text-[20px] leading-[1.6] text-white/80">
+            <p className="text-[18px] leading-[1.6] text-white/80">
               A collection of documented failures, security issues, and
               unintended consequences that have emerged as AI coding tools have
               become more widely adopted.

@@ -17,11 +17,11 @@ export default function HomePage() {
           <h1 className="text-[18px] leading-[1.25] tracking-[-0.02em]">
             Hello, I'm Connor <span className="rotate-180">👋</span>
           </h1>
-          <p className="max-w-[400px] text-[18px] leading-[1.25] tracking-[-0.02em] opacity-50">
+          <p className="max-w-[400px] text-[18px] leading-[1.25] tracking-[-0.02em] text-black/50">
             I am the Director of Technology at
             <br /> Asimov Collective, an agency in New York.
           </p>
-          <p className="text-[18px] leading-[1.25] tracking-[-0.02em] opacity-50">
+          <p className="text-[18px] leading-[1.25] tracking-[-0.02em] text-black/50">
             Some websites I have worked on can be found below.
           </p>
         </div>

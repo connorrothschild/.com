@@ -60,7 +60,7 @@ export default function FeedItem({ item }: FeedItemProps) {
           <div className="flex flex-col lg:flex-row gap-2 justify-between w-full lg:items-center flex-shrink-0 border-b border-black/10 pb-4">
             {/* Title and optional link */}
 
-            <h3 className="max-lg:flex max-lg:items-center max-lg:justify-between max-lg:w-full text-[20px] tracking-[-0.02em] leading-[1.25] text-wrap-balance text-black">
+            <h3 className="max-lg:flex max-lg:items-center max-lg:justify-between max-lg:w-full text-[18px] tracking-[-0.02em] leading-[1.25] text-balance text-black">
               {item.title}
               {item.link && (
                 <a
@@ -152,7 +152,7 @@ export default function FeedItem({ item }: FeedItemProps) {
                   prose-a:
                   prose-a:transition-opacity
                   
-                  text-wrap-pretty"
+                  text-pretty"
               >
                 <ReactMarkdown>{item.content}</ReactMarkdown>
               </div>

@@ -275,7 +275,7 @@ export const projects = [
     client: "ISP Myanmar",
   },
   {
-    title: "Inside the BJP's WhatsApp machine",
+    title: "Inside the BJP's WhatsApp Machine",
     year: 2024,
     url: "https://restofworld.org/2024/bjp-whatsapp-modi/",
     type: "Chart",

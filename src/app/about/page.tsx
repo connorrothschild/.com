@@ -13,7 +13,7 @@ export const metadata: Metadata = generatePageMetadata({
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white text-black">
-      <div className="px-[16px] lg:px-[24px] pt-[48px] lg:pt-[64px] pb-[64px] lg:pb-[96px]">
+      <div className="px-[16px] lg:px-[24px] pt-[200px] pb-[64px] lg:pb-[96px]">
         <div
           className="mx-auto"
           style={{ maxWidth: "var(--inner-content-width)" }}

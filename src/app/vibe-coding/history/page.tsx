@@ -485,10 +485,10 @@ const EraSection = ({
       <h2 className="text-[32px] lg:text-[48px] mb-4 leading-[1.1] tracking-[-0.02em] text-white">
         {title}
       </h2>
-      <p className="text-[20px] lg:text-[24px] leading-[1.4] text-white mb-6">
+      <p className="text-[18px] lg:text-[24px] leading-[1.4] text-white mb-6">
         {subtitle}
       </p>
-      <p className="text-[20px] leading-[1.6] text-white/80 max-w-3xl">
+      <p className="text-[18px] leading-[1.6] text-white/80 max-w-3xl">
         {description}
       </p>
     </div>
@@ -725,7 +725,7 @@ export default function VibeCodingHistory() {
           {/* Introduction */}
           <section id="introduction" className="mb-20 scroll-mt-24">
             <div className="mb-12">
-              <h1 className="text-[36px] lg:text-[64px] mb-6 leading-[1.1] tracking-[-0.02em] text-wrap-balance">
+              <h1 className="text-[36px] lg:text-[64px] mb-6 leading-[1.1] tracking-[-0.02em] text-balance">
                 A History of Vibe Coding, So Far
               </h1>
               <p className="text-[16px] leading-[1.4] text-white/50 mb-8 font-mono uppercase tracking-tight">
@@ -734,19 +734,19 @@ export default function VibeCodingHistory() {
             </div>
 
             <div className="space-y-6">
-              {/* <p className="text-[20px] leading-[1.6] text-white/80">
+              {/* <p className="text-[18px] leading-[1.6] text-white/80">
                 In just four years, the way we write code has undergone a
                 fundamental transformation. What began as an experimental tool
                 for code completion has evolved into a cultural phenomenon
                 that's reshaping software development itself.
               </p> */}
-              <p className="text-[20px] leading-[1.6] text-white/80">
+              <p className="text-[18px] leading-[1.6] text-white/80">
                 "Vibe coding" — the term coined by Andrej Karpathy in February
                 2025 — describes a new approach to programming where developers
                 work in close collaboration with AI, iterating through code with
                 an intuitive, almost conversational flow.
               </p>
-              <p className="text-[20px] leading-[1.6] text-white/80">
+              <p className="text-[18px] leading-[1.6] text-white/80">
                 But vibe coding has changed tremendously in the past few years.
                 It's capabilities have grown as new models have released, it's
                 meaning has evolved, and it's applications have expanded. This
@@ -1108,7 +1108,7 @@ export default function VibeCodingHistory() {
           <section id="conclusion" className="mb-20 scroll-mt-24">
             <div className="border-t border-white/20 pt-12">
               <div className="space-y-6">
-                <p className="text-[20px] leading-[1.6] text-white/80">
+                <p className="text-[18px] leading-[1.6] text-white/80">
                   Thanks for reading! If I missed anything, please{" "}
                   <a
                     href="mailto:connor@connorrothschild.com"
@@ -1118,7 +1118,7 @@ export default function VibeCodingHistory() {
                   </a>
                   .
                 </p>
-                <p className="mt-12 text-[20px] leading-[1.6] text-white/80">
+                <p className="mt-12 text-[18px] leading-[1.6] text-white/80">
                   Some notes:
                 </p>
                 <ul className="list-disc list-inside">

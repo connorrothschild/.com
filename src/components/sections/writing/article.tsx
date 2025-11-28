@@ -27,23 +27,8 @@ const mdxComponents = {
 // Update the prop type to use PostData['content']
 // Make the component async
 export default function Article({ article }: { article: PostData }) {
-  // Format the date using built-in Date object
-  const formattedDate = new Date(article.date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    timeZone: "UTC", // Ensure consistency regardless of server/client timezone
-  });
-
   return (
     <div className="flex flex-col w-full font-sans prose">
-      <h2 className="text-[24px] lg:text-[48px] mb-2 lg:mb-4 leading-none tracking-[-0.04em] not-prose text-wrap-balance text-black">
-        {article.title}
-      </h2>
-      <p className="text-[20px] leading-none mb-6 lg:mb-8 text-black/50 not-prose tracking-[-0.01em]">
-        {formattedDate}
-      </p>
-
       {/* <MDXRemote source={article.content} components={mdxComponents} /> */}
       <ReactMarkdown
         rehypePlugins={[rehypeRaw]}
@@ -101,7 +86,7 @@ export default function Article({ article }: { article: PostData }) {
             </li>
           ),
           blockquote: ({ children }) => (
-            <blockquote className="border-l-4 border-black/10 pl-6 py-4 my-6">
+            <blockquote className="border-l-4 border-black/10 pl-6 py-0 my-6">
               {children}
             </blockquote>
           ),

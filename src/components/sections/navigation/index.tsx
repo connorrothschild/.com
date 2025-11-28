@@ -39,19 +39,20 @@ export default function Navigation() {
 
   return (
     <motion.div
-      layoutId="navigation"
-      layout="position"
-      className="z-50 relative p-[16px] lg:p-[24px] flex justify-between items-center w-full"
-      transition={{
-        duration: 0.75,
-        ease: easeInOutQuint,
-      }}
+      // layoutId="navigation"
+      // layout="position"
+      className="bg-white z-50 fixed top-0 left-0 p-[16px] lg:p-[24px] flex justify-between items-center w-full"
+      // transition={{
+      //   duration: 0.75,
+      //   ease: easeInOutQuint,
+      // }}
     >
       <Link
         href="/"
         className="text-[16px] leading-none tracking-[-0.02em] text-black"
       >
-        Connor Rothschild
+        <span className="hidden sm:block">Connor Rothschild</span>
+        <span className="block sm:hidden">CR</span>
       </Link>
       <div className="flex gap-1">
         {navItems.map((item, index) => (

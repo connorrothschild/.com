@@ -78,15 +78,6 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-.text-wrap-pretty {
-  text-wrap: balance;
-  text-wrap: pretty;
-}
-
-.text-wrap-balance {
-  text-wrap: balance;
-}
-
 img {
   user-select: none;
   -webkit-user-drag: none;
