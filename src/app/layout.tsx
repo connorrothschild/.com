@@ -8,6 +8,7 @@ import { RealViewport } from "@/components/helpers/real-viewport";
 import { generateDefaultJsonLd } from "@/lib/metadata";
 import { Chivo_Mono } from "next/font/google";
 import Navigation from "@/components/sections/navigation";
+import { ThemeProvider } from "@/components/helpers/theme-provider";
 
 const times = localFont({
   src: [
@@ -107,8 +108,11 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#ffffff",
-  colorScheme: "light",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+  ],
+  colorScheme: "light dark",
 
   width: "device-width",
   initialScale: 1,
@@ -122,38 +126,54 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
-        <main
-          className={`${gtAmerica.variable} ${times.variable} ${chivoMono.variable} bg-bg font-sans`}
-        >
-          <Navigation />
-          {children}
-        </main>
-        <Analytics />
-        <SpeedInsights />
-        <RealViewport />
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              let previousSelectionLength = 0;
-              
-              document.addEventListener('selectionchange', function() {
-                const selection = window.getSelection();
-                const currentSelectionLength = selection ? selection.toString().length : 0;
-                
-                // Only change color if we're starting a new selection (going from 0 to some text)
-                // Keep the same color if we're extending an existing selection
-                if (currentSelectionLength > 0 && previousSelectionLength === 0) {
-                  const randomHue = Math.floor(Math.random() * 360);
-                  document.documentElement.style.setProperty('--selection-hue', randomHue);
+              (function() {
+                const theme = localStorage.getItem('theme') || 
+                  (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                if (theme === 'dark') {
+                  document.documentElement.classList.add('dark');
                 }
-                
-                previousSelectionLength = currentSelectionLength;
-              });
+              })();
             `,
           }}
         />
+        <ThemeProvider>
+          <main
+            className={`${gtAmerica.variable} ${times.variable} ${chivoMono.variable} font-sans`}
+            style={{ backgroundColor: "var(--background)" }}
+          >
+            <Navigation />
+            {children}
+          </main>
+          <Analytics />
+          <SpeedInsights />
+          <RealViewport />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                let previousSelectionLength = 0;
+                
+                document.addEventListener('selectionchange', function() {
+                  const selection = window.getSelection();
+                  const currentSelectionLength = selection ? selection.toString().length : 0;
+                  
+                  // Only change color if we're starting a new selection (going from 0 to some text)
+                  // Keep the same color if we're extending an existing selection
+                  if (currentSelectionLength > 0 && previousSelectionLength === 0) {
+                    const randomHue = Math.floor(Math.random() * 360);
+                    document.documentElement.style.setProperty('--selection-hue', randomHue);
+                  }
+                  
+                  previousSelectionLength = currentSelectionLength;
+                });
+              `,
+            }}
+          />
+        </ThemeProvider>
       </body>
     </html>
   );

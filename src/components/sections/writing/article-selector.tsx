@@ -93,7 +93,7 @@ export default function ArticleSelector({
 
       {/* Add a divider if both groups have articles */}
       {techArticles.length > 0 && personalArticles.length > 0 && (
-        <div className="w-full h-px bg-black/10 my-2" />
+        <div className="w-full h-px bg-text/10 dark:bg-text/20 my-2" />
       )}
 
       {/* Render Tech Articles */}

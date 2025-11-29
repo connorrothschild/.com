@@ -19,8 +19,14 @@ export default async function WritingLayout({
     }));
 
   return (
-    <div className="min-h-screen bg-white text-black">
-      <div className="px-[16px] lg:px-[24px] pt-[200px] pb-[64px] lg:pb-[96px]">
+    <div
+      className="min-h-screen text-text"
+      style={{
+        backgroundColor: "var(--background)",
+        color: "var(--background-invert)",
+      }}
+    >
+      <div className="px-[16px] lg:px-[24px] pt-[200px] pb-[64px] lg:pb-[120px]">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-8 lg:gap-16">
           {/* Left Sidebar */}
           <div className="max-lg:mb-12 lg:sticky lg:top-[96px] lg:self-start w-full max-w-[var(--inner-content-width)] mx-auto">

@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import PrimaryTitle from "@/components/typography/primary";
 import { easeInOutQuint } from "@/config/eases";
 import { ArrowRightIcon } from "lucide-react";
+import { ThemeToggle } from "@/components/helpers/theme-toggle";
 
 const navItems = [
   {
@@ -41,7 +42,11 @@ export default function Navigation() {
     <motion.div
       // layoutId="navigation"
       // layout="position"
-      className="bg-white z-50 fixed top-0 left-1/2 -translate-x-1/2 p-[16px] lg:p-[24px] flex justify-between items-center w-full max-w-[calc(var(--outer-content-width)_+_48px)] mx-auto"
+      className="z-50 fixed top-0 left-1/2 -translate-x-1/2 p-[16px] lg:p-[24px] flex justify-between items-center w-full max-w-[calc(var(--outer-content-width)_+_48px)] mx-auto"
+      style={{
+        backgroundColor: "var(--background)",
+        color: "var(--background-invert)",
+      }}
       // transition={{
       //   duration: 0.75,
       //   ease: easeInOutQuint,
@@ -49,17 +54,22 @@ export default function Navigation() {
     >
       <Link
         href="/"
-        className="text-[16px] leading-none tracking-[-0.02em] text-black"
+        className="flex-1 text-left text-[16px] leading-none tracking-[-0.02em] text-text"
       >
         <span className="hidden sm:block">Connor Rothschild</span>
         <span className="block sm:hidden">CR</span>
       </Link>
-      <div className="flex gap-1">
+
+      <div className="flex-1 flex justify-center items-center">
+        <ThemeToggle />
+      </div>
+
+      <div className="flex-1 text-right justify-end flex gap-1 items-center">
         {navItems.map((item, index) => (
           <Link
             key={`nav-${index}`}
             className={cn(
-              "text-[16px] leading-none tracking-[-0.02em] cursor-pointer text-black",
+              "text-[16px] leading-none tracking-[-0.02em] cursor-pointer text-text",
               getRootPathname(item.href) === rootPathname
                 ? "opacity-100"
                 : "opacity-50 hover:opacity-100 active:opacity-100",

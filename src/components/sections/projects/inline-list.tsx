@@ -37,7 +37,7 @@ export default function InlineProjectsList({
 
   return (
     <div
-      className="text-[18px] leading-[1.5] tracking-[-0.02em] text-justify"
+      className="dark:text-text/90 text-[18px] leading-[1.5] tracking-[-0.02em] text-justify"
       onMouseLeave={() => setHoveredIndex(null)}
     >
       {projects

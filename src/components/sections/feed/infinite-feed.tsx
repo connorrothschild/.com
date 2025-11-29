@@ -186,7 +186,7 @@ const InfiniteFeed: React.FC<InfiniteFeedProps> = ({ initialItems }) => {
               behavior: "smooth",
             });
           }}
-          className="block text-right w-max ml-auto cursor-pointer mt-[25px] lg:mt-[100px] text-black opacity-50 hover:opacity-100 transition-opacity"
+          className="block text-right w-max ml-auto cursor-pointer mt-[25px] lg:mt-[100px] text-text/50 hover:text-text transition-colors"
         >
           Back to top
         </button>
