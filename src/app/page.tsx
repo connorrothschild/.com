@@ -11,13 +11,7 @@ export const metadata: Metadata = generatePageMetadata({
 
 export default function HomePage() {
   return (
-    <div
-      className="min-h-screen text-text"
-      style={{
-        backgroundColor: "var(--background)",
-        color: "var(--background-invert)",
-      }}
-    >
+    <div className="min-h-screen">
       <div className="px-[16px] lg:px-[24px] pt-[200px] pb-[64px] lg:pb-[120px]">
         <div className="space-y-6 text-left flex flex-col items-start max-w-[var(--outer-content-width)] mx-auto">
           <h1 className="text-[24px] leading-[1.25] tracking-[-0.02em]">

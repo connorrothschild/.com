@@ -31,11 +31,11 @@ const ArticleLinkItem: React.FC<ArticleLinkItemProps> = ({
       rel={article.isExternal ? "noopener noreferrer" : undefined}
       data-article-id={article.id}
       className={cn(
-        "text-[16px] leading-[1.1] tracking-[-0.02em] cursor-pointer transition-opacity duration-150 ease-in-out", // Base styles + added transition
+        "text-[16px] leading-[1.1] tracking-[-0.02em] cursor-pointer transition-colors ease-in-out", // Base styles + added transition
         // Apply conditional styling
         article.id === currentSlug
-          ? "opacity-100" // Active style
-          : "opacity-50 hover:opacity-100 active:opacity-100" // Inactive style
+          ? "text-text" // Active style
+          : "text-text/50 hover:text-text active:text-text" // Inactive style
       )}
     >
       {article.title}

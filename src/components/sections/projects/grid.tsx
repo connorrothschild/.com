@@ -67,7 +67,7 @@ function ProjectItem({
         <div className="text-[16px] leading-none tracking-[-0.02em]">
           {project.title}
         </div>
-        <div className="text-[16px] leading-none tracking-[-0.02em] mt-1 opacity-50 pb-1 text-balance">
+        <div className="text-[16px] leading-none tracking-[-0.02em] mt-1 text-text/50 pb-1 text-balance">
           {project.client && `For ${project.client}`}
           {project.client && project.with && ` with ${project.with}`}
           {!project.client && project.with && `With ${project.with}`}

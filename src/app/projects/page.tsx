@@ -12,13 +12,7 @@ export const metadata: Metadata = generatePageMetadata({
 
 export default function ProjectsPage() {
   return (
-    <div
-      className="min-h-screen text-text"
-      style={{
-        backgroundColor: "var(--background)",
-        color: "var(--background-invert)",
-      }}
-    >
+    <div className="min-h-screen">
       <div className="px-[16px] lg:px-[24px] pt-[200px] pb-[64px] lg:pb-[120px]">
         <div className="w-full max-w-[var(--inner-content-width)] mx-auto">
           <h1 className="text-[18px] leading-normal tracking-[-0.02em] mb-1">

@@ -34,10 +34,12 @@
   /* Inner content width */
   --inner-content-width: 768px;
   --outer-content-width: 1460px;
+
+  --theme-transition-duration: 600ms;
 }
 
 .dark {
-  --background: #000000;
+  --background: #1f1f1f;
   --background-invert: #ffffff;
   --text: #ffffff;
   --border: #ffffff;

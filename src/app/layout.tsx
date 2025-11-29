@@ -144,7 +144,11 @@ export default function RootLayout({
         <ThemeProvider>
           <main
             className={`${gtAmerica.variable} ${times.variable} ${chivoMono.variable} font-sans`}
-            style={{ backgroundColor: "var(--background)" }}
+            style={{
+              backgroundColor: "var(--background)",
+              transition:
+                "background-color var(--theme-transition-duration) ease",
+            }}
           >
             <Navigation />
             {children}

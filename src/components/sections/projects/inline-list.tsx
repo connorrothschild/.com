@@ -19,7 +19,7 @@ function generateSubtitle(project: Project) {
   }
 
   return (
-    <span className="text-[16px] leading-none tracking-[-0.01em] opacity-50">
+    <span className="text-[16px] leading-none tracking-[-0.01em] text-text/50">
       {" "}
       {parts.join(" ")}
     </span>

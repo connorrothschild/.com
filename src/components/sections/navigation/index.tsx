@@ -46,6 +46,7 @@ export default function Navigation() {
       style={{
         backgroundColor: "var(--background)",
         color: "var(--background-invert)",
+        transition: "background-color var(--theme-transition-duration) ease",
       }}
       // transition={{
       //   duration: 0.75,
@@ -71,9 +72,9 @@ export default function Navigation() {
             className={cn(
               "text-[16px] leading-none tracking-[-0.02em] cursor-pointer text-text",
               getRootPathname(item.href) === rootPathname
-                ? "opacity-100"
-                : "opacity-50 hover:opacity-100 active:opacity-100",
-              "transition-opacity duration-150"
+                ? "text-text"
+                : "text-text/50 hover:text-text active:text-text",
+              "transition-colors"
             )}
             href={item.href}
           >

@@ -80,7 +80,7 @@ export default function FeedItem({ item }: FeedItemProps) {
             </h3>
 
             {/* Type and Date */}
-            <p className="text-[14px] text-text opacity-50 leading-none shrink-0 lg:text-right ">
+            <p className="text-[14px] text-text/50 leading-none shrink-0 lg:text-right">
               {item.type} from{" "}
               {new Date(item.date).toLocaleDateString("en-US", {
                 month: "short",
@@ -142,12 +142,12 @@ export default function FeedItem({ item }: FeedItemProps) {
                   "prose-strong:font-normal",
                   "prose-strong:text-text",
                   "prose-a:text-text",
-                  "prose-a:opacity-50",
+                  "prose-a:text-text/50",
                   "prose-a:hover:opacity-100",
                   "prose-a:underline-offset-4",
                   "prose-a:decoration-black",
                   "prose-a:decoration-[0.5px]",
-                  "prose-a:transition-opacity",
+                  "prose-a:transition-colors",
                   "text-pretty"
                 )}
               >
