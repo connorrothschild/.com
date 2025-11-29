@@ -1,19 +1,6 @@
 import React from "react";
-import Navigation from "@/components/sections/navigation";
-import BottomBox from "@/components/sections/bottom-box"; // Adjusted path
-import RightSide from "@/components/sections/right-side"; // Adjusted path
-import ArticleSelector from "@/components/sections/writing/article-selector"; // Adjusted path
+import ArticleSidebar from "@/components/sections/writing/article-sidebar";
 import { getAllPosts, PostData } from "@/lib/posts";
-
-// const additionalArticleLinks = [
-//   {
-//     id: "vibe-coding",
-//     title: "A History of Vibe Coding",
-//     slug: "/vibe-coding/history",
-//     category: "technical" as const,
-//     isExternal: true,
-//   },
-// ];
 
 export default async function WritingLayout({
   children,
@@ -32,23 +19,26 @@ export default async function WritingLayout({
     }));
 
   return (
-    <div className="default-grid scrollbar-hide max-lg:flex max-lg:flex-col">
-      <Navigation />
-
-      <BottomBox>
-        {/* We need to pass the current slug here for active state, will handle next */}
-        <ArticleSelector
-          articles={[
-            ...articleLinks,
-            // ...additionalArticleLinks
-          ]}
-        />
-      </BottomBox>
-
-      <RightSide>
-        {/* Render the specific page content */}
-        {children}
-      </RightSide>
+    <div className="min-h-screen">
+      <div className="px-[16px] lg:px-[24px] pt-[200px] pb-[64px] lg:pb-[120px]">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-8 lg:gap-16">
+          {/* Left Sidebar */}
+          <div className="max-lg:mb-12 lg:sticky lg:top-[96px] lg:self-start w-full max-w-[var(--inner-content-width)] mx-auto">
+            <ArticleSidebar
+              articles={[
+                ...articleLinks,
+                // ...additionalArticleLinks
+              ]}
+            />
+          </div>
+          {/* Right Content */}
+          <div className="w-full">
+            <div className="w-full max-w-[var(--inner-content-width)] mx-auto">
+              {children}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

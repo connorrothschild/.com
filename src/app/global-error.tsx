@@ -14,7 +14,7 @@ export default function NotFound() {
 
       <div className="mt-12">
         <Link
-          className="flex w-max items-center gap-2 rounded-sm bg-white px-4 py-3 text-black"
+          className="flex w-max items-center gap-2 rounded-sm bg-background px-4 py-3 text-text"
           href="/"
         >
           <ArrowLeft className="h-4 w-4" />

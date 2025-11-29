@@ -9,6 +9,8 @@ import ReactMarkdown from "react-markdown";
 import { APPLY_FISHEYE } from "./constants";
 import { FeedItemInternal } from "./infinite-feed";
 import { ArrowUpRightIcon } from "lucide-react";
+import { useTheme } from "@/components/helpers/theme-provider";
+import { cn } from "@/lib/utils";
 
 // Remove isCentered from props
 interface FeedItemProps {
@@ -16,6 +18,7 @@ interface FeedItemProps {
 }
 
 export default function FeedItem({ item }: FeedItemProps) {
+  const { theme } = useTheme();
   const isInteractionWithVideo = item.type === "Interaction" && item.videoSrc;
 
   // Ref for the element to track visibility
@@ -48,29 +51,26 @@ export default function FeedItem({ item }: FeedItemProps) {
   }, [isInView, isInteractionWithVideo, item.videoSrc]);
 
   return (
-    <div className="w-full flex justify-center">
+    <div className="w-full">
       <div
         ref={viewRef}
-        className={`max-w-[600px] w-[90%] md:w-[80%] flex items-center justify-center select-none flex-shrink-0 mb-[100px] lg:mb-[75px] lg:mt-[75px]`}
+        className={`w-full flex items-center justify-center select-none flex-shrink-0 mb-[64px] lg:mb-[48px]`}
       >
         <motion.div
-          className={`w-full bg-neutral-900 border border-neutral-800 text-white text-xl flex flex-col gap-4 p-4 overflow-hidden`}
-          // animate={{
-          //   filter: isInView ? "blur(0px)" : "blur(2px)",
-          // }}
+          className={`w-full bg-background rounded border border-text/10 dark:border-text/20 text-text text-xl flex flex-col gap-4 p-4 overflow-hidden`}
           transition={{ duration: 0.3, ease: "easeInOut" }}
         >
-          <div className="flex flex-col lg:flex-row gap-2 justify-between w-full lg:items-center flex-shrink-0 border-b border-neutral-700 pb-4">
+          <div className="flex flex-col lg:flex-row gap-2 justify-between w-full lg:items-center flex-shrink-0 border-b border-text/10 dark:border-text/20 pb-4">
             {/* Title and optional link */}
 
-            <h3 className="max-lg:flex max-lg:items-center max-lg:justify-between max-lg:w-full text-[20px] leading-[1.25] font-medium text-wrap-balance">
+            <h3 className="max-lg:flex max-lg:items-center max-lg:justify-between max-lg:w-full text-[18px] tracking-[-0.02em] leading-[1.25] text-balance text-text">
               {item.title}
               {item.link && (
                 <a
                   href={item.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block lg:inline-block align-middle ml-2 lg:mb-px text-neutral-400 hover:text-neutral-200 active:text-neutral-200 transition-colors duration-150"
+                  className="block lg:inline-block align-middle ml-2 lg:mb-0.5 text-text/60 hover:text-text transition-colors"
                   aria-label={`Link for ${item.title}`}
                 >
                   {/* Simple arrow icon */}
@@ -80,7 +80,7 @@ export default function FeedItem({ item }: FeedItemProps) {
             </h3>
 
             {/* Type and Date */}
-            <p className="text-[14px] text-neutral-400 leading-none shrink-0 lg:text-right">
+            <p className="text-[14px] text-text/50 leading-none shrink-0 lg:text-right">
               {item.type} from{" "}
               {new Date(item.date).toLocaleDateString("en-US", {
                 month: "short",
@@ -122,38 +122,34 @@ export default function FeedItem({ item }: FeedItemProps) {
               </div>
             ) : (
               <div
-                className="text-white flex flex-col w-full font-sans 
-                  prose
-                  prose-p:my-2
-                  prose-ol:my-1
-                  prose-ul:my-1
-
-                  prose-p:first:mt-0
-                  prose-p:last:mb-0
-                  prose-invert 
-                  
-                  prose-p:text-neutral-400
-                  prose-p:font-light
-                  prose-p:text-[18px]
-                  prose-p:leading-[1.5]
-                  prose-p:tracking-[-0.003em]
-                  
-                  prose-li:text-neutral-400
-                  prose-li:font-light
-                  prose-li:text-[18px]
-                  prose-li:leading-[1.5]
-                  prose-li:tracking-[-0.003em]
-
-                  prose-strong:font-normal
-                  prose-strong:text-neutral-200
-                  
-                  prose-a:text-neutral-200
-                  prose-a:underline-offset-4
-                  prose-a:decoration-neutral-200
-                  prose-a:decoration-[0.5px]
-                  prose-a:font-light
-                  
-                  text-wrap-pretty"
+                className={cn(
+                  "text-text flex flex-col w-full font-sans",
+                  "prose",
+                  theme === "dark" && "prose-invert",
+                  "prose-p:my-2",
+                  "prose-ol:my-1",
+                  "prose-ul:my-1",
+                  "prose-p:first:mt-0",
+                  "prose-p:last:mb-0",
+                  "prose-p:text-text/80",
+                  "prose-p:text-[18px]",
+                  "prose-p:leading-[1.5]",
+                  "prose-p:tracking-[-0.01em]",
+                  "prose-li:text-text/80",
+                  "prose-li:text-[18px]",
+                  "prose-li:leading-[1.5]",
+                  "prose-li:tracking-[-0.01em]",
+                  "prose-strong:font-normal",
+                  "prose-strong:text-text",
+                  "prose-a:text-text",
+                  "prose-a:text-text/50",
+                  "prose-a:hover:opacity-100",
+                  "prose-a:underline-offset-4",
+                  "prose-a:decoration-black",
+                  "prose-a:decoration-[0.5px]",
+                  "prose-a:transition-colors",
+                  "text-pretty"
+                )}
               >
                 <ReactMarkdown>{item.content}</ReactMarkdown>
               </div>

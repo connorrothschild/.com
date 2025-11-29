@@ -13,19 +13,23 @@ export interface Project {
   archived?: boolean;
   audience?: string;
   blurDataURL?: string; // Add blurDataURL to the interface
+  with?: string;
+  client?: string;
 }
 
 export const projects = [
-  {
-    title: "Etched",
-    year: 2025,
-    url: "https://www.etched.com",
-    type: "Web",
-    filterCategory: "web",
-    featured: false,
-    image: "etched",
-    titleWidth: 80,
-  },
+  // {
+  //   title: "Etched",
+  //   year: 2025,
+  //   url: "https://www.etched.com",
+  //   type: "Web",
+  //   filterCategory: "web",
+  //   featured: false,
+  //   image: "etched",
+  //   with: "Asimov Collective",
+  //   titleWidth: 80,
+  //   client: "Etched",
+  // },
   {
     title: "Rainmaker Merch Store",
     year: 2025,
@@ -35,6 +39,8 @@ export const projects = [
     featured: false,
     image: "rainmaker-merch",
     titleWidth: 80,
+    with: "Asimov Collective",
+    client: "Rainmaker",
   },
   {
     title: "Extropic",
@@ -45,6 +51,8 @@ export const projects = [
     featured: true,
     image: "extropic",
     titleWidth: 80,
+    with: "Asimov Collective",
+    client: "Extropic",
   },
   {
     title: "Picogrid",
@@ -55,6 +63,8 @@ export const projects = [
     featured: true,
     image: "picogrid",
     titleWidth: 80,
+    with: "Asimov Collective",
+    client: "Picogrid",
   },
   // {
   //   title: "Hadrian",
@@ -75,6 +85,8 @@ export const projects = [
     featured: false,
     // image: "innate",
     // titleWidth: 100,
+    with: "Asimov Collective",
+    client: "Spectral Labs",
   },
   {
     title: "Innate Robotics",
@@ -85,6 +97,8 @@ export const projects = [
     featured: false,
     // image: "innate",
     // titleWidth: 100,
+    with: "Asimov Collective",
+    client: "Innate Robotics",
   },
   {
     title: "New Industrial Corporation",
@@ -95,6 +109,8 @@ export const projects = [
     featured: true,
     image: "new-industrial",
     titleWidth: 200,
+    with: "Asimov Collective",
+    client: "New Industrial Corporation",
   },
   {
     title: "Testudo",
@@ -105,6 +121,8 @@ export const projects = [
     featured: true,
     image: "testudo",
     titleWidth: 80,
+    with: "Asimov Collective",
+    client: "Testudo",
   },
   {
     title: "Venice AI",
@@ -115,6 +133,8 @@ export const projects = [
     featured: true,
     image: "venice",
     titleWidth: 80,
+    with: "Asimov Collective",
+    client: "Venice AI",
   },
   {
     title: "Integral",
@@ -125,6 +145,8 @@ export const projects = [
     featured: true,
     image: "integral",
     titleWidth: 80,
+    with: "Asimov Collective",
+    client: "Integral",
   },
   {
     title: "Terrain",
@@ -135,6 +157,8 @@ export const projects = [
     featured: true,
     image: "terrain",
     titleWidth: 73,
+    with: "Asimov Collective",
+    client: "Terrain",
   },
   {
     title: "Durin",
@@ -142,9 +166,11 @@ export const projects = [
     url: "https://www.durin.com/",
     type: "Web",
     filterCategory: "web",
-    featured: true,
+    featured: false,
     image: "durin",
     titleWidth: 80,
+    with: "Asimov Collective",
+    client: "Durin",
   },
   {
     title: "Valar Atomics",
@@ -155,6 +181,8 @@ export const projects = [
     featured: true,
     image: "valar",
     titleWidth: 120,
+    with: "Asimov Collective",
+    client: "Valar Atomics",
   },
   {
     title: "Eternal",
@@ -165,17 +193,19 @@ export const projects = [
     featured: true,
     image: "eternal",
     titleWidth: 80,
+    with: "Asimov Collective",
+    client: "Eternal",
   },
-  // {
-  //   title: "Dirac",
-  //   year: 2024,
-  //   url: "https://www.diracinc.com",
-  //   type: "Web",
-  //   filterCategory: "web",
-  //   featured: true,
-  //   image: "dirac",
-  //   titleWidth: 60,
-  // },
+  {
+    title: "Dirac",
+    year: 2024,
+    url: "https://www.diracinc.com",
+    type: "Web",
+    filterCategory: "web",
+    featured: false,
+    image: "dirac",
+    titleWidth: 60,
+  },
   {
     title: "Monumental Labs",
     year: 2024,
@@ -185,6 +215,8 @@ export const projects = [
     featured: true,
     image: "monumental",
     titleWidth: 140,
+    with: "Asimov Collective",
+    client: "Monumental Labs",
   },
   {
     title: "When China Blocked Popular AI Websites",
@@ -193,6 +225,8 @@ export const projects = [
     type: "Chart",
     filterCategory: "visualization",
     featured: false,
+    with: "Asimov Collective",
+    client: "Rest of World",
   },
   {
     title: "Realm",
@@ -203,6 +237,8 @@ export const projects = [
     featured: true,
     image: "realm",
     titleWidth: 65,
+    with: "Asimov Collective",
+    client: "Realm",
   },
   {
     title: "From Relationships to Revenue",
@@ -213,6 +249,8 @@ export const projects = [
     featured: true,
     image: "linkedin",
     titleWidth: 200,
+    // with: "Asimov Collective",
+    client: "LinkedIn",
   },
   {
     title: "Midjourney Magazine",
@@ -223,6 +261,8 @@ export const projects = [
     featured: true,
     image: "midjourney",
     titleWidth: 150,
+    with: "Asimov Collective",
+    client: "Midjourney",
   },
   {
     title: "ISP Myanmar: Visual Explainers",
@@ -231,14 +271,18 @@ export const projects = [
     type: "Chart",
     filterCategory: "visualization",
     featured: false,
+    with: "Asimov Collective",
+    client: "ISP Myanmar",
   },
   {
-    title: "Inside the BJP's WhatsApp machine",
+    title: "Inside the BJP's WhatsApp Machine",
     year: 2024,
     url: "https://restofworld.org/2024/bjp-whatsapp-modi/",
     type: "Chart",
     filterCategory: "visualization",
     featured: false,
+    with: "Asimov Collective",
+    client: "Rest of World",
   },
   {
     title: "Rainmaker",
@@ -249,6 +293,8 @@ export const projects = [
     featured: true,
     image: "rainmaker",
     titleWidth: 85,
+    with: "Asimov Collective",
+    client: "Rainmaker",
   },
   {
     title: "LaDataViz",
@@ -266,6 +312,7 @@ export const projects = [
     featured: true,
     image: "protests",
     titleWidth: 200,
+    client: "Rest of World",
   },
   {
     title: "Praxis Portal",
@@ -287,6 +334,7 @@ export const projects = [
     url: "https://restofworld.org/2024/riders-in-the-smog-gig-workers-pollution/",
     type: "Chart",
     filterCategory: "visualization",
+    client: "Rest of World",
   },
   {
     title: "Dressed to Express",
@@ -294,6 +342,7 @@ export const projects = [
     url: "https://www.aclutx.org/en/publications/dressed-express-how-dress-codes-discriminate-against-texas-students-and-must-be-changed",
     type: "Chart",
     filterCategory: "visualization",
+    client: "ACLU of Texas",
   },
   {
     title: "Hinge Copilot",
@@ -315,6 +364,7 @@ export const projects = [
     url: "https://restofworld.org/2023/china-shopping-shein-temu-global-rise/",
     type: "Chart",
     filterCategory: "visualization",
+    client: "Rest of World",
   },
   {
     title: "Causative Labs",
@@ -370,6 +420,7 @@ export const projects = [
     url: "https://restofworld.org/2023/internet-most-used-languages/",
     type: "Chart",
     filterCategory: "visualization",
+    client: "Rest of World",
   },
   {
     title: "Vana",
@@ -387,6 +438,7 @@ export const projects = [
     featured: true,
     image: "tech",
     titleWidth: 220,
+    client: "Rest of World",
   },
   {
     title: "babby.xyz",
@@ -409,6 +461,7 @@ export const projects = [
     url: "https://houstonbudget.cool/",
     type: "Story",
     filterCategory: "visualization",
+    client: "ACLU of Texas",
   },
   {
     title: "Praxis",
@@ -419,6 +472,7 @@ export const projects = [
     featured: true,
     image: "praxis",
     titleWidth: 65,
+    client: "Praxis",
   },
   {
     title: "Gallery",
@@ -436,6 +490,7 @@ export const projects = [
     featured: true,
     image: "blackouts",
     titleWidth: 85,
+    client: "Rest of World",
   },
   {
     title: "An Interactive History of Impact Investing",
@@ -446,6 +501,7 @@ export const projects = [
     featured: true,
     image: "impact",
     titleWidth: 265,
+    client: "Collaborative Fund",
   },
   {
     title: "COVID vulnerability scores vs. vaccination rates across the U.S.",
@@ -453,6 +509,7 @@ export const projects = [
     url: "https://www.axios.com/2021/06/21/coronavirus-vaccines-vulnerability-states-outbreaks-variants",
     type: "Chart",
     filterCategory: "visualization",
+    client: "Axios",
   },
   {
     title: "Olympic winners, over time",
@@ -463,6 +520,7 @@ export const projects = [
     featured: true,
     image: "olympics",
     titleWidth: 180,
+    client: "Axios",
   },
   {
     title: "The U.S. college population, visualized as 100 students",
@@ -470,6 +528,7 @@ export const projects = [
     url: "https://www.axios.com/2021/08/21/hard-truths-deep-dive-higher-education-affirmative-action",
     type: "Chart",
     filterCategory: "visualization",
+    client: "Axios",
   },
   {
     title: "Olympics medal tracker",
@@ -477,6 +536,7 @@ export const projects = [
     url: "https://www.axios.com/2021/07/27/olympics-medal-count-usa-tokyo",
     type: "Chart",
     filterCategory: "visualization",
+    client: "Axios",
   },
   {
     title: "Non-white share of population by county",
@@ -484,13 +544,7 @@ export const projects = [
     url: "https://www.axios.com/2021/08/15/diversity-majority-minority-white-american-census",
     type: "Charts",
     filterCategory: "visualization",
-  },
-  {
-    title: "Axios",
-    year: 2021,
-    url: "https://muckrack.com/connor-rothschild-1/portfolio",
-    type: "Chart",
-    filterCategory: "visualization",
+    client: "Axios",
   },
   {
     title: "Beat Foundry",
@@ -505,6 +559,7 @@ export const projects = [
     url: "https://news.rice.edu/news/2021/dashboard-developed-rice-will-help-texas-schools-open-safely-amid-pandemic",
     type: "Story",
     filterCategory: "visualization",
+    client: "Texas Policy Lab",
   },
   {
     title: "Changes in Federal and State Minimum Wages",
@@ -512,6 +567,7 @@ export const projects = [
     url: "https://twitter.com/CL_Rothschild/status/1366879233935564803",
     type: "Chart",
     filterCategory: "visualization",
+    client: "fun",
   },
   {
     title: "The Bob Ross Virtual Art Gallery",
@@ -522,6 +578,7 @@ export const projects = [
     featured: false,
     image: "bob-ross",
     titleWidth: 210,
+    client: "fun",
   },
   {
     title: "One Line Hacks",
@@ -532,6 +589,7 @@ export const projects = [
     url: "https://connorrothschild.github.io/one-line-hacks/",
     type: "Story",
     filterCategory: "web",
+    client: "fun",
   },
   {
     title: "USSOCOM",
@@ -546,6 +604,7 @@ export const projects = [
     url: "https://twitter.com/CL_Rothschild/status/1328746973952942081",
     type: "Chart",
     filterCategory: "visualization",
+    client: "fun",
   },
   {
     title: "COVID on Campus",
@@ -553,6 +612,7 @@ export const projects = [
     url: "https://twitter.com/CL_Rothschild/status/1315353704388866048",
     type: "Story",
     filterCategory: "visualization",
+    client: "fun",
   },
   {
     title: "Mask Wearing in Your County",
@@ -561,6 +621,7 @@ export const projects = [
     url: "https://observablehq.com/@connorrothschild/mask-wearing-in-your-county",
     type: "Story",
     filterCategory: "visualization",
+    client: "fun",
   },
   {
     title: "I Can Guess What You're Doing Right Now",
@@ -571,6 +632,7 @@ export const projects = [
     url: "https://connorrothschild.github.io/what-are-you-doing/",
     type: "Story",
     filterCategory: "visualization",
+    client: "fun",
   },
   {
     title: "Are You Smarter Than COMPAS?",
@@ -582,6 +644,7 @@ export const projects = [
     url: "https://connorrothschild.github.io/compas/",
     type: "Story",
     filterCategory: "visualization",
+    client: "fun",
   },
   {
     title: "How Much Does Kid Cudi Hum?",
@@ -593,6 +656,7 @@ export const projects = [
     featured: true,
     image: "cudi",
     titleWidth: 210,
+    client: "fun",
   },
   {
     title: "Mapping Houston Homicides",
@@ -601,6 +665,7 @@ export const projects = [
     url: "https://connorrothschild.github.io/datathon-2020/source",
     type: "Story",
     filterCategory: "visualization",
+    client: "fun",
   },
   // {
   //   title: "Mapping Police Killings",
@@ -618,6 +683,7 @@ export const projects = [
     url: "https://quarantune.netlify.app",
     type: "Story",
     filterCategory: "visualization",
+    client: "fun",
   },
   {
     title: "How Much Does Your State Spend on Police?",
@@ -625,6 +691,7 @@ export const projects = [
     url: "https://connorrothschild.github.io/state-police-spending/",
     type: "Story",
     filterCategory: "visualization",
+    client: "fun",
   },
   {
     title: "Spikes in Firearm Background Checks during COVID-19",
@@ -632,6 +699,7 @@ export const projects = [
     url: "https://twitter.com/CL_Rothschild/status/1283412638618341376",
     type: "Chart",
     filterCategory: "visualization",
+    client: "fun",
   },
   {
     title: "Mapping Missing Migrants",
@@ -641,6 +709,7 @@ export const projects = [
     url: "https://connorrothschild.github.io/map-missing-migrants",
     type: "Story",
     filterCategory: "visualization",
+    client: "fun",
   },
   {
     title: "The Race for Media Attention",
@@ -651,13 +720,18 @@ export const projects = [
     url: "https://observablehq.com/@connorrothschild/bar-chart-race",
     type: "Story",
     filterCategory: "visualization",
+    client: "fun",
   },
 ]
   .reverse()
-  .map((p) => ({
-    ...p,
-    featured: p.featured ?? false,
-    blurDataURL: p.image
-      ? blurData[p.image as keyof typeof blurData]
-      : undefined,
-  }));
+  .map((p) => {
+    const { client, ...rest } = p;
+    return {
+      ...rest,
+      featured: p.featured ?? false,
+      blurDataURL: p.image
+        ? blurData[p.image as keyof typeof blurData]
+        : undefined,
+      ...(client && client !== p.title ? { client } : {}),
+    };
+  });

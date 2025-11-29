@@ -31,11 +31,11 @@ const ArticleLinkItem: React.FC<ArticleLinkItemProps> = ({
       rel={article.isExternal ? "noopener noreferrer" : undefined}
       data-article-id={article.id}
       className={cn(
-        "max-lg:snap-center shrink-0 whitespace-nowrap text-[20px] lg:text-[24px] leading-[1.1] tracking-[-0.02em] font-light cursor-pointer transition-colors duration-150 ease-in-out", // Base styles + added transition
+        "text-[16px] leading-[1.1] tracking-[-0.02em] cursor-pointer transition-colors ease-in-out", // Base styles + added transition
         // Apply conditional styling
         article.id === currentSlug
-          ? "text-white" // Active style
-          : "text-neutral-600 hover:text-neutral-300 active:text-neutral-300" // Inactive style
+          ? "text-text" // Active style
+          : "text-text/50 hover:text-text active:text-text" // Inactive style
       )}
     >
       {article.title}
@@ -60,21 +60,11 @@ export default function ArticleSelector({
       );
 
       if (activeLink) {
-        // Check if the screen is mobile (using window.innerWidth as a proxy)
-        // We only want to scroll horizontally on mobile
-        if (window.innerWidth < 1024) {
-          // Tailwind's 'lg' breakpoint is 1024px
-          activeLink.scrollIntoView({
-            behavior: "smooth", // Optional: smooth scrolling
-            block: "nearest", // Align vertically to the nearest edge
-            inline: "center", // Align horizontally to the start edge
-          });
-        } else {
-          // Optional: On larger screens, you might want different behavior,
-          // like scrolling vertically if the list is long.
-          // For now, we only handle mobile horizontal scroll.
-          // Consider adding vertical scrolling logic here if needed.
-        }
+        // Scroll the active link into view
+        activeLink.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+        });
       }
     }
   }, [currentSlug]); // Rerun effect when the slug changes
@@ -90,11 +80,7 @@ export default function ArticleSelector({
   return (
     <div
       ref={scrollContainerRef} // Attach the ref to the container
-      className={cn(
-        "flex flex-row flex-nowrap gap-x-4 gap-y-2 items-start scrollbar-hide",
-        "max-lg:w-[calc(100%+48px)] -translate-x-[24px] px-[24px] max-lg:overflow-x-auto max-lg:snap-x",
-        "lg:flex-col"
-      )}
+      className={cn("flex flex-col gap-y-2 items-start")}
     >
       {/* Render Personal Articles */}
       {personalArticles.map((article) => (
@@ -107,7 +93,7 @@ export default function ArticleSelector({
 
       {/* Add a divider if both groups have articles */}
       {techArticles.length > 0 && personalArticles.length > 0 && (
-        <div className="shrink-0 w-[2px] h-full lg:w-full lg:h-px bg-neutral-800 max-lg:mx-2 lg:my-2" />
+        <div className="w-full h-px bg-text/10 dark:bg-text/20 my-2" />
       )}
 
       {/* Render Tech Articles */}

@@ -1,14 +1,21 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+@variant dark (.dark &);
+
 @theme {
   --default-border-width: 1px;
   --default-border-width: 0.5px;
+  --color-bg: var(--background);
+  --color-text: var(--text);
+  --color-border: var(--border);
 }
 
 :root {
-  --background: #000000;
-  --background-invert: #ffffff;
+  --background: #f4f4f4;
+  --background-invert: #000000;
+  --text: #000000;
+  --border: #000000;
 
   --vh: 1vh;
 
@@ -23,6 +30,19 @@
 
   /* Smallest grid cells */
   --grid-cell-width: 50vw; /* max(220px, 50vw); */
+
+  /* Inner content width */
+  --inner-content-width: 768px;
+  --outer-content-width: 1460px;
+
+  --theme-transition-duration: 600ms;
+}
+
+.dark {
+  --background: #1f1f1f;
+  --background-invert: #ffffff;
+  --text: #ffffff;
+  --border: #ffffff;
 }
 
 :root {
@@ -32,6 +52,11 @@
 *::selection {
   background-color: hsl(var(--selection-hue), 30%, 30%);
   color: #fff;
+}
+
+.dark *::selection {
+  background-color: hsl(var(--selection-hue), 30%, 70%);
+  color: #000;
 }
 
 /* Tailwind lg breakpoint */
@@ -49,9 +74,14 @@
   }
 }
 
-html,
+html {
+  background: var(--background) !important;
+  color-scheme: light dark;
+}
+
 body {
   background: var(--background) !important;
+  color: var(--background-invert);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: geometricPrecision;
@@ -75,26 +105,17 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-.text-wrap-pretty {
-  text-wrap: balance;
-  text-wrap: pretty;
-}
-
-.text-wrap-balance {
-  text-wrap: balance;
-}
-
 img {
   user-select: none;
   -webkit-user-drag: none;
   -webkit-user-select: none;
 }
 
-@layer components {
+/* @layer components {
   .default-grid {
-    @apply bg-black min-h-[calc(100*var(--svh))] h-[calc(100*var(--svh))] text-white overflow-x-auto grid grid-rows-2 auto-cols-[var(--grid-cell-width)] grid-flow-col;
+    @apply bg-text min-h-[calc(100*var(--svh))] h-[calc(100*var(--svh))] overflow-x-auto grid grid-rows-2 auto-cols-[var(--grid-cell-width)] grid-flow-col;
   }
-}
+} */
 
 /* FIXME: Prose pre causes height collapse, this is a hack to fix it */
 .prose pre {

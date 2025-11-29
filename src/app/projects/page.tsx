@@ -1,11 +1,9 @@
 import React from "react";
-import Navigation from "@/components/sections/navigation";
-import BottomBox from "@/components/sections/bottom-box";
-import RightSide from "@/components/sections/right-side";
 import { projects } from "@/data/projects";
 import { Metadata } from "next";
 import { generatePageMetadata } from "@/lib/metadata";
 import Link from "next/link";
+import InlineProjectsList from "@/components/sections/projects/inline-list";
 
 export const metadata: Metadata = generatePageMetadata({
   title: "Projects",
@@ -14,74 +12,27 @@ export const metadata: Metadata = generatePageMetadata({
 
 export default function ProjectsPage() {
   return (
-    <div className="default-grid scrollbar-hide max-lg:flex max-lg:flex-col">
-      <Navigation />
-
-      <BottomBox>
-        <div className="">
-          <h1 className="hidden lg:block text-3xl font-light mb-2">
+    <div className="min-h-screen">
+      <div className="px-[16px] lg:px-[24px] pt-[200px] pb-[64px] lg:pb-[120px]">
+        <div className="w-full max-w-[var(--inner-content-width)] mx-auto">
+          <h1 className="text-[24px] leading-normal tracking-[-0.02em]">
             All Projects
           </h1>
-          <p className="text-base lg:text-base text-neutral-400">
-            <span className="inline lg:hidden">All projects.</span> See featured
-            projects{" "}
+          <p className="text-[18px] leading-normal tracking-[-0.02em] text-text/50">
+            See featured projects{" "}
             <Link
               href="/"
-              className="underline underline-offset-4 decoration-[1px]"
+              className="underline underline-offset-4 decoration-[1px] hover:text-text"
             >
               here
             </Link>
             .
           </p>
-        </div>
-      </BottomBox>
-
-      <RightSide>
-        {/* Scrims */}
-        {/* FIXME ABSTRACT? */}
-        <div className="absolute top-0 h-[50px] w-full bg-gradient-to-b from-black to-transparent pointer-events-none z-10" />
-        <div className="absolute bottom-0 left-0 right-0 h-[50px] bg-gradient-to-t from-black to-transparent pointer-events-none z-10" />
-
-        {/* Modify prose classes here for body text styling */}
-        <div
-          className="absolute inset-0 h-full w-full overflow-y-scroll scrollbar-hide py-[50px] lg:py-[100px] lg:pt-[37svh]"
-          style={{
-            // NOTE: Cannot use motion here because it breaks mdx-remote which is a server component.
-            opacity: 0,
-            animation: "fadeIn 0.5s ease-in-out 0.25s forwards",
-          }}
-        >
-          <div className="space-y-1.5 max-lg:max-w-none lg:max-w-[480px] lg:mx-auto max-lg:px-[16px]">
-            {projects
-              .slice()
-              .reverse()
-              .map((project, index) => (
-                <div key={index} className="relative flex items-end text-white">
-                  {project.url ? (
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="truncate text-lg lg:text-2xl font-light hover:opacity-75 transition-opacity"
-                    >
-                      {project.title}
-                    </a>
-                  ) : (
-                    <span className="truncate text-lg lg:text-2xl font-light">
-                      {project.title}
-                    </span>
-                  )}
-                  {project.featured && (
-                    <span className="opacity-75 ml-0.5 mb-auto">*</span>
-                  )}
-                  <span className="text-base opacity-50 ml-1 mb-px">
-                    ({project.year})
-                  </span>
-                </div>
-              ))}
+          <div className="mt-[64px] lg:mt-[96px]">
+            <InlineProjectsList projects={projects} />
           </div>
         </div>
-      </RightSide>
+      </div>
     </div>
   );
 }

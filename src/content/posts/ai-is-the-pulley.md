@@ -12,23 +12,23 @@ synopsisForLlms: "..."
 
 <blockquote>
 
-<p className='!my-0 lg:!text-lg'>
+<p className='!my-0 !text-base lg:!text-lg'>
 An old man in Calcutta would walk to get water from a well every day. He’d carry a clay pot and lower it by hand slowly, all the way down, careful not to let it hit the sides of the well and break. 
 </p>
 
-<p className='!my-0 lg:!text-lg'>
+<p className='!my-0 !text-base lg:!text-lg'>
 Once it was full, he’d raise the pot slowly and carefully again. It was a focused, time-consuming act.  
 </p>
 
-<p className='!my-0 lg:!text-lg'>
+<p className='!my-0 !text-base lg:!text-lg'>
 One day, a traveler noticed the old man engaged in this difficult task. More experienced with mechanics, he showed the old man how to use a pulley system.  
 </p>
 
-<p className='!my-0 lg:!text-lg'>
+<p className='!my-0 !text-base lg:!text-lg'>
 “This will allow the pot to go straight down quickly,” the traveler explained, “then fill with water and come back up, without hitting the sides. It’s much easier and the pot will be just as full with much less work.”  
 </p>
 
-<p className='!my-0 lg:!text-lg'>
+<p className='!my-0 !text-base lg:!text-lg'>
 The old man looked at him and said, “I think I’m going to keep doing it the way I always have. I really have to think about each movement and there’s a great deal of care that goes into doing it right. I’d imagine if I were to use the pulley, it would become easy and I might even start thinking about something else while doing it. If I put so little care and time into it, what might the water taste like? It couldn’t possibly taste as good.”  
 </p>
 
