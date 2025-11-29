@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 // Remove rehype imports
 // import rehypeSanitize from "rehype-sanitize";
@@ -32,19 +32,33 @@ export default function FeedItem({ item }: FeedItemProps) {
   // Ref for the video element
   const videoRef = useRef<HTMLVideoElement>(null);
 
+  // State to track when video has loaded
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
   // Effect to load and play video when in view
   useEffect(() => {
     if (isInteractionWithVideo && isInView && videoRef.current) {
       const videoElement = videoRef.current;
       if (videoElement.currentSrc !== item.videoSrc) {
-        console.log(`Loading video: ${item.videoSrc}`);
         videoElement.src = item.videoSrc!;
+
+        // Handle video loaded event
+        const handleVideoLoaded = () => {
+          setVideoLoaded(true);
+        };
+
+        videoElement.addEventListener("canplay", handleVideoLoaded);
+
         videoElement.play().catch((error) => {
           // Autoplay might be blocked, handle error
           console.error("Video autoplay failed:", error);
           // Optionally show controls if autoplay fails
           // videoElement.controls = true;
         });
+
+        return () => {
+          videoElement.removeEventListener("canplay", handleVideoLoaded);
+        };
       }
     }
     // We don't need to pause when out of view based on `once: true`
@@ -80,7 +94,7 @@ export default function FeedItem({ item }: FeedItemProps) {
             </h3>
 
             {/* Type and Date */}
-            <p className="text-[14px] text-text/50 leading-none shrink-0 lg:text-right">
+            <p className="text-[16px] text-text/50 leading-none shrink-0 lg:text-right">
               {item.type} from{" "}
               {new Date(item.date).toLocaleDateString("en-US", {
                 month: "short",
@@ -100,7 +114,12 @@ export default function FeedItem({ item }: FeedItemProps) {
                     src={item.posterSrc}
                     alt={`${item.title} poster`}
                     // Use absolute positioning to fill the container, remove aspect ratio here
-                    className="absolute inset-0 w-full h-full object-cover z-0 bg-gray-50 animate-pulse"
+                    className={cn(
+                      "absolute inset-0 w-full h-full object-cover z-[1] bg-gray-50",
+                      "transition-opacity duration-300 ease-in-out",
+                      "blur-[4px]",
+                      videoLoaded ? "opacity-0" : "opacity-100"
+                    )}
                     // Ensure the image loads quickly
                     loading="eager"
                   />
@@ -111,7 +130,11 @@ export default function FeedItem({ item }: FeedItemProps) {
                   // Remove the poster attribute
                   // poster={item.posterSrc}
                   // Use absolute positioning to fill the container, remove aspect ratio here
-                  className="absolute inset-0 w-full h-full object-cover z-10"
+                  className={cn(
+                    "absolute inset-0 w-full h-full object-cover z-[2]",
+                    "transition-opacity duration-300 ease-in-out",
+                    videoLoaded ? "opacity-100" : "opacity-0"
+                  )}
                   preload="metadata"
                   muted
                   loop

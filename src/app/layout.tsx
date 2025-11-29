@@ -148,7 +148,7 @@ export default function RootLayout({
             style={{
               backgroundColor: "var(--background)",
               transition:
-                "background-color var(--theme-transition-duration) ease",
+                "background-color var(--theme-transition-duration) cubic-bezier(0.74, 0.05, 0.43, 1)",
             }}
           >
             <Navigation />

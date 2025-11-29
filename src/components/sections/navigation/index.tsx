@@ -46,7 +46,8 @@ export default function Navigation() {
       style={{
         backgroundColor: "var(--background)",
         color: "var(--background-invert)",
-        transition: "background-color var(--theme-transition-duration) ease",
+        transition:
+          "background-color var(--theme-transition-duration) cubic-bezier(0.74, 0.05, 0.43, 1)",
       }}
       // transition={{
       //   duration: 0.75,

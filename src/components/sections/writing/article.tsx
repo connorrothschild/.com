@@ -41,10 +41,10 @@ export default function Article({ article }: { article: PostData }) {
     <div className="flex flex-col w-full font-sans">
       {/* Title and Date */}
       <div className="mb-8">
-        <h1 className="text-[36px] leading-[1.2] tracking-[-0.04em] text-text mb-2 font-normal">
+        <h1 className="text-[36px] leading-[1.2] tracking-[-0.04em] text-text mb-3 font-normal">
           {article.title}
         </h1>
-        <p className="text-[14px] text-text/50 leading-none">{formattedDate}</p>
+        <p className="text-[18px] text-text/50 leading-none">{formattedDate}</p>
       </div>
 
       {/* Article Content */}
