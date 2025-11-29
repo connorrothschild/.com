@@ -27,110 +27,132 @@ const mdxComponents = {
 // Update the prop type to use PostData['content']
 // Make the component async
 export default function Article({ article }: { article: PostData }) {
+  const formattedDate = new Date(article.date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
   return (
-    <div className="flex flex-col w-full font-sans prose">
-      {/* <MDXRemote source={article.content} components={mdxComponents} /> */}
-      <ReactMarkdown
-        rehypePlugins={[rehypeRaw]}
-        components={{
-          h1: ({ children }) => (
-            <h1 className="text-[36px] leading-[1.2] tracking-[-0.04em] text-black mb-4 mt-16 first:mt-0 font-normal">
-              {children}
-            </h1>
-          ),
-          h2: ({ children }) => (
-            <h2 className="text-[36px] leading-[1.2] tracking-[-0.03em] text-black mb-4 mt-12 first:mt-0 font-normal">
-              {children}
-            </h2>
-          ),
-          h3: ({ children }) => (
-            <h3 className="text-[24px] leading-[1.2] tracking-[-0.02em] text-black mb-4 mt-10 first:mt-0 font-normal">
-              {children}
-            </h3>
-          ),
-          p: ({ children, className }) => (
-            <p
-              className={cn(
-                "text-[18px] leading-[1.5] tracking-[-0.01em] !my-2.5 text-black/70",
-                className
-              )}
-            >
-              {children}
-            </p>
-          ),
-          strong: ({ children }) => (
-            <strong className="text-black font-normal">{children}</strong>
-          ),
-          em: ({ children }) => (
-            <em className="text-black/50 italic">{children}</em>
-          ),
-          a: ({ children, href }) => (
-            <a
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-black hover:text-black/50 underline underline-offset-4 decoration-[0.5px] transition-colors"
-            >
-              {children}
-            </a>
-          ),
-          ul: ({ children }) => (
-            <ul className="text-black/60 space-y-2 !my-0">{children}</ul>
-          ),
-          ol: ({ children }) => (
-            <ol className="text-black/60 space-y-2 !my-0">{children}</ol>
-          ),
-          li: ({ children }) => (
-            <li className="text-black/60 relative text-[18px] leading-[1.5] tracking-[-0.01em] text-balance">
-              {children}
-            </li>
-          ),
-          blockquote: ({ children }) => (
-            <blockquote className="border-l-4 border-black/10 pl-6 py-0 my-6">
-              {children}
-            </blockquote>
-          ),
-          code: ({ children, className }) => {
-            const isInline = !className;
-            if (isInline) {
+    <div className="flex flex-col w-full font-sans">
+      {/* Title and Date */}
+      <div className="mb-8">
+        <h1 className="text-[36px] leading-[1.2] tracking-[-0.04em] text-black mb-2 font-normal">
+          {article.title}
+        </h1>
+        <p className="text-[14px] text-black/50 leading-none">
+          {formattedDate}
+        </p>
+      </div>
+
+      {/* Article Content */}
+      <div className="prose">
+        {/* <MDXRemote source={article.content} components={mdxComponents} /> */}
+
+        <ReactMarkdown
+          rehypePlugins={[rehypeRaw]}
+          components={{
+            h1: ({ children }) => (
+              <h1 className="text-[36px] leading-[1.2] tracking-[-0.04em] text-black mb-4 mt-16 first:mt-0 font-normal border-t border-black/10 pt-16 first:border-t-0 first:pt-0">
+                {children}
+              </h1>
+            ),
+            h2: ({ children }) => (
+              <h2 className="text-[36px] leading-[1.2] tracking-[-0.03em] text-black mb-4 mt-12 first:mt-0 font-normal border-t border-black/10 pt-12 first:border-t-0 first:pt-0">
+                {children}
+              </h2>
+            ),
+            h3: ({ children }) => (
+              <h3 className="text-[24px] leading-[1.2] tracking-[-0.02em] text-black mb-4 mt-10 first:mt-0 font-normal border-t border-black/10 pt-10 first:border-t-0 first:pt-0">
+                {children}
+              </h3>
+            ),
+            p: ({ children, className }) => (
+              <p
+                className={cn(
+                  "text-[18px] leading-[1.5] tracking-[-0.01em] !my-2.5 text-black/70",
+                  className
+                )}
+              >
+                {children}
+              </p>
+            ),
+            strong: ({ children }) => (
+              <strong className="text-black font-normal">{children}</strong>
+            ),
+            em: ({ children }) => (
+              <em className="text-black/50 italic">{children}</em>
+            ),
+            a: ({ children, href }) => (
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black hover:text-black/50 underline underline-offset-4 decoration-[0.5px] transition-colors"
+              >
+                {children}
+              </a>
+            ),
+            ul: ({ children }) => (
+              <ul className="text-black/60 space-y-2 !my-0">{children}</ul>
+            ),
+            ol: ({ children }) => (
+              <ol className="text-black/60 space-y-2 !my-0">{children}</ol>
+            ),
+            li: ({ children }) => (
+              <li className="text-black/60 relative text-[18px] leading-[1.5] tracking-[-0.01em] text-balance">
+                {children}
+              </li>
+            ),
+            blockquote: ({ children }) => (
+              <blockquote className="border-l-4 border-black/10 pl-6 py-0 my-6">
+                {children}
+              </blockquote>
+            ),
+            code: ({ children, className }) => {
+              const isInline = !className;
+              if (isInline) {
+                return (
+                  <code className="px-1 py-1 bg-black/10 text-black rounded text-sm font-mono">
+                    {children}
+                  </code>
+                );
+              }
               return (
-                <code className="px-1 py-1 bg-black/10 text-black rounded text-sm font-mono">
-                  {children}
-                </code>
+                <pre className="my-6 bg-black/5 border border-black/10 rounded-xl p-4 overflow-x-auto">
+                  <code className="text-black text-sm font-mono">
+                    {children}
+                  </code>
+                </pre>
               );
-            }
-            return (
-              <pre className="my-6 bg-black/5 border border-black/10 rounded-xl p-4 overflow-x-auto">
-                <code className="text-black text-sm font-mono">{children}</code>
+            },
+            pre: ({ children }) => (
+              <pre className="not-prose bg-black/5 border border-black/10 rounded-xl p-4 overflow-x-auto my-6">
+                {children}
               </pre>
-            );
-          },
-          pre: ({ children }) => (
-            <pre className="not-prose bg-black/5 border border-black/10 rounded-xl p-4 overflow-x-auto my-6">
-              {children}
-            </pre>
-          ),
-          img: ({ src, alt }) => (
-            <Image
-              width={1200}
-              height={1200}
-              src={src || ""}
-              alt={alt || ""}
-              className="my-8 not-prose w-full rounded-xl border border-black/10"
-            />
-          ),
-          video: ({ src, ...props }) => (
-            <video
-              src={src}
-              className="my-8 w-full rounded-xl border border-black/10"
-              controls
-              {...props}
-            />
-          ),
-        }}
-      >
-        {article.content}
-      </ReactMarkdown>
+            ),
+            img: ({ src, alt }) => (
+              <Image
+                width={1200}
+                height={1200}
+                src={src || ""}
+                alt={alt || ""}
+                className="my-8 not-prose w-full rounded-xl border border-black/10"
+              />
+            ),
+            video: ({ src, ...props }) => (
+              <video
+                src={src}
+                className="my-8 w-full rounded-xl border border-black/10"
+                controls
+                {...props}
+              />
+            ),
+          }}
+        >
+          {article.content}
+        </ReactMarkdown>
+      </div>
     </div>
   );
 }

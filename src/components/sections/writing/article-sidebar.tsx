@@ -69,7 +69,7 @@ export default function ArticleSidebar({ articles }: ArticleSidebarProps) {
 
   return (
     <div className="flex flex-col">
-      {articleMetadata && !loading && (
+      {/* {articleMetadata && !loading && (
         <div className="mb-8 lg:mb-12">
           <h2 className="text-[24px] lg:text-[48px] mb-2 lg:mb-4 leading-none tracking-[-0.04em] text-balance text-black">
             {articleMetadata.title}
@@ -78,7 +78,7 @@ export default function ArticleSidebar({ articles }: ArticleSidebarProps) {
             {formattedDate}
           </p>
         </div>
-      )}
+      )} */}
       <ArticleSelector articles={articles} />
     </div>
   );

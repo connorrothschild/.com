@@ -26,6 +26,7 @@
 
   /* Inner content width */
   --inner-content-width: 768px;
+  --outer-content-width: 1460px;
 }
 
 :root {

@@ -14,10 +14,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white text-black">
       <div className="px-[16px] lg:px-[24px] pt-[200px] pb-[64px] lg:pb-[96px]">
-        <div
-          className="mx-auto"
-          style={{ maxWidth: "var(--inner-content-width)" }}
-        >
+        <div className="w-full max-w-[var(--inner-content-width)] mx-auto">
           <Image
             src="/images/me/headshot-2025.jpg"
             alt="Connor Rothschild"

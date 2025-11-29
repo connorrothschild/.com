@@ -55,13 +55,13 @@ function ProjectItem({
       className={cn("block group relative overflow-hidden", className)}
     >
       <Image
-        src={`/images/mobile-screens/${project.image}.webp`}
+        src={`/images/desktop-screens/${project.image}.webp`}
         alt={project.title}
         width={1000}
         height={1000}
         placeholder="blur"
         blurDataURL={project.blurDataURL}
-        className="w-full h-auto object-cover aspect-[1.7/1] border border-black/10"
+        className="w-full h-auto object-cover object-bottom aspect-[3024/1898] border border-black/10 rounded"
       />
       <div className="mt-4 space-y-1.5">
         <div className="text-[16px] leading-none tracking-[-0.02em]">
@@ -84,7 +84,7 @@ export default function Grid() {
     .reverse() as Project[];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-12 w-full max-w-[1460px] mx-auto">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-x-5 gap-y-12 w-full max-w-[var(--outer-content-width)] mx-auto">
       {featuredProjects.map((project, index) => (
         <ProjectItem key={index} project={project} index={index} />
       ))}

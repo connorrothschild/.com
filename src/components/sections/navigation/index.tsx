@@ -41,7 +41,7 @@ export default function Navigation() {
     <motion.div
       // layoutId="navigation"
       // layout="position"
-      className="bg-white z-50 fixed top-0 left-0 p-[16px] lg:p-[24px] flex justify-between items-center w-full"
+      className="bg-white z-50 fixed top-0 left-1/2 -translate-x-1/2 p-[16px] lg:p-[24px] flex justify-between items-center w-full max-w-[calc(var(--outer-content-width)_+_48px)] mx-auto"
       // transition={{
       //   duration: 0.75,
       //   ease: easeInOutQuint,

@@ -23,7 +23,7 @@ export default async function WritingLayout({
       <div className="px-[16px] lg:px-[24px] pt-[200px] pb-[64px] lg:pb-[96px]">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-8 lg:gap-16">
           {/* Left Sidebar */}
-          <div className="lg:sticky lg:top-[96px] lg:self-start">
+          <div className="max-lg:mb-12 lg:sticky lg:top-[96px] lg:self-start w-full max-w-[var(--inner-content-width)] mx-auto">
             <ArticleSidebar
               articles={[
                 ...articleLinks,
@@ -33,10 +33,7 @@ export default async function WritingLayout({
           </div>
           {/* Right Content */}
           <div className="w-full">
-            <div
-              className="mx-auto"
-              style={{ maxWidth: "var(--inner-content-width)" }}
-            >
+            <div className="w-full max-w-[var(--inner-content-width)] mx-auto">
               {children}
             </div>
           </div>
