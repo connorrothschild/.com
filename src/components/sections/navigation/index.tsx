@@ -55,7 +55,7 @@ export default function Navigation() {
     >
       <Link
         href="/"
-        className="flex-1 text-left text-[16px] leading-none tracking-[-0.02em] text-text"
+        className="md:flex-1 text-left text-[16px] leading-none tracking-[-0.02em] text-text"
       >
         <span className="hidden sm:block">Connor Rothschild</span>
         <span className="block sm:hidden">CR</span>
