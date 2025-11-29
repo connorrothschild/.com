@@ -15,7 +15,7 @@ export default function ProjectsPage() {
     <div className="min-h-screen">
       <div className="px-[16px] lg:px-[24px] pt-[200px] pb-[64px] lg:pb-[120px]">
         <div className="w-full max-w-[var(--inner-content-width)] mx-auto">
-          <h1 className="text-[18px] leading-normal tracking-[-0.02em] mb-1">
+          <h1 className="text-[24px] leading-normal tracking-[-0.02em]">
             All Projects
           </h1>
           <p className="text-[18px] leading-normal tracking-[-0.02em] text-text/50">

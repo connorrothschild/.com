@@ -61,7 +61,10 @@ function ProjectItem({
         height={1000}
         placeholder="blur"
         blurDataURL={project.blurDataURL}
-        className="w-full h-auto object-cover object-bottom aspect-[3024/1898] border border-text/10 rounded"
+        className={cn(
+          "w-full h-auto object-cover object-bottom aspect-[3024/1898] border border-text/10 rounded",
+          "group-hover:shadow-lg transition-shadow duration-300"
+        )}
       />
       <div className="mt-4 space-y-1.5">
         <div className="text-[16px] leading-none tracking-[-0.02em]">

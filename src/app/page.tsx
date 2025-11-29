@@ -18,15 +18,15 @@ export default function HomePage() {
             Hello, I'm Connor <span className="rotate-180">👋</span>
           </h1>
           <p className="max-w-[400px] text-[18px] leading-[1.25] tracking-[-0.02em] text-text/50">
-            I lead technology at Asimov Collective,{" "}
+            I help lead technology at Asimov Collective,{" "}
             <br className="hidden [@media(min-width:335px)]:block" />
             an agency in New York.
           </p>
           <p className="text-[18px] leading-[1.25] tracking-[-0.02em] text-text/50">
-            Some websites I have worked on can be found below.
+            Some projects I&apos;ve worked on can be found below.
           </p>
         </div>
-        <div className="mt-[64px] lg:mt-[144px]">
+        <div className="mt-[64px] lg:mt-[120px]">
           <Grid />
         </div>
       </div>

@@ -181,7 +181,7 @@ const InfiniteFeed: React.FC<InfiniteFeedProps> = ({ initialItems }) => {
       {IS_INFINITE ? null : (
         <button
           onClick={() => {
-            scrollContainerRef.current?.scrollTo({
+            window.scrollTo({
               top: 0,
               behavior: "smooth",
             });

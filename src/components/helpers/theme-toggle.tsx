@@ -22,9 +22,13 @@ export function ThemeToggle() {
     >
       <span
         className={cn(
-          "absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-bg transition-transform duration-300",
+          "absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-bg",
           isDark && "translate-x-5"
         )}
+        style={{
+          transition:
+            "all var(--theme-transition-duration) cubic-bezier(0.74, 0.05, 0.43, 1)",
+        }}
       />
     </button>
   );

@@ -8,6 +8,7 @@ import { RealViewport } from "@/components/helpers/real-viewport";
 import { generateDefaultJsonLd } from "@/lib/metadata";
 import { Chivo_Mono } from "next/font/google";
 import Navigation from "@/components/sections/navigation";
+import Footer from "@/components/sections/footer";
 import { ThemeProvider } from "@/components/helpers/theme-provider";
 
 const times = localFont({
@@ -152,6 +153,7 @@ export default function RootLayout({
           >
             <Navigation />
             {children}
+            <Footer />
           </main>
           <Analytics />
           <SpeedInsights />
