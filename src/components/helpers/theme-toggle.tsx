@@ -23,7 +23,7 @@ export function ThemeToggle() {
       <span
         className={cn(
           "absolute top-0.5 left-0.5 size-3 md:size-4 rounded-full bg-bg",
-          isDark && "translate-x-5"
+          isDark && "translate-x-4 md:translate-x-5"
         )}
         style={{
           transition:
