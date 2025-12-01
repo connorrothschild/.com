@@ -139,6 +139,10 @@ export default function FeedItem({ item }: FeedItemProps) {
                   muted
                   loop
                   playsInline
+                  webkit-playsinline="true"
+                  x5-playsinline="true"
+                  disablePictureInPicture
+                  controls={false}
                 >
                   Your browser does not support the video tag.
                 </video>
